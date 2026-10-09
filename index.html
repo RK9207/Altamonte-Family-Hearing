@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hearing Care in Altamonte Springs, FL | Altamonte Family Hearing</title>
+<meta name="description" content="Family-owned hearing care in Altamonte Springs, FL: hearing evaluations, hearing aid fittings and repair, tinnitus and earwax care. Hablamos español.">
+<meta name="theme-color" content="#1A3028">
+
+<!--
+  STEP 4A FIRST DRAFT: Altamonte Family Hearing / Better Hearing Health
+  Governing docs: PAGE_STRATEGY.md, CONTENT_DIRECTION.md, DESIGN_SYSTEM.md (sections S0-S12)
+
+  IMPLEMENTATION NOTES (internal, not visitor-facing)
+  - Image slots carry data-ph="IMG-..." IDs. Each is populated with the genuine clinic photo named in DESIGN_SYSTEM.md.
+    If a file fails to load, the slot shows its ID/label instead. Swap src values in Step 4B / production.
+  - Google aggregate (5.0 / 156) comes from the 9 Oct 2026 panel transcription. It appears in S1 and S7 only. Re-check before publishing.
+  - Booking dialog iframe src is the supplied My Hearing Portal URL, unchanged. It is set on first open (not at page load).
+  - Request form: the embed is the supplied Onspire Pulse code with ONE technical change: the iframe id and
+    data-layout-iframe-id use the "formEmbed-" prefix instead of "inline-" (known GHL autoscroll fix). form_embed.js is loaded once.
+  - Map: iframe uses the clinic site's own embeddable CID source. Get Directions uses the brief's Google Maps place link.
+  - Fonts: DM Serif Display (Google Fonts) and Satoshi (Fontshare CDN) for the draft. Self-host WOFF2 for production.
+  - Footer copyright keeps the {{location.name}} merge token for the GHL deployment.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#006241; --primary-deep:#004D33;
+  --gold:#CBA052; --gold-soft:#E8D3A6;
+  --night:#1A3028;
+  --mist:#DEE7E3; --mist-deep:#C9D8D1;
+  --cream:#FBF8F1; --paper:#FFFDF8;
+  --text:#1A3028; --text-2:#4A5E55;
+  --on-dark:#EEF3EF; --on-dark-soft:#C7D6CD;
+  --border:#C9D8D1; --control:#597066;
+  --error:#8C2E2E; --white:#FFFFFF;
+  --r-card:28px; --r-photo:18px; --r-panel:44px;
+  --wrap:1240px; --gutter:48px; --section-y:88px;
+  --serif:"DM Serif Display",Georgia,serif;
+  --sans:"Satoshi",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (max-width:1099px){ :root{ --gutter:32px; --section-y:72px; } }
+@media (max-width:899px){ :root{ --gutter:28px; } }
+@media (max-width:767px){ :root{ --gutter:22px; --section-y:56px; } }
+@media (max-width:359px){ :root{ --gutter:16px; } }
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; overflow-x:clip; scroll-padding-top:104px; }
+body{
+  margin:0; background:var(--cream); color:var(--text);
+  font:400 18px/1.62 var(--sans);
+  -webkit-font-smoothing:antialiased; overflow-x:clip;
+}
+img,svg{ max-width:100%; }
+a{ color:var(--primary); text-underline-offset:3px; }
+p{ margin:0 0 1em; }
+p:last-child{ margin-bottom:0; }
+ul,ol{ margin:0; padding:0; }
+h1,h2,h3{ font-family:var(--serif); font-weight:400; margin:0; letter-spacing:0; }
+h1{ font-size:clamp(2.5rem,1.6rem + 3.2vw,4.5rem); line-height:1.08; letter-spacing:-.01em; }
+h2{ font-size:clamp(1.9rem,1.2rem + 2vw,3rem); line-height:1.15; }
+h3{ font-size:clamp(1.45rem,1.3rem + .6vw,1.9rem); line-height:1.22; }
+h1 em,h2 em{ font-style:italic; color:var(--primary); }
+.panel h2 em{ color:var(--gold-soft); }
+@media (max-width:767px){ h1{ line-height:1.12; } }
+
+.sr-only{ position:absolute!important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.skip{ position:absolute; left:16px; top:-80px; z-index:100; background:var(--night); color:var(--white); padding:12px 20px; border-radius:999px; font-weight:700; }
+.skip:focus{ top:12px; }
+:focus-visible{ outline:3px solid var(--primary); outline-offset:3px; }
+.on-dark :focus-visible, .panel :focus-visible{ outline-color:var(--gold); }
+.rev :focus-visible, .care-card :focus-visible{ outline-color:var(--primary); }
+
+.wrap{ width:100%; max-width:calc(var(--wrap) + var(--gutter)*2); margin-inline:auto; padding-inline:var(--gutter); }
+.section{ padding-block:var(--section-y); }
+.section--panel{ padding-block:56px; }
+@media (max-width:767px){ .section--panel{ padding-block:28px; } }
+.section--paper{ background:var(--paper); }
+.section--mist{ background:var(--mist); }
+.eyebrow{ font-size:14px; line-height:1.4; font-weight:700; letter-spacing:.04em; color:var(--primary); margin:0 0 16px; }
+.lead{ font-size:20px; line-height:1.6; color:var(--text-2); max-width:52ch; }
+@media (max-width:767px){ .lead{ font-size:18px; } }
+.measure{ max-width:62ch; }
+.section-head{ margin-bottom:40px; }
+.section-head .lead{ margin-top:20px; }
+@media (max-width:767px){ .section-head{ margin-bottom:28px; } }
+
+.ico{ width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+.ico-star{ fill:currentColor; stroke:none; width:18px; height:18px; }
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:52px; padding:15px 28px; border-radius:999px; border:2px solid transparent;
+  font:700 16px/1.2 var(--sans); text-align:center; text-decoration:none; cursor:pointer;
+  transition:background-color .15s ease,color .15s ease,border-color .15s ease;
+}
+.btn-primary{ background:var(--primary); color:var(--white); }
+.btn-primary:hover,.btn-primary:active{ background:var(--primary-deep); }
+.btn-gold{ background:var(--gold); color:var(--night); }
+.btn-gold:hover,.btn-gold:active{ background:var(--gold-soft); }
+.btn-outline{ background:transparent; color:var(--night); border-color:var(--control); }
+.btn-outline:hover{ background:var(--mist); }
+.btn-sm{ min-height:46px; padding:10px 22px; font-size:15px; line-height:1.15; }
+.tel{ display:inline-flex; align-items:center; gap:8px; font-weight:700; color:var(--primary); text-decoration:underline; min-height:44px; }
+.tel:hover{ color:var(--primary-deep); }
+.on-dark .tel, .panel .tel{ color:var(--on-dark); }
+.link-btn{ background:none; border:0; padding:0; font:inherit; font-weight:700; color:var(--primary); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
+.cta-row{ display:flex; flex-wrap:wrap; align-items:center; gap:12px 28px; }
+@media (max-width:479px){ .cta-row .btn{ width:100%; } }
+
+/* Header */
+@font-face{
+  font-family:"Satoshi Header";
+  src:url("https://altamontefamilyhearing.com/fonts/satoshi/Satoshi-Variable.woff2") format("woff2");
+  font-style:normal; font-weight:300 900; font-display:swap;
+}
+.site-header{ position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--border); font-family:"Satoshi Header",var(--sans); }
+.header-inner{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; min-height:78px; padding-block:8px; }
+.logo{ display:flex; align-items:center; flex:0 0 auto; max-width:100%; min-height:52px; }
+.logo img{ display:block; width:clamp(140px,40vw,166px); height:auto; }
+.nav,.header-phone{ display:none; }
+.header-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:16px; min-width:0; max-width:100%; margin-inline-start:auto; }
+.header-actions .btn{ width:clamp(8.8em,42vw,11.75em); min-width:0; min-height:52px; padding:12px 14px; font-family:"Satoshi Header",var(--sans); font-weight:600; line-height:1.2; }
+.nav a{ display:inline-flex; align-items:center; min-height:48px; padding:10px 4px; font-weight:600; font-size:16px; color:var(--night); text-decoration:none; border-bottom:2px solid transparent; }
+.nav a:hover,.nav a:focus-visible{ border-bottom-color:var(--primary); }
+@media (min-width:768px){
+  .header-inner{ min-height:84px; gap:20px; }
+  .logo img{ width:210px; }
+  .header-phone{ display:inline-flex; font-size:16px; font-weight:600; white-space:nowrap; }
+  .header-actions{ gap:20px; }
+  .header-actions .btn{ width:auto; padding:12px 24px; font-size:16px; white-space:nowrap; }
+}
+@media (min-width:1280px){
+  .header-inner{ display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); min-height:88px; gap:24px; padding-block:0; }
+  .logo{ justify-self:start; }
+  .logo img{ width:248px; }
+  .nav{ display:flex; gap:28px; justify-self:center; }
+  .header-actions{ justify-self:end; }
+}
+@media (min-width:1280px) and (max-width:1439px){
+  .header-actions{ gap:16px; }
+}
+
+/* Hero */
+.hero{ padding-block:48px 64px; }
+.hero-grid{ display:grid; gap:36px; }
+.hero h1{ margin-bottom:24px; }
+.hero .cta-row{ margin-top:32px; }
+.g-proof{ display:inline-flex; align-items:center; flex-wrap:wrap; gap:6px 12px; margin-top:28px; color:var(--text); text-decoration:none; font-size:16px; }
+.g-proof:hover .g-text{ text-decoration:underline; }
+.stars{ display:inline-flex; gap:2px; color:var(--gold); }
+.g-text strong{ font-weight:700; }
+.es-cue{ margin-top:14px; font-size:16px; font-weight:500; color:var(--text-2); }
+.hero-photo{ --ar:3/2; box-shadow:0 18px 40px -22px rgba(26,48,40,.35),0 6px 14px -10px rgba(26,48,40,.25); }
+@media (min-width:900px){
+  .hero{ padding-block:72px 96px; }
+  .hero-grid{ grid-template-columns:minmax(0,6fr) minmax(0,5fr); gap:64px; align-items:center; }
+}
+
+/* Image slots */
+.ph{ position:relative; margin:0; border-radius:var(--r-photo); overflow:hidden; background:var(--mist-deep); aspect-ratio:var(--ar,3/2); }
+.ph::before{ content:attr(data-ph) ": " attr(data-label); position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:16px; text-align:center; font-size:14px; font-weight:500; color:var(--text-2); }
+.ph img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+.ph img.is-broken{ display:none; }
+.fig figcaption{ font-size:16px; line-height:1.5; color:var(--text-2); margin-top:12px; }
+.panel .fig figcaption{ color:var(--on-dark-soft); }
+
+/* S2 Recognition */
+.recog-grid{ display:grid; gap:36px; }
+@media (min-width:900px){ .recog-grid{ grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:64px; align-items:start; } }
+.signs{ list-style:none; border-bottom:1px solid var(--border); }
+.signs li{ position:relative; padding:20px 0 20px 40px; border-top:1px solid var(--border); font-size:19px; line-height:1.5; }
+.signs li::before{ content:""; position:absolute; left:6px; top:29px; width:14px; height:14px; border-radius:50%; border:2px solid var(--primary); }
+.recog-note{ margin-top:24px; color:var(--text-2); }
+.alert{ display:flex; gap:16px; align-items:flex-start; background:var(--paper); border:2px solid var(--error); border-radius:var(--r-photo); padding:22px 26px; margin-top:48px; }
+.alert .ico{ color:var(--error); width:28px; height:28px; margin-top:2px; }
+.alert strong{ display:block; font-size:19px; margin-bottom:4px; }
+@media (max-width:767px){ .alert{ margin-top:36px; padding:18px; } }
+
+/* S3 First visit */
+.visit-grid{ display:grid; gap:40px; }
+@media (min-width:900px){
+  .visit-grid{ grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:64px; align-items:start; }
+  .visit-media{ position:sticky; top:120px; }
+}
+@media (max-width:899px){ .visit-media{ order:2; } }
+.steps{ list-style:none; counter-reset:step; }
+.steps li{ counter-increment:step; display:grid; grid-template-columns:48px minmax(0,1fr); gap:20px; padding:24px 0; border-top:1px solid var(--border); }
+.steps li:first-child{ border-top:0; padding-top:0; }
+.steps li::before{ content:counter(step); display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:50%; border:2px solid var(--primary); color:var(--primary); font:400 24px/1 var(--serif); }
+.steps h3{ margin-bottom:8px; }
+.callout{ background:var(--mist); border-radius:var(--r-card); padding:26px 30px; margin-top:12px; }
+.callout strong{ display:block; font-size:20px; margin-bottom:6px; }
+.bring{ margin:28px 0 0; padding:0; list-style:none; display:grid; gap:12px; }
+.bring li{ padding-left:28px; position:relative; color:var(--text-2); }
+.bring li::before{ content:""; position:absolute; left:2px; top:.7em; width:12px; height:2px; background:var(--primary); }
+.bring b{ color:var(--text); font-weight:700; }
+.visit-cta{ margin-top:36px; }
+
+/* Panels */
+.panel{ background:var(--night); color:var(--on-dark); border-radius:var(--r-panel); padding:72px 64px; }
+.panel a{ color:var(--on-dark); }
+.panel .lead{ color:var(--on-dark-soft); }
+@media (max-width:1099px){ .panel{ padding:56px 40px; } }
+@media (max-width:767px){ .panel{ padding:40px 22px; border-radius:28px; } }
+.panel-head{ max-width:860px; margin-bottom:48px; }
+.panel-head .lead{ margin-top:20px; }
+
+/* S4 Verification */
+.verify-grid{ display:grid; gap:48px; }
+@media (min-width:1000px){ .verify-grid{ grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:64px; align-items:start; } }
+.method{ padding:28px 0; border-top:1px solid rgba(238,243,239,.2); }
+.method:first-child{ border-top:0; padding-top:0; }
+.method h3{ margin-bottom:12px; color:var(--white); }
+.method p{ color:var(--on-dark); max-width:64ch; }
+.chips{ list-style:none; display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+.chips li{ border:1px solid rgba(238,243,239,.45); border-radius:999px; padding:6px 16px; font-weight:500; font-size:16px; }
+.care-card{ background:var(--paper); color:var(--night); border-radius:var(--r-card); border-top:6px solid var(--gold); padding:28px 28px 30px; margin-top:28px; }
+.care-card .big{ font:400 clamp(2.2rem,1.6rem + 1.6vw,3.2rem)/1.05 var(--serif); display:block; margin-bottom:10px; }
+.care-card .scope{ font-size:18px; font-weight:500; margin-bottom:0; }
+.care-card ul{ list-style:none; margin-top:18px; padding-top:18px; border-top:1px solid var(--border); display:grid; gap:10px; font-size:16px; color:var(--text-2); }
+.care-card ul li{ padding-left:22px; position:relative; }
+.care-card ul li::before{ content:""; position:absolute; left:0; top:.65em; width:10px; height:2px; background:var(--primary); }
+.care-card h4{ font:700 16px/1.3 var(--sans); margin:18px 0 0; }
+.panel-cta{ margin-top:48px; padding-top:36px; border-top:1px solid rgba(238,243,239,.2); display:flex; flex-wrap:wrap; align-items:center; gap:12px 28px; }
+.panel-cta p{ margin:0; color:var(--on-dark-soft); max-width:46ch; }
+
+/* S5 Services */
+.services{ display:grid; gap:0 64px; }
+@media (min-width:768px){ .services{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+.svc{ padding:30px 0; border-top:1px solid var(--border); }
+.svc h3{ font:700 22px/1.3 var(--sans); margin-bottom:10px; }
+.svc .qual{ font-size:16px; line-height:1.55; color:var(--text-2); margin-top:12px; padding-left:14px; border-left:3px solid var(--mist-deep); }
+.svc .tel{ margin-top:8px; }
+.services-end{ border-top:1px solid var(--border); }
+.walkin{ display:grid; gap:32px; background:var(--mist); border-radius:var(--r-card); padding:32px; margin-top:24px; align-items:center; }
+.walkin h3{ margin-bottom:12px; }
+.walkin .time{ display:inline-block; background:var(--paper); border:1px solid var(--border); border-radius:999px; padding:6px 18px; font-weight:700; margin:4px 0 16px; }
+.walkin .ph{ --ar:4/3; }
+@media (min-width:900px){ .walkin{ grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:48px; padding:36px; } }
+@media (max-width:767px){ .walkin{ padding:22px; } }
+
+/* S6 People */
+.provider{ display:grid; gap:28px; padding:40px 0; border-top:1px solid var(--border); }
+@media (min-width:900px){
+  .provider{ grid-template-columns:minmax(0,4fr) minmax(0,8fr); gap:56px; align-items:start; }
+  .provider--lead{ grid-template-columns:minmax(0,5fr) minmax(0,7fr); }
+  .provider--rev{ grid-template-columns:minmax(0,8fr) minmax(0,4fr); }
+  .provider--rev .portrait{ order:2; }
+}
+.portrait{ --ar:4/5; border-radius:var(--r-card); }
+.portrait img{ object-position:50% 22%; }
+.bio h3{ margin-bottom:6px; }
+.role{ font-weight:700; color:var(--primary); margin-bottom:16px; }
+.facts{ list-style:none; margin:20px 0 0; display:grid; gap:10px; }
+.facts li{ padding-left:28px; position:relative; }
+.facts li::before{ content:""; position:absolute; left:2px; top:.72em; width:12px; height:2px; background:var(--primary); }
+.support-wrap{ border-top:1px solid var(--border); padding-top:40px; }
+.support-wrap > h3{ margin-bottom:24px; }
+.support{ display:grid; gap:28px; }
+@media (min-width:768px){ .support{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; } }
+.coord{ display:grid; grid-template-columns:120px minmax(0,1fr); gap:20px; align-items:start; }
+.coord .portrait{ --ar:4/5; border-radius:var(--r-photo); }
+.coord h4{ font:700 20px/1.3 var(--sans); margin:0 0 2px; }
+.coord .role{ margin-bottom:8px; font-size:16px; }
+.coord p{ font-size:17px; color:var(--text-2); }
+@media (max-width:479px){ .coord{ grid-template-columns:96px minmax(0,1fr); gap:16px; } }
+.team-note{ margin-top:32px; display:grid; gap:12px; }
+@media (min-width:900px){ .team-note{ grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:48px; } }
+.team-note p{ font-size:17px; color:var(--text-2); }
+.es-box{ background:var(--mist); border-radius:var(--r-photo); padding:18px 22px; }
+.es-box strong{ display:block; font-size:19px; }
+
+/* S7 Reviews */
+.rev-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 48px; margin-bottom:40px; }
+.rev-head h2{ color:var(--white); max-width:16ch; }
+.agg{ display:flex; align-items:center; gap:16px; }
+.agg .num{ font:400 clamp(3.2rem,2.4rem + 2vw,4.2rem)/1 var(--serif); color:var(--white); }
+.agg .stars{ margin-bottom:4px; }
+.agg .ico-star{ width:22px; height:22px; }
+.agg p{ margin:0; color:var(--on-dark); font-size:17px; line-height:1.4; }
+.rev-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; align-items:start; }
+@media (max-width:1099px){ .rev-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:767px){
+  .rev-grid{ grid-template-columns:minmax(0,1fr); gap:18px; }
+  .rev:nth-child(n+4){ display:none; }
+}
+.rev{ background:var(--paper); color:var(--night); border:1px solid var(--mist-deep); border-radius:var(--r-card); padding:28px; display:flex; flex-direction:column; gap:14px; }
+.rev .stars{ color:var(--gold); }
+.rev blockquote{ margin:0; font-size:18px; line-height:1.6; }
+.rev .who{ margin-top:2px; }
+.rev .who b{ display:block; font-size:17px; }
+.rev .who span{ font-size:15px; color:var(--text-2); }
+.rev details{ border-top:1px solid var(--border); padding-top:6px; }
+.rev summary{ list-style:none; cursor:pointer; min-height:44px; display:flex; align-items:center; gap:8px; font-weight:700; color:var(--primary); }
+.rev summary::-webkit-details-marker{ display:none; }
+.rev summary::after{ content:""; width:8px; height:8px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg) translateY(-2px); margin-left:2px; }
+.rev details[open] summary::after{ transform:rotate(-135deg); }
+.rev .full{ font-size:16px; line-height:1.6; color:var(--text-2); padding-bottom:6px; }
+.rev .full p{ margin-bottom:.8em; }
+.rev .clar{ background:var(--mist); border-radius:12px; padding:12px 14px; font-size:15px; color:var(--text); }
+.rev-foot{ margin-top:40px; padding-top:32px; border-top:1px solid rgba(238,243,239,.2); display:flex; flex-wrap:wrap; align-items:center; gap:16px 32px; }
+.rev-foot .rev-link{ font-weight:700; font-size:18px; }
+@media (max-width:767px){ .rev-head{ margin-bottom:28px; } .rev{ padding:22px; } }
+
+/* S8 FAQ */
+.faq-wrap{ max-width:820px; margin-inline:auto; }
+.faq-wrap .section-head{ text-align:center; }
+.faq-wrap .section-head .lead{ margin-inline:auto; }
+.faq details{ border-top:1px solid var(--border); }
+.faq details:last-child{ border-bottom:1px solid var(--border); }
+.faq summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:44px; padding:20px 0; font-weight:700; font-size:19px; line-height:1.35; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:"+"; flex:none; width:32px; height:32px; border-radius:50%; border:1.5px solid var(--control); display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:500; line-height:1; color:var(--primary); }
+.faq details[open] summary::after{ content:"\2212"; }
+.faq .ans{ padding:0 52px 24px 0; max-width:70ch; color:var(--text); }
+.faq .ans p{ margin-bottom:.8em; }
+@media (max-width:767px){ .faq .ans{ padding-right:0; } .faq summary{ font-size:18px; } }
+.faq-help{ margin-top:36px; text-align:center; color:var(--text-2); }
+
+/* S9 Request */
+.req-grid{ display:grid; gap:32px; }
+@media (min-width:900px){ .req-grid{ grid-template-columns:minmax(0,4fr) minmax(0,8fr); gap:56px; align-items:start; } }
+.req-intro p{ margin-top:18px; }
+.req-intro .small{ font-size:16px; color:var(--text-2); }
+.form-shell{ background:var(--paper); border:1px solid var(--mist-deep); border-radius:var(--r-card); padding:20px; min-width:0; }
+.form-shell iframe{ display:block; min-height:492px; }
+@media (max-width:599px){ .form-shell{ padding:10px; } .form-shell iframe{ min-height:560px; } }
+
+/* S10 Location */
+.loc-grid{ display:grid; gap:36px; }
+@media (min-width:900px){ .loc-grid{ grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:56px; align-items:start; } }
+.loc-card{ background:var(--mist); border-radius:var(--r-card); padding:32px; }
+.loc-card h3{ font:700 20px/1.3 var(--sans); margin:0 0 6px; }
+.loc-card address{ font-style:normal; margin-bottom:22px; }
+.hours{ margin:0 0 22px; display:grid; gap:0; }
+.hours div{ display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-top:1px solid var(--mist-deep); }
+.hours dt{ font-weight:500; }
+.hours dd{ margin:0; font-weight:700; text-align:right; }
+.walk-note{ background:var(--paper); border:1px solid var(--mist-deep); border-radius:var(--r-photo); padding:16px 18px; margin-bottom:22px; }
+.walk-note strong{ display:block; }
+.near{ font-size:16px; color:var(--text-2); margin-top:20px; }
+.map{ position:relative; aspect-ratio:4/3; border-radius:var(--r-photo); overflow:hidden; border:1px solid var(--border); background:var(--mist); }
+.map iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+@media (max-width:767px){ .map{ aspect-ratio:auto; height:320px; } .loc-card{ padding:24px; } }
+.map-cta{ margin-top:16px; }
+@media (max-width:479px){ .map-cta .btn{ width:100%; } }
+
+/* S11 + S12 */
+.end{ background:var(--cream); }
+.end-inner{ background:var(--night); color:var(--on-dark); border-radius:var(--r-panel) var(--r-panel) 0 0; }
+@media (max-width:767px){ .end-inner{ border-radius:28px 28px 0 0; } }
+.closing{ padding-block:80px 64px; }
+.closing h2{ color:var(--white); max-width:18ch; }
+.closing p{ color:var(--on-dark-soft); max-width:50ch; margin-top:18px; font-size:20px; }
+.closing .cta-row{ margin-top:32px; }
+.closing .tel{ color:var(--on-dark); }
+@media (max-width:767px){ .closing{ padding-block:48px 40px; } .closing p{ font-size:18px; } }
+.footer{ border-top:1px solid rgba(238,243,239,.2); padding-block:40px 36px; font-size:16px; color:var(--on-dark-soft); }
+.footer a{ color:var(--on-dark); }
+.footer-grid{ display:grid; gap:28px; }
+@media (min-width:768px){ .footer-grid{ grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr); gap:48px; } }
+.footer .flogo{ display:block; width:200px; height:auto; margin-bottom:14px; }
+.footer address{ font-style:normal; }
+.footer h3{ font:700 14px/1.3 var(--sans); letter-spacing:.04em; color:var(--white); margin-bottom:10px; }
+.footer ul{ list-style:none; display:grid; gap:6px; }
+.footer ul a{ display:inline-block; padding:6px 0; }
+.copyright{ margin-top:32px; padding-top:20px; border-top:1px solid rgba(238,243,239,.2); font-size:15px; }
+
+/* Mobile Call bar */
+.call-bar{ display:none; }
+@media (max-width:767px){
+  body{ padding-bottom:calc(56px + env(safe-area-inset-bottom,0px) + 8px); }
+  .call-bar{
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    background:var(--primary); color:#FFFFFF; text-decoration:none;
+    min-height:56px; padding:0 16px calc(env(safe-area-inset-bottom,0px)); box-sizing:content-box;
+    font:700 18px/1 var(--sans);
+  }
+  .call-bar:active{ background:var(--primary-deep); }
+  .call-bar .ico{ width:22px; height:22px; color:#FFFFFF; }
+  body.modal-open .call-bar{ display:none; }
+}
+body.modal-open{ overflow:hidden; }
+
+/* Booking dialog */
+.book-dialog{
+  width:min(1040px,calc(100vw - 32px)); max-width:none; height:min(820px,calc(100dvh - 32px)); max-height:none;
+  padding:0; border:0; border-radius:var(--r-card); overflow:hidden; background:var(--paper); color:var(--text);
+  box-shadow:0 30px 80px -20px rgba(26,48,40,.55);
+}
+.book-dialog[open]{ display:flex; flex-direction:column; }
+.book-dialog::backdrop{ background:rgba(26,48,40,.62); }
+.book-head{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 14px 14px 28px; border-bottom:1px solid var(--border); }
+.book-head h2{ font-size:clamp(1.5rem,1.3rem + .8vw,2rem); }
+.book-close{ width:48px; height:48px; border-radius:50%; border:1.5px solid var(--control); background:var(--paper); color:var(--night); display:flex; align-items:center; justify-content:center; cursor:pointer; flex:none; }
+.book-close:hover{ background:var(--mist); }
+.book-body{ position:relative; flex:1 1 auto; min-height:0; background:var(--white); }
+.book-body iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.book-load{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; margin:0; padding:24px; text-align:center; color:var(--text-2); }
+.book-load[hidden]{ display:none; }
+.book-foot{ margin:0; padding:12px 28px; font-size:16px; border-top:1px solid var(--border); background:var(--cream); }
+@media (max-width:767px){
+  .book-dialog{ width:100vw; height:100dvh; border-radius:0; }
+  .book-head{ padding-left:20px; }
+  .book-foot{ padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px)); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ transition:none!important; animation:none!important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- S0. HEADER -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="https://altamontefamilyhearing.com/" aria-label="Altamonte Family Hearing, visit our website">
+      <img src="https://assets.cdn.filesafe.space/3o0LBBSuVEkoaohgGtT0/media/6ac7f45989da6e6f9bbdacc8.png" alt="Altamonte Family Hearing" width="2172" height="724">
+    </a>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#care">Care</a>
+      <a href="#team">Our Team</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <div class="header-actions">
+      <a class="tel header-phone" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>407-949-6737</a>
+      <button type="button" class="btn btn-primary btn-sm" data-book>Book Appointment</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- S1. HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Better hearing health in Altamonte Springs, FL</p>
+      <h1 id="hero-title">Understand your hearing. <em>Find the care that fits.</em></h1>
+      <p class="lead">Altamonte Family Hearing is an independent, family-owned practice in Altamonte Springs. We evaluate your hearing, explain your results in plain language, and talk through the options that suit your needs, with hearing aids as one possibility, never an assumption.</p>
+      <div class="cta-row">
+        <button type="button" class="btn btn-primary" data-book>Book Appointment</button>
+        <a class="tel" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>or call 407-949-6737</a>
+      </div>
+      <!-- Google aggregate: 5.0 / 156 per 9 Oct 2026 panel capture. Re-check before publishing. -->
+      <a class="g-proof" href="#reviews">
+        <span class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></span>
+        <span class="g-text"><strong>5.0</strong> rating on Google from 156 reviews</span>
+      </a>
+      <p class="es-cue">Hablamos español.</p>
+    </div>
+    <figure class="ph hero-photo" data-ph="IMG-HERO-01" data-label="Hero consultation photo, 3:2 landscape">
+      <img src="https://altamontefamilyhearing.com/assets/photos/AFH-C-173.webp" alt="Jaysee Soto talking a patient through her options at his desk" width="1600" height="1067" fetchpriority="high" referrerpolicy="no-referrer">
+    </figure>
+  </div>
+</section>
+
+<!-- S2. RECOGNITION -->
+<section class="section" id="recognition" style="padding-top:24px" aria-labelledby="recog-title">
+  <div class="wrap">
+    <div class="recog-grid">
+      <div>
+        <h2 id="recog-title">When listening takes more effort, it's worth finding out why</h2>
+        <p class="lead" style="margin-top:20px">Hearing changes are often gradual and easy to miss day to day. If any of these sound familiar, a hearing evaluation can help you understand what's going on, without assuming you'll need hearing aids.</p>
+        <p class="recog-note">Often it's a family member who notices first. A family member or friend can come along to help review your results.</p>
+      </div>
+      <div>
+        <ul class="signs">
+          <li>You often ask people to repeat themselves.</li>
+          <li>You can tell someone is talking, but you don't catch the words.</li>
+          <li>Conversations in restaurants, at parties, in the car or at family gatherings take real effort, and you may feel tired afterward.</li>
+          <li>Other people say the TV or phone is too loud.</li>
+          <li>You notice ringing, buzzing, humming or hissing, sometimes along with a change in hearing.</li>
+          <li>Your hearing aids never sounded quite right, or they're sitting in a drawer.</li>
+        </ul>
+        <p class="recog-note"><strong>Not every hearing concern calls for hearing aids.</strong> If your hearing is within normal limits, we'll tell you.</p>
+      </div>
+    </div>
+    <aside class="alert" role="note" aria-label="Urgent hearing changes">
+      <svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>
+      <div>
+        <strong>Sudden changes need medical care first</strong>
+        Sudden hearing loss, or tinnitus with sudden severe vertigo, is a medical emergency. Seek immediate medical care and don't wait for a routine hearing evaluation.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- S3. FIRST VISIT -->
+<section class="section section--paper" id="first-visit" aria-labelledby="visit-title">
+  <div class="wrap">
+    <div class="section-head" style="max-width:820px">
+      <h2 id="visit-title">Your first visit: understand your hearing, then your options</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-media fig">
+        <div class="ph" data-ph="IMG-PROCESS-01" data-label="Sound-booth testing photo, 4:3" style="--ar:4/3">
+          <img src="https://altamontefamilyhearing.com/assets/photos/AFH-A-29.webp" alt="Jaysee fitting headphones on a smiling patient in the sound booth" width="1600" height="1200" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <figcaption>Sound-booth testing: tones at different pitches, plus speech in quiet and in noise.</figcaption>
+      </div>
+      <div>
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>We start by listening</h3>
+              <p>Tell us what's been difficult and where: restaurants, family gatherings, the phone, the TV. We'll also ask about your hearing and health history and any medications, since these can be relevant to changes in hearing or tinnitus.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>We look in your ears</h3>
+              <p>Before testing, we examine your ear canals with an otoscope and check for earwax. If wax is in the way, we'll explain whether it's safe to remove in our office or whether you should see another provider.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>You take a hearing test</h3>
+              <p>In our sound booth, you'll listen to tones at different pitches, then to speech in quiet and in background noise.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>We explain your results and next steps</h3>
+              <p>During the same visit, we review your audiogram in plain terms, and you take home a record you can compare at future visits. Then we talk through options based on your hearing, lifestyle, preferences and budget.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="callout">
+          <strong>Most hearing evaluations are complimentary.</strong>
+          Call our office for details and to confirm any costs that may apply: <a href="tel:+14079496737">407-949-6737</a>.
+        </div>
+        <ul class="bring">
+          <li><b>Hearing evaluations are for adults of all ages.</b></li>
+          <li><b>Bring</b> your current hearing aids, if you wear them, and your insurance card. We'll check your benefits for you.</li>
+          <li><b>Consider bringing</b> a family member or friend to help you review your results.</li>
+        </ul>
+        <div class="cta-row visit-cta">
+          <button type="button" class="btn btn-primary" data-book>Book Appointment</button>
+          <a class="tel" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Questions first? Call us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S4. VERIFICATION AND ONGOING CARE -->
+<section class="section section--panel" id="verification" aria-labelledby="verify-title">
+  <div class="wrap">
+    <div class="panel">
+      <div class="panel-head">
+        <h2 id="verify-title">A fitting <em>checked for your ears</em>, with care afterward</h2>
+        <p class="lead">A hearing aid is only as effective as the care behind it. Here is what we do, and why it matters, especially if hearing aids have disappointed you before.</p>
+      </div>
+      <div class="verify-grid">
+        <div>
+          <div class="method">
+            <h3>Real Ear Measurement (REM)</h3>
+            <p>Two people can have the same hearing test results, the same hearing aids and the same software settings, and still receive very different sound in their ear canals. Software defaults are based on average ear-canal values. Your ears may not be average.</p>
+            <p>With Real Ear Measurement, a thin probe-microphone tube is placed in your ear canal next to the hearing aid. It measures the sound actually delivered near your eardrum at soft, average and loud levels. We compare that with targets calculated from your own hearing test, so your fitting can be verified, and fine-tuned, for your ear.</p>
+            <p>REM is verification. It is not a promise of perfect hearing.</p>
+          </div>
+          <div class="method">
+            <h3>Electroacoustic Analysis (EAA)</h3>
+            <p>Before every fitting, we also run a separate test-box check. Electroacoustic Analysis measures the hearing aid's own output, amplification and distortion against the manufacturer's specifications. It checks the device, not your hearing, and it doesn't replace Real Ear Measurement.</p>
+          </div>
+          <div class="method">
+            <h3>HearingUp Certified Provider</h3>
+            <p>Jaysee is a HearingUp Certified Provider. HearingUp is a provider network founded by Dr. Cliff Olson. Its providers are personally reviewed and commit to best practices, including fitting verification with Real Ear Measurement.</p>
+          </div>
+          <div class="method">
+            <h3>Not tied to one brand</h3>
+            <p>We fit hearing aids from six manufacturers and recommend based on your hearing test, lifestyle, budget and preferences.</p>
+            <ul class="chips" aria-label="Manufacturers we fit">
+              <li>Phonak</li><li>Oticon</li><li>ReSound</li><li>Signia</li><li>Starkey</li><li>Widex</li>
+            </ul>
+          </div>
+        </div>
+        <aside>
+          <figure class="fig" style="margin:0">
+            <div class="ph" data-ph="IMG-METHOD-01" data-label="Real Ear Measurement procedure photo, 4:3" style="--ar:4/3">
+              <img src="https://altamontefamilyhearing.com/assets/photos/AFH-C-196.webp" alt="Jaysee placing the Real Ear Measurement probe tube in a patient's ear" width="1600" height="1200" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <figcaption>Real Ear Measurement: a thin probe tube sits in the ear canal beside the hearing aid.</figcaption>
+          </figure>
+          <div class="care-card">
+            <span class="big">5 years of professional care</span>
+            <p class="scope">Included with hearing aids purchased from our office, at every technology level.</p>
+            <h4>Around a fitting</h4>
+            <ul>
+              <li>Follow-up visits over the first few weeks to fine-tune your fit</li>
+              <li>A professional deep cleaning every six months is recommended for hearing aid users</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <div class="panel-cta">
+        <button type="button" class="btn btn-gold" data-book>Book Appointment</button>
+        <p>Start with an evaluation. We'll explain what we find and what your options are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5. CARE OPTIONS -->
+<section class="section" id="care" aria-labelledby="care-title">
+  <div class="wrap">
+    <div class="section-head" style="max-width:820px">
+      <h2 id="care-title">Help for the concern you have now</h2>
+      <p class="lead">Whether you're new to hearing care, wearing hearing aids from another provider, or helping a family member who can't easily travel, start with the concern you have today.</p>
+    </div>
+    <div class="services">
+      <article class="svc">
+        <h3>Hearing evaluations</h3>
+        <p>An ear check and sound-booth testing to explain how you hear and what your next step could be. For adults of all ages.</p>
+        <p class="qual">Most hearing evaluations are complimentary. Call to confirm any costs that may apply.</p>
+      </article>
+      <article class="svc">
+        <h3>Hearing aid fittings and adjustments</h3>
+        <p>Recommendations based on your hearing test, lifestyle, preferences and budget. Your hearing aids are programmed to targets calculated from your hearing test, verified with Real Ear Measurement, and fine-tuned at follow-up visits.</p>
+        <p class="qual">Hearing aids may help, but they don't restore natural hearing, and no hearing aid removes background noise completely. The adjustment period varies, and familiar sounds and your own voice may seem different at first.</p>
+      </article>
+      <article class="svc">
+        <h3>Hearing aid repair and cleaning</h3>
+        <p>We troubleshoot, clean, program and repair hearing aids from most major manufacturers, including hearing aids you bought elsewhere. Many small repairs, such as battery doors, receivers, tubing, domes and filters, can be handled in our office, with professional drying for moisture.</p>
+        <p class="qual">Moisture inside the case, a cracked shell or a failed circuit board may need factory service, which we coordinate with the manufacturer. Same-day repair isn't guaranteed for every issue.</p>
+      </article>
+      <article class="svc">
+        <h3>Tinnitus consultation</h3>
+        <p>Ringing, buzzing, hissing or pulsing? We evaluate your hearing and talk through ways to reduce the impact. When hearing loss is also present, hearing aids with built-in sound-therapy features may help make tinnitus less noticeable.</p>
+        <p class="qual">There is no universal cure, and relief varies from person to person. We refer you to other providers for specialized tinnitus care when that's appropriate.</p>
+      </article>
+      <article class="svc">
+        <h3>Earwax removal</h3>
+        <p>We examine your ears with a video otoscope, so you can see the image on screen, and, when it's appropriate, gently remove wax with warm-water irrigation at controlled low pressure.</p>
+        <p class="qual">We screen first. Ear surgery, ear tubes, a perforated eardrum or a recent infection can mean irrigation isn't suitable, and we would refer you to an ENT.</p>
+      </article>
+      <article class="svc">
+        <h3>Mobile hearing care at home</h3>
+        <p>Toni brings hearing evaluations and hearing aid fittings to your home or care facility, for people who have difficulty getting to the office, in the Greater Orlando area.</p>
+        <p class="qual">Cost and availability are discussed by phone. Some tests require in-office equipment.</p>
+        <a class="tel" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Call about home visits</a>
+      </article>
+    </div>
+    <div class="services-end"></div>
+    <div class="walkin">
+      <figure class="fig ph" data-ph="IMG-REPAIR-01" data-label="Repair bench photo, 4:3">
+        <img src="https://altamontefamilyhearing.com/assets/photos/AFH-C-125.webp" alt="Jaysee at the repair bench cleaning a hearing aid" width="1600" height="1200" loading="lazy" referrerpolicy="no-referrer">
+      </figure>
+      <div>
+        <h3>Walk-in hour for cleanings and minor repairs</h3>
+        <span class="time">Monday to Friday, 1:00 to 2:00 pm</span>
+        <p>No appointment needed. Bring your hearing aids in for a cleaning or a minor repair, whether you bought them from us or from another provider. Hearing aid users are encouraged to have a professional deep cleaning about every six months, which helps with moisture and earwax before they cause a repair.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S6. PEOPLE -->
+<section class="section section--paper" id="team" aria-labelledby="team-title">
+  <div class="wrap">
+    <div class="section-head" style="max-width:860px">
+      <h2 id="team-title">Meet the team who will care for your hearing</h2>
+      <p class="lead">We're an independent, family-owned practice, not part of a chain. Your hearing care is provided by one of our two Florida-licensed Hearing Aid Specialists, with our Patient Care Coordinators helping with everything around your visit.</p>
+    </div>
+
+    <div class="provider provider--lead">
+      <figure class="ph portrait" data-ph="IMG-PROVIDER-01" data-label="Jaysee portrait, 4:5 portrait">
+        <img src="https://altamontefamilyhearing.com/assets/photos/jaysee-portrait.webp" alt="Jaysee Soto, HAS, BC-HIS, Owner and Hearing Aid Specialist, in his white coat" width="1200" height="1500" loading="lazy" referrerpolicy="no-referrer">
+      </figure>
+      <div class="bio">
+        <h3>Jaysee A. Soto, HAS, BC-HIS</h3>
+        <p class="role">Owner and Hearing Aid Specialist</p>
+        <p>Jaysee has worked in hearing care since 2013, beginning in West Palm Beach, Florida, before opening Altamonte Family Hearing. He and his wife, Grace, own and run the practice.</p>
+        <p>Beyond the clinic, Jaysee shares hearing-health education online as "The Bald Hearing Guy."</p>
+        <ul class="facts">
+          <li><strong>Florida-licensed</strong> Hearing Aid Specialist (HAS)</li>
+          <li><strong>BC-HIS:</strong> Board Certified in Hearing Instrument Sciences</li>
+          <li><strong>HearingUp Certified Provider</strong></li>
+          <li>Board member, <strong>Florida Hearing Society</strong> (District 5 Director)</li>
+          <li><strong>Bilingual in English and Spanish.</strong> Your whole visit can be in Spanish.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="provider provider--rev">
+      <figure class="ph portrait" data-ph="IMG-PROVIDER-02" data-label="Toni portrait, 4:5 portrait">
+        <img src="https://cdn.sanity.io/images/p8cei03q/production/592d18eda5ba9c959fa4c2719d71cd0ff0e3f603-1800x1440.jpg?w=800&amp;auto=format" alt="Toni Trager, Hearing Aid Specialist at Altamonte Family Hearing" width="800" height="640" loading="lazy" referrerpolicy="no-referrer">
+      </figure>
+      <div class="bio">
+        <h3>Toni Trager, HAS</h3>
+        <p class="role">Hearing Aid Specialist</p>
+        <p>Toni is a Florida-licensed Hearing Aid Specialist who has worn hearing aids since childhood, so she brings firsthand understanding to the care she provides.</p>
+        <p>She also provides our mobile hearing care, bringing evaluations and hearing aid fittings to patients at home or in a care facility.</p>
+      </div>
+    </div>
+
+    <div class="support-wrap">
+      <h3>Patient Care Coordinators</h3>
+      <div class="support">
+        <div class="coord">
+          <figure class="ph portrait" data-ph="IMG-PROVIDER-03" data-label="Grace portrait, 4:5">
+            <img src="https://cdn.sanity.io/images/p8cei03q/production/4fac9632e53190ee3edd42029b0a9b78c58c05c7-1800x1440.jpg?w=800&amp;auto=format" alt="Grace Soto, Patient Care Coordinator, smiling in green scrubs" width="800" height="640" loading="lazy" referrerpolicy="no-referrer">
+          </figure>
+          <div>
+            <h4>Grace Soto</h4>
+            <p class="role">Patient Care Coordinator and co-owner</p>
+            <p>Helps with scheduling, insurance questions and care coordination. Bilingual in English and Spanish.</p>
+          </div>
+        </div>
+        <div class="coord">
+          <figure class="ph portrait" data-ph="IMG-PROVIDER-04" data-label="Francesca portrait, 4:5">
+            <img src="https://cdn.sanity.io/images/p8cei03q/production/d470d108685dbdd5ac71c470a83983c6fe72314b-1800x1440.jpg?w=800&amp;auto=format" alt="Francesca Natal, Patient Care Coordinator, smiling in green scrubs" width="800" height="640" loading="lazy" referrerpolicy="no-referrer">
+          </figure>
+          <div>
+            <h4>Francesca Natal</h4>
+            <p class="role">Patient Care Coordinator</p>
+            <p>Helps with appointments, patient forms and questions before your visit. Bilingual in English and Spanish.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-note">
+      <p>Our clinical providers are licensed Hearing Aid Specialists, not audiologists or physicians. If something falls outside that scope, such as a possible medical cause for a change in your hearing, they'll refer you to a physician, an ENT or another specialist.</p>
+      <div class="es-box"><strong>Hablamos español.</strong>Ofrecemos evaluaciones auditivas, formularios y recursos en español.</div>
+    </div>
+  </div>
+</section>
+
+<!-- S7. GOOGLE REVIEWS -->
+<section class="section section--panel" id="reviews" aria-labelledby="reviews-title">
+  <div class="wrap">
+    <div class="panel">
+      <div class="rev-head">
+        <h2 id="reviews-title">How patients describe their care</h2>
+        <!-- Google aggregate: 5.0 / 156 per 9 Oct 2026 panel capture. Re-check before publishing. -->
+        <div class="agg">
+          <span class="num" aria-hidden="true">5.0</span>
+          <div>
+            <span class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></span>
+            <p><strong>5.0 rating</strong> from 156 Google reviews</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev-grid">
+        <!-- Cards 1-3 show on mobile. Cards 4-6 are hidden below 768px. Excerpts are exact; full text is verbatim from the supplied Google panel. -->
+        <article class="rev">
+          <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
+          <p class="sr-only">5 out of 5 stars</p>
+          <blockquote><p>“They weren't just focused on selling a hearing aid; they were truly committed to finding the best solution for my hearing needs and lifestyle.”</p></blockquote>
+          <div class="who"><b>Teri Yanovitch</b><span>Excerpt from a Google review</span></div>
+          <details>
+            <summary>Read full review</summary>
+            <div class="full"><p>I had an outstanding experience at Altamonte Hearing Center. From the moment I walked in, I was treated with warmth, professionalism, and genuine care. Jaycee is incredibly knowledgeable, patient, and attentive—taking the time to thoroughly explain every step of the hearing evaluation process. What really stood out was how personalized the service felt by both Jaycee and Francesca. They weren't just focused on selling a hearing aid; they were truly committed to finding the best solution for my hearing needs and lifestyle. If you're looking for a place where you'll be treated like a person, not just a patient, Altamonte Hearing Center is the place to go. I can't recommend them highly enough!</p></div>
+          </details>
+        </article>
+
+        <article class="rev">
+          <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
+          <p class="sr-only">5 out of 5 stars</p>
+          <blockquote><p>“He spent a great deal of time performing very thorough hearing tests and, just as importantly, took the time to clearly explain the results in a way that we could all understand.”</p></blockquote>
+          <div class="who"><b>Philip Zeitler</b><span>Excerpt from a Google review</span></div>
+          <details>
+            <summary>Read full review</summary>
+            <div class="full"><p>We had an excellent experience with Altamonte Family Hearing, and I can't thank them enough for the care they provided my dad. Jaysee Soto was absolutely wonderful throughout the entire process. He spent a great deal of time performing very thorough hearing tests and, just as importantly, took the time to clearly explain the results in a way that we could all understand. When it came time to set up and program my dad's new high-end ReSound hearing aids, Jaysee was incredibly patient and detail-oriented, making sure everything was perfectly tuned to my dad's needs. He also went above and beyond by showing my dad how to operate the hearing aids through his phone once they were paired, which gave him a lot of confidence using them.</p></div>
+          </details>
+        </article>
+
+        <article class="rev">
+          <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
+          <p class="sr-only">5 out of 5 stars</p>
+          <blockquote><p>“I have several hearing aids that don't work and don't fit, but Jaysee found the perfect match for me.”</p></blockquote>
+          <div class="who"><b>jan bradburn</b><span>Excerpt from a Google review</span></div>
+          <details>
+            <summary>Read full review</summary>
+            <div class="full"><p>Jaysee Soto gave me back my hearing! I have several hearing aids that don't work and don't fit, but Jaysee found the perfect match for me. To determine my hearing concerns, I had a extensive exam that went far beyond my other hearing exams, leading to hearing aids that are comfortable and actually work. The office staff is professional and accomodating. They worked with my insurance to get me the best price on my hearing aids. I highly recommend Altamonte Family Hearing.</p></div>
+          </details>
+        </article>
+
+        <article class="rev">
+          <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
+          <p class="sr-only">5 out of 5 stars</p>
+          <blockquote><p>“Jaysee and his staff are personable, professional and really go the extra mile for their clients.”</p></blockquote>
+          <div class="who"><b>Steve Marsee</b><span>Excerpt from a Google review</span></div>
+          <details>
+            <summary>Read full review</summary>
+            <div class="full"><p>They have the in the ear measuring capability that allows them to actually see in the device they have in your ear is actually picking up the sounds that you need. That ensured that my monitors were dong their job based upon my specific needs. Jaysee and his staff are personable, professional and really go the extra mile for their clients. You can see their empathy, understanding and dedication to every one of us. You really matter to them and they have invested the training and resources for state-of-the art equipment necessary to provide you with the absolute best care available.</p></div>
+          </details>
+        </article>
+
+        <article class="rev">
+          <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
+          <p class="sr-only">5 out of 5 stars</p>
+          <blockquote><p>“I really felt heard and cared for by the staff! Thank you so much! Your help has made a HUGE impact on my life.”</p></blockquote>
+          <div class="who"><b>Emily Palo</b><span>Excerpt from a Google review</span></div>
+          <details>
+            <summary>Read full review</summary>
+            <div class="full"><p>I want to start this review by saying this has by far been the best experience I have had with healthcare. About a month ago, I came across them by googling places that can repair hearing aids. I called them 5 minutes before closing time and they happily answered my call for help and immediately re-assured me that things can be fixed. I came in today during the walk-in hours and showed them the aids and the issue. I was greeted by Jaysee and he re-assured me that things can be fixed, and all the same day! The staff are very friendly and helpful. I had mentioned that getting hearing aids has been hard and they immediately wanted to help with a solution. I really felt heard and cared for by the staff! Thank you so much! Your help has made a HUGE impact on my life. This is absolutely the place to go!!!!</p></div>
+          </details>
+        </article>
+
+        <article class="rev">
+          <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
+          <p class="sr-only">5 out of 5 stars</p>
+          <blockquote><p>“Being able to communicate in Spanish made my mother feel at ease and well cared for.”</p></blockquote>
+          <div class="who"><b>Rocio M Stevens</b><span>Excerpt from a Google review</span></div>
+          <details>
+            <summary>Read full review</summary>
+            <div class="full">
+              <p>Dr.Soto provided exceptional care for my mother's hearing needs. From the moment we arrived, he and his team were professional, patient, and compassionate. They took the time to explain every step of the process, making sure my mother fully understood her options and felt comfortable throughout the entire experience. The service was outstanding, and my mother is absolutely thrilled with her new hearing aids. The improvement has made a tremendous difference in her daily life. I highly recommend Dr. Soto, especially to the Spanish-speaking community. Being able to communicate in Spanish made my mother feel at ease and well cared for. Dr. De Soto is truly amazing, and we are very grateful for his expertise and kindness. Thank you</p>
+              <p class="clar">Note from Altamonte Family Hearing: Jaysee Soto is a licensed Hearing Aid Specialist (HAS, BC-HIS), not a physician.</p>
+            </div>
+          </details>
+        </article>
+      </div>
+
+      <div class="rev-foot">
+        <a class="rev-link" href="https://www.google.com/search?q=altamonte+family+hearing+center&amp;rlz=1C1CHBD_enIN1092IN1158&amp;oq=altamonte+Family&amp;gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIGCAEQRRg5MgcIAhAAGIAEMgwIAxAAGBQYhwIYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQk3MTU0ajBqMTWoAgiwAgHxBX27SYRtLJHc8QV9u0mEbSyR3A&amp;sourceid=chrome&amp;source=chrome.rb&amp;ie=UTF-8#lrd=0x88e771506ecb647d:0xabcbd17d7a2f5be5,1,,,," target="_blank" rel="noopener">See all our Google reviews<span class="sr-only"> (opens in a new tab)</span></a>
+        <button type="button" class="btn btn-gold" data-book>Book Appointment</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S8. FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-wrap">
+    <div class="section-head">
+      <h2 id="faq-title">Answers before you book</h2>
+      <p class="lead">Straight answers on cost, insurance, your current hearing aids and what our care covers.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Is there a charge for a hearing evaluation?</summary>
+        <div class="ans"><p>Most hearing evaluations are complimentary. Call our office at <a href="tel:+14079496737">407-949-6737</a> for details and to confirm any costs that may apply.</p></div>
+      </details>
+      <details>
+        <summary>Do you accept insurance?</summary>
+        <div class="ans"><p>We accept many insurance plans, but coverage for hearing aids varies from plan to plan. Bring your insurance card to your visit and we'll check your benefits for you, or call us with your plan details beforehand.</p></div>
+      </details>
+      <details>
+        <summary>Will I need hearing aids?</summary>
+        <div class="ans"><p>Not every hearing concern calls for hearing aids. After your evaluation, we explain your results and the options that may suit you. If your hearing is within normal limits, we'll tell you.</p></div>
+      </details>
+      <details>
+        <summary>Can you help with hearing aids I bought somewhere else?</summary>
+        <div class="ans">
+          <p>Yes. We clean, troubleshoot, program and repair hearing aids from most major manufacturers, including ones purchased from other providers, and we can verify a fitting with Real Ear Measurement.</p>
+          <p>Some problems, such as moisture inside the case, a cracked shell or a failed circuit board, need factory repair, which we coordinate with the manufacturer. Our walk-in hour for cleanings and minor repairs is Monday to Friday, 1:00 to 2:00 pm.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How long does it take to get used to new hearing aids?</summary>
+        <div class="ans"><p>It varies from person to person. Familiar sounds and your own voice may seem different at first. Regular use and follow-up visits help as you adjust.</p></div>
+      </details>
+      <details>
+        <summary>Can hearing aids help with tinnitus?</summary>
+        <div class="ans">
+          <p>When tinnitus comes with hearing loss, hearing aids, including models with built-in sound-therapy features, may help make it less noticeable. There is no universal cure for tinnitus, and the amount of relief varies. We refer you to other providers for specialized tinnitus care when needed.</p>
+          <p>If your tinnitus started suddenly, is in one ear only, or pulses in time with your heartbeat, see a physician promptly. Tinnitus with sudden severe vertigo is a medical emergency.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What if my problem is just earwax?</summary>
+        <div class="ans">
+          <p>Symptoms alone can't tell you whether wax is the cause, which is why we look in your ears before testing. We'll explain whether wax can be removed safely in our office or whether you should see another provider.</p>
+          <p>Please avoid cotton swabs in the ear canal, which can push wax deeper. Ear candling doesn't reliably remove earwax and can cause burns or other injuries.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Do you offer home visits?</summary>
+        <div class="ans"><p>Yes. Toni provides hearing evaluations and hearing aid fittings at your home or care facility for people who have difficulty getting to the office, in the Greater Orlando area. Call us for cost and availability. Some tests require in-office equipment, so home testing may not include everything a sound-booth evaluation can.</p></div>
+      </details>
+      <details>
+        <summary>Can my visit be in Spanish?</summary>
+        <div class="ans"><p>Sí. Ofrecemos evaluaciones auditivas, formularios y recursos en español. Jaysee is bilingual, and your whole visit can be in Spanish. Our Patient Care Coordinators, Grace and Francesca, are bilingual in English and Spanish too.</p></div>
+      </details>
+      <details>
+        <summary>Who will provide my care, and are you part of a chain?</summary>
+        <div class="ans">
+          <p>We're an independent, family-owned and operated practice, not part of a chain. You'll see Jaysee Soto (HAS, BC-HIS) or Toni Trager (HAS), both Florida-licensed Hearing Aid Specialists. They are not audiologists or physicians, and they refer you to a physician, ENT or other specialist when your care falls outside their scope.</p>
+          <p>Grace Soto and Francesca Natal, our Patient Care Coordinators, help with scheduling and forms.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What should I do if my hearing changes suddenly?</summary>
+        <div class="ans"><p>Sudden hearing loss, or tinnitus with sudden severe vertigo, is a medical emergency. Seek immediate medical care. Don't wait for a routine hearing evaluation.</p></div>
+      </details>
+    </div>
+    <p class="faq-help">Still have a question? Call us at <a class="tel" href="tel:+14079496737" style="min-height:0">407-949-6737</a> and our team will help.</p>
+  </div>
+</section>
+
+<!-- S9. APPOINTMENT REQUEST -->
+<section class="section section--mist" id="request" aria-labelledby="request-title">
+  <div class="wrap req-grid">
+    <div class="req-intro">
+      <h2 id="request-title">Request an Appointment</h2>
+      <p class="lead">Prefer to have our team help arrange your visit? Send a request and we'll help with the next step.</p>
+      <p class="small">A request is not a confirmed appointment time. If you'd like to choose a time yourself, <button type="button" class="link-btn" data-book>book online</button>, or call <a href="tel:+14079496737">407-949-6737</a>.</p>
+      <p class="small">Read our <a href="https://altamontefamilyhearing.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+    </div>
+    <div class="form-shell">
+      <!-- Supplied Onspire Pulse embed. Only change: iframe id and data-layout-iframe-id use "formEmbed-" (not "inline-") to prevent the GHL autoscroll bug. -->
+      <iframe
+        src="https://api.onspirepulse.com/widget/form/D8GC4EbdywnuWVjsghX3"
+        style="width:100%;height:100%;border:none;border-radius:8px"
+        id="formEmbed-D8GC4EbdywnuWVjsghX3"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Better Hearing Health"
+        data-height="492"
+        data-layout-iframe-id="formEmbed-D8GC4EbdywnuWVjsghX3"
+        data-form-id="D8GC4EbdywnuWVjsghX3"
+        data-cookie-consent="true"
+        data-cookie-consent-provider="auto"
+        title="Better Hearing Health"
+      >
+      </iframe>
+      <script src="https://api.onspirepulse.com/js/form_embed.js"></script>
+    </div>
+  </div>
+</section>
+
+<!-- S10. LOCATION -->
+<section class="section" id="location" aria-labelledby="loc-title">
+  <div class="wrap">
+    <div class="section-head" style="max-width:820px">
+      <h2 id="loc-title">Visit us in Altamonte Springs</h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <h3>Altamonte Family Hearing</h3>
+        <address>715 Douglas Ave, Suite 45<br>Altamonte Springs, FL 32714<br>Inside One Senior Place</address>
+        <p style="margin-bottom:22px"><a class="tel" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>407-949-6737</a></p>
+        <h3>Office hours</h3>
+        <dl class="hours">
+          <div><dt>Monday to Friday</dt><dd>9:00 am to 4:30 pm</dd></div>
+          <div><dt>Closed for lunch</dt><dd>12:00 to 1:00 pm</dd></div>
+          <div><dt>Saturday and Sunday</dt><dd>Closed</dd></div>
+        </dl>
+        <div class="walk-note"><strong>Walk-in hour: cleanings and minor repairs</strong>Monday to Friday, 1:00 to 2:00 pm. No appointment needed.</div>
+        <p class="near">We welcome patients from Lake Mary, Winter Park, Maitland, Casselberry, Longwood, Winter Springs and across Greater Orlando.</p>
+      </div>
+      <div>
+        <div class="map">
+          <iframe title="Map showing Altamonte Family Hearing at 715 Douglas Ave, Suite 45, Altamonte Springs" src="https://www.google.com/maps?cid=12379218337608981477&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="map-cta">
+          <a class="btn btn-outline" href="https://www.google.com/maps/place/Altamonte+Family+Hearing/@28.676125,-81.3896501,17z/data=!3m1!4b1!4m6!3m5!1s0x88e771506ecb647d:0xabcbd17d7a2f5be5!8m2!3d28.676125!4d-81.3896501!16s%2Fg%2F11frns4w3b?hl=en-GB&amp;entry=ttu&amp;g_ep=EgoyMDI2MTAwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg>Get Directions<span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- S11. CLOSING + S12. FOOTER -->
+<div class="end">
+  <div class="end-inner on-dark">
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="wrap">
+        <h2 id="closing-title">Ready to understand your hearing?</h2>
+        <p>Book an appointment online, or call our Altamonte Springs office and our team will help. Hablamos español.</p>
+        <div class="cta-row">
+          <button type="button" class="btn btn-gold" data-book>Book Appointment</button>
+          <a class="tel" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>or call 407-949-6737</a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a href="https://altamontefamilyhearing.com/"><img class="flogo" src="https://altamontefamilyhearing.com/assets/logo-altamonte-white-626.png" alt="Altamonte Family Hearing" width="626" height="209" loading="lazy" referrerpolicy="no-referrer"></a>
+            <p>A family-owned and operated hearing care practice in Altamonte Springs, Florida.</p>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <address>715 Douglas Ave, Suite 45<br>Altamonte Springs, FL 32714<br>Inside One Senior Place<br><a href="tel:+14079496737">407-949-6737</a></address>
+          </div>
+          <div>
+            <h3>Links</h3>
+            <ul>
+              <li><a href="https://altamontefamilyhearing.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+              <li><a href="https://altamontefamilyhearing.com/" target="_blank" rel="noopener">Visit Our Website</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="copyright">© <span id="yr">2026</span> {{location.name}} | All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- Mobile sticky call bar (hidden at 768px and up, and while the booking dialog is open) -->
+<a class="call-bar" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Call 407-949-6737</a>
+
+<!-- Booking dialog: every [data-book] button opens this single instance -->
+<dialog id="booking-dialog" class="book-dialog" aria-labelledby="book-title">
+  <div class="book-head">
+    <h2 id="book-title">Book an appointment</h2>
+    <button type="button" class="book-close" data-close aria-label="Close booking window"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="book-body">
+    <p class="book-load" id="book-load">Loading the booking calendar…</p>
+    <iframe id="book-frame" title="Book an appointment with Altamonte Family Hearing" data-src="https://myhearingportal.com/?clinic=P2FwaUtleT1TMDd0THc0OEtTNVJROFdDcW1hTU40QWZjRFFCZHdySiZjbGluaWNOYW1lPUZMX2FmaCZmdWxsV2lkdGg9MQ=="></iframe>
+  </div>
+  <p class="book-foot">Having trouble booking? Call <a href="tel:+14079496737">407-949-6737</a> and our team will help.</p>
+</dialog>
+
+<script>
+(function(){
+  var dlg = document.getElementById('booking-dialog');
+  var frame = document.getElementById('book-frame');
+  var loading = document.getElementById('book-load');
+  var body = document.body;
+
+  function openBooking(){
+    if (!frame.getAttribute('src')) { frame.setAttribute('src', frame.getAttribute('data-src')); }
+    if (typeof dlg.showModal === 'function') {
+      dlg.showModal();
+      body.classList.add('modal-open');
+    } else {
+      window.open(frame.getAttribute('data-src'), '_blank', 'noopener');
+    }
+  }
+  function closeBooking(){ if (dlg.open) { dlg.close(); } }
+
+  document.addEventListener('click', function(e){
+    var trigger = e.target.closest('[data-book]');
+    if (trigger) { e.preventDefault(); openBooking(); return; }
+    if (e.target.closest('[data-close]')) { closeBooking(); return; }
+    if (e.target === dlg) { closeBooking(); }
+  });
+  dlg.addEventListener('close', function(){ body.classList.remove('modal-open'); });
+  frame.addEventListener('load', function(){ if (frame.getAttribute('src')) { loading.hidden = true; } });
+
+  /* Image slots: show the ID/label if a photo can't load */
+  document.querySelectorAll('.ph img').forEach(function(img){
+    function broken(){ img.classList.add('is-broken'); }
+    img.addEventListener('error', broken);
+    if (img.complete && img.naturalWidth === 0) { broken(); }
+  });
+
+  /* Footer year */
+  var yr = document.getElementById('yr');
+  if (yr) { yr.textContent = new Date().getFullYear(); }
+})();
+</script>
+</body>
+</html>
