@@ -378,36 +378,47 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 @media (max-width:899px){ .walkin .ph{ width:min(100%,200px); justify-self:center; } }
 @media (max-width:767px){ #care{ padding-block:36px; } .svc{ padding:16px 0; } .svc h3{ font-size:21px; } .walkin{ padding:20px; gap:16px; } .walkin h3{ font-size:25px; } .walkin-content{ gap:16px; } .walkin .time{ font-size:30px; } .walkin .ph{ display:none; } }
 
-/* S6 People */
-.provider{ display:grid; gap:28px; padding:40px 0; border-top:1px solid var(--border); }
-@media (min-width:900px){
-  .provider{ grid-template-columns:minmax(0,4fr) minmax(0,8fr); gap:56px; align-items:start; }
-  .provider--lead{ grid-template-columns:minmax(0,5fr) minmax(0,7fr); }
-  .provider--rev{ grid-template-columns:minmax(0,8fr) minmax(0,4fr); }
-  .provider--rev .portrait{ order:2; }
-}
-.portrait{ --ar:4/5; border-radius:var(--r-card); }
-.portrait img{ object-position:50% 22%; }
-.bio h3{ margin-bottom:6px; }
-.role{ font-weight:700; color:var(--primary); margin-bottom:16px; }
-.facts{ list-style:none; margin:20px 0 0; display:grid; gap:10px; }
-.facts li{ padding-left:28px; position:relative; }
-.facts li::before{ content:""; position:absolute; left:2px; top:.72em; width:12px; height:2px; background:var(--primary); }
-.support-wrap{ border-top:1px solid var(--border); padding-top:40px; }
-.support-wrap > h3{ margin-bottom:24px; }
-.support{ display:grid; gap:28px; }
-@media (min-width:768px){ .support{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; } }
-.coord{ display:grid; grid-template-columns:120px minmax(0,1fr); gap:20px; align-items:start; }
-.coord .portrait{ --ar:4/5; border-radius:var(--r-photo); }
-.coord h4{ font:700 20px/1.3 var(--sans); margin:0 0 2px; }
-.coord .role{ margin-bottom:8px; font-size:16px; }
-.coord p{ font-size:17px; color:var(--text-2); }
-@media (max-width:479px){ .coord{ grid-template-columns:96px minmax(0,1fr); gap:16px; } }
-.team-note{ margin-top:32px; display:grid; gap:12px; }
-@media (min-width:900px){ .team-note{ grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:48px; } }
-.team-note p{ font-size:17px; color:var(--text-2); }
-.es-box{ background:var(--mist); border-radius:var(--r-photo); padding:18px 22px; }
-.es-box strong{ display:block; font-size:19px; }
+/* S6 People — paired specialists, coordinated support */
+#team{ background:var(--cream); padding-block:56px; }
+#team .section-head{ max-width:none; margin-bottom:28px; }
+#team .section-head .lead{ margin-top:14px; max-width:none; }
+.team-providers{ display:grid; gap:28px; padding:28px; border-radius:26px; background:radial-gradient(ellipse at 100% 0%,rgba(222,231,227,.65),transparent 65%),linear-gradient(115deg,var(--paper),#F4F4EC); border:1px solid rgba(201,216,209,.6); }
+.team-provider{ display:grid; grid-template-columns:160px minmax(0,1fr); gap:14px 22px; align-content:start; min-width:0; }
+.team-photo{ grid-column:1; grid-row:1/3; margin:0; aspect-ratio:1; border-radius:22px; padding:4px; background:linear-gradient(135deg,var(--gold-soft),var(--mist)); overflow:hidden; }
+.team-photo img{ display:block; width:100%; height:100%; object-fit:cover; object-position:50% 20%; border-radius:18px; }
+.team-provider header{ grid-column:2; min-width:0; }
+#team .team-provider h3{ font:400 27px/1.15 var(--serif); margin:0 0 7px; }
+.team-credentials{ display:block; font:600 16px/1.4 "Satoshi Header",var(--sans); color:var(--text-2); margin-top:5px; }
+#team .team-role{ font:600 16px/1.45 "Satoshi Header",var(--sans); color:var(--primary); margin:0; }
+.team-bio{ grid-column:2; min-width:0; }
+.team-bio p{ font-size:18px; line-height:1.5; color:var(--text-2); margin:0 0 12px; overflow-wrap:anywhere; }
+.team-bio strong{ color:var(--night); font-family:"Satoshi Header",var(--sans); font-weight:600; }
+.team-facts{ list-style:none; margin:14px 0; padding:0; display:grid; gap:8px; }
+.team-facts li{ font-size:17px; line-height:1.45; color:var(--text-2); padding-left:16px; position:relative; }
+.team-facts li::before{ content:""; width:6px; height:6px; border:1px solid var(--primary); border-radius:50%; position:absolute; left:0; top:.55em; }
+.team-extra{ margin-top:10px; }
+.team-extra summary{ cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px; min-height:44px; color:var(--primary); font:600 17px/1.5 "Satoshi Header",var(--sans); }
+.team-extra summary::-webkit-details-marker{ display:none; }
+.team-extra summary::after{ content:"+"; font-size:22px; }
+.team-extra[open] summary::after{ content:"−"; }
+.team-extra p{ font-size:17px; margin:8px 0 0; padding-left:14px; border-left:2px solid var(--border); }
+.team-support{ margin-top:28px; }
+#team .team-support>h3{ font:600 22px/1.3 "Satoshi Header",var(--sans); margin:0 0 6px; }
+.team-support-intro{ font-size:17px; color:var(--text-2); margin:0 0 18px; }
+.team-coordinators{ display:grid; gap:22px; }
+.team-coordinator{ display:grid; grid-template-columns:88px minmax(0,1fr); gap:18px; min-width:0; align-items:start; }
+.team-coordinator .team-photo{ grid-row:auto; border-radius:16px; padding:0; }
+.team-coordinator .team-photo img{ border-radius:16px; }
+.team-coordinator h4{ font:600 21px/1.3 "Satoshi Header",var(--sans); margin:0 0 4px; }
+.team-coordinator p{ font-size:17px; line-height:1.5; color:var(--text-2); margin:8px 0 0; overflow-wrap:anywhere; }
+.team-foot{ margin-top:26px; padding-top:20px; border-top:1px solid var(--border); display:grid; gap:16px; }
+.team-foot p{ font-size:16px; line-height:1.5; color:var(--text-2); margin:0; }
+.team-spanish{ border-left:3px solid var(--gold); padding-left:16px; }
+.team-spanish strong{ display:block; color:var(--primary); font:600 18px/1.4 "Satoshi Header",var(--sans); margin-bottom:4px; }
+@media(min-width:1100px){ .team-providers{ grid-template-columns:minmax(0,7fr) minmax(0,6fr); gap:28px; } .team-provider+.team-provider{ padding-left:28px; border-left:1px solid var(--border); grid-template-columns:140px minmax(0,1fr); } }
+@media(min-width:768px){ .team-coordinators{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; } .team-foot{ grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:32px; align-items:start; } }
+@media(max-width:1099px){ .team-provider+.team-provider{ padding-top:24px; border-top:1px solid var(--border); } }
+@media(max-width:599px){ #team{ padding-block:40px; } .team-providers{ padding:20px 18px; gap:22px; } .team-provider{ grid-template-columns:96px minmax(0,1fr); gap:14px; } .team-photo{ grid-row:1; } .team-bio{ grid-column:1/-1; } #team .team-provider h3{ font-size:24px; } .team-coordinator{ grid-template-columns:80px minmax(0,1fr); gap:16px; } }
 
 /* S7 Reviews */
 .rev-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 48px; margin-bottom:40px; }
@@ -551,7 +562,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="a7b46b1afe5d889efb670d0022b2d7ba8ce62d6add534629118c38e30836fb51">
+<meta data-preview-version="17a45547f62229325a7152c42be38a6f2099a5ee7425968d912cb96e91551ef8">
 </head>
 <body>
 
@@ -845,73 +856,79 @@ body.modal-open{ overflow:hidden; }
 </section>
 
 <!-- S6. PEOPLE -->
-<section class="section section--paper" id="team" aria-labelledby="team-title">
+<section class="section" id="team" aria-labelledby="team-title">
   <div class="wrap">
-    <div class="section-head" style="max-width:860px">
-      <h2 id="team-title">Meet the team who will care for your hearing</h2>
-      <p class="lead">We're an independent, family-owned practice, not part of a chain. Your hearing care is provided by one of our two Florida-licensed Hearing Aid Specialists, with our Patient Care Coordinators helping with everything around your visit.</p>
+    <div class="section-head">
+      <h2 id="team-title">A Family-Owned Practice, <em>With Personal Care</em></h2>
+      <p class="lead">Meet the licensed Hearing Aid Specialists and patient care team behind our independent practice.</p>
     </div>
-
-    <div class="provider provider--lead">
-      <figure class="ph portrait" data-ph="IMG-PROVIDER-01" data-label="Jaysee portrait, 4:5 portrait">
-        <img src="https://altamontefamilyhearing.com/assets/photos/jaysee-portrait.webp" alt="Jaysee Soto, HAS, BC-HIS, Owner and Hearing Aid Specialist, in his white coat" width="1200" height="1500" loading="lazy" referrerpolicy="no-referrer">
-      </figure>
-      <div class="bio">
-        <h3>Jaysee A. Soto, HAS, BC-HIS</h3>
-        <p class="role">Owner and Hearing Aid Specialist</p>
-        <p>Jaysee has worked in hearing care since 2013, beginning in West Palm Beach, Florida, before opening Altamonte Family Hearing. He and his wife, Grace, own and run the practice.</p>
-        <p>Beyond the clinic, Jaysee shares hearing-health education online as "The Bald Hearing Guy."</p>
-        <ul class="facts">
-          <li><strong>Florida-licensed</strong> Hearing Aid Specialist (HAS)</li>
-          <li><strong>BC-HIS:</strong> Board Certified in Hearing Instrument Sciences</li>
-          <li><strong>HearingUp Certified Provider</strong></li>
-          <li>Board member, <strong>Florida Hearing Society</strong> (District 5 Director)</li>
-          <li><strong>Bilingual in English and Spanish.</strong> Your whole visit can be in Spanish.</li>
-        </ul>
-      </div>
+    <div class="team-providers">
+      <article class="team-provider" aria-labelledby="jaysee-name">
+        <figure class="team-photo" data-ph="IMG-PROVIDER-01">
+          <img src="https://altamontefamilyhearing.com/assets/photos/jaysee-portrait.webp" alt="Jaysee Soto smiling in his clinic white coat" width="1400" height="1120" loading="lazy" referrerpolicy="no-referrer">
+        </figure>
+        <header>
+          <h3 id="jaysee-name">Jaysee A. Soto <span class="team-credentials">HAS, BC-HIS</span></h3>
+          <p class="team-role">Owner · Florida-licensed Hearing Aid Specialist</p>
+        </header>
+        <div class="team-bio">
+          <p><strong>In hearing care since 2013.</strong> Jaysee and his wife, Grace, own and run Altamonte Family Hearing.</p>
+          <ul class="team-facts">
+            <li><strong>BC-HIS:</strong> Board Certified in Hearing Instrument Sciences</li>
+            <li><strong>HearingUp Certified Provider</strong></li>
+            <li><strong>English and Spanish.</strong> Your whole visit can be in Spanish.</li>
+          </ul>
+          <details class="team-extra">
+            <summary>More about Jaysee</summary>
+            <p>Jaysee began his hearing-care career in West Palm Beach, Florida. He serves on the Florida Hearing Society board as District 5 Director and shares hearing-health education online as “The Bald Hearing Guy.”</p>
+          </details>
+        </div>
+      </article>
+      <article class="team-provider" aria-labelledby="toni-name">
+        <figure class="team-photo" data-ph="IMG-PROVIDER-02">
+          <img src="https://cdn.sanity.io/images/p8cei03q/production/592d18eda5ba9c959fa4c2719d71cd0ff0e3f603-1800x1440.jpg?w=800&amp;auto=format" alt="Toni Trager smiling in her clinic white coat" width="800" height="640" loading="lazy" referrerpolicy="no-referrer">
+        </figure>
+        <header>
+          <h3 id="toni-name">Toni Trager <span class="team-credentials">HAS</span></h3>
+          <p class="team-role">Florida-licensed Hearing Aid Specialist</p>
+        </header>
+        <div class="team-bio">
+          <p><strong>Firsthand understanding.</strong> Toni has worn hearing aids since childhood, bringing personal experience to the care she provides.</p>
+          <p>She also brings evaluations and hearing aid fittings to patients at home or in a care facility through our mobile hearing care.</p>
+        </div>
+      </article>
     </div>
-
-    <div class="provider provider--rev">
-      <figure class="ph portrait" data-ph="IMG-PROVIDER-02" data-label="Toni portrait, 4:5 portrait">
-        <img src="https://cdn.sanity.io/images/p8cei03q/production/592d18eda5ba9c959fa4c2719d71cd0ff0e3f603-1800x1440.jpg?w=800&amp;auto=format" alt="Toni Trager, Hearing Aid Specialist at Altamonte Family Hearing" width="800" height="640" loading="lazy" referrerpolicy="no-referrer">
-      </figure>
-      <div class="bio">
-        <h3>Toni Trager, HAS</h3>
-        <p class="role">Hearing Aid Specialist</p>
-        <p>Toni is a Florida-licensed Hearing Aid Specialist who has worn hearing aids since childhood, so she brings firsthand understanding to the care she provides.</p>
-        <p>She also provides our mobile hearing care, bringing evaluations and hearing aid fittings to patients at home or in a care facility.</p>
-      </div>
-    </div>
-
-    <div class="support-wrap">
+    <div class="team-support">
       <h3>Patient Care Coordinators</h3>
-      <div class="support">
-        <div class="coord">
-          <figure class="ph portrait" data-ph="IMG-PROVIDER-03" data-label="Grace portrait, 4:5">
-            <img src="https://cdn.sanity.io/images/p8cei03q/production/4fac9632e53190ee3edd42029b0a9b78c58c05c7-1800x1440.jpg?w=800&amp;auto=format" alt="Grace Soto, Patient Care Coordinator, smiling in green scrubs" width="800" height="640" loading="lazy" referrerpolicy="no-referrer">
+      <p class="team-support-intro">Grace and Francesca offer support in English and Spanish.</p>
+      <div class="team-coordinators">
+        <article class="team-coordinator" aria-labelledby="grace-name">
+          <figure class="team-photo" data-ph="IMG-PROVIDER-03">
+            <img src="https://cdn.sanity.io/images/p8cei03q/production/4fac9632e53190ee3edd42029b0a9b78c58c05c7-1800x1440.jpg?w=800&amp;auto=format" alt="Grace Soto smiling in green clinic scrubs" width="800" height="640" loading="lazy" referrerpolicy="no-referrer">
           </figure>
           <div>
-            <h4>Grace Soto</h4>
-            <p class="role">Patient Care Coordinator and co-owner</p>
-            <p>Helps with scheduling, insurance questions and care coordination. Bilingual in English and Spanish.</p>
+            <h4 id="grace-name">Grace Soto</h4>
+            <p class="team-role">Co-owner · Patient Care Coordinator</p>
+            <p>Helps with scheduling, insurance questions and care coordination.</p>
           </div>
-        </div>
-        <div class="coord">
-          <figure class="ph portrait" data-ph="IMG-PROVIDER-04" data-label="Francesca portrait, 4:5">
-            <img src="https://cdn.sanity.io/images/p8cei03q/production/d470d108685dbdd5ac71c470a83983c6fe72314b-1800x1440.jpg?w=800&amp;auto=format" alt="Francesca Natal, Patient Care Coordinator, smiling in green scrubs" width="800" height="640" loading="lazy" referrerpolicy="no-referrer">
+        </article>
+        <article class="team-coordinator" aria-labelledby="francesca-name">
+          <figure class="team-photo" data-ph="IMG-PROVIDER-04">
+            <img src="https://cdn.sanity.io/images/p8cei03q/production/d470d108685dbdd5ac71c470a83983c6fe72314b-1800x1440.jpg?w=800&amp;auto=format" alt="Francesca Natal smiling in green clinic scrubs" width="800" height="640" loading="lazy" referrerpolicy="no-referrer">
           </figure>
           <div>
-            <h4>Francesca Natal</h4>
-            <p class="role">Patient Care Coordinator</p>
-            <p>Helps with appointments, patient forms and questions before your visit. Bilingual in English and Spanish.</p>
+            <h4 id="francesca-name">Francesca Natal</h4>
+            <p class="team-role">Patient Care Coordinator</p>
+            <p>Helps with appointments, patient forms and questions before your visit.</p>
           </div>
-        </div>
+        </article>
       </div>
     </div>
-
-    <div class="team-note">
-      <p>Our clinical providers are licensed Hearing Aid Specialists, not audiologists or physicians. If something falls outside that scope, such as a possible medical cause for a change in your hearing, they'll refer you to a physician, an ENT or another specialist.</p>
-      <div class="es-box"><strong>Hablamos español.</strong>Ofrecemos evaluaciones auditivas, formularios y recursos en español.</div>
+    <div class="team-foot">
+      <p>Our clinical providers are licensed Hearing Aid Specialists, not audiologists or physicians. For concerns outside their scope, including a possible medical cause for a hearing change, they refer to a physician, ENT or another specialist.</p>
+      <div class="team-spanish">
+        <p><strong>Hablamos español.</strong>Ofrecemos evaluaciones auditivas, formularios y recursos en español.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1291,7 +1308,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = 'a7b46b1afe5d889efb670d0022b2d7ba8ce62d6add534629118c38e30836fb51';
+  const version = '17a45547f62229325a7152c42be38a6f2099a5ee7425968d912cb96e91551ef8';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
