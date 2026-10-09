@@ -196,23 +196,26 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .panel .fig figcaption{ color:var(--on-dark-soft); }
 
 /* S1A Welcome video */
-.welcome{ padding-block:72px; }
+.welcome{ padding-block:88px; background:radial-gradient(ellipse at 12% 35%,rgba(201,216,209,.65),transparent 58%),radial-gradient(ellipse at 92% 20%,rgba(232,211,166,.3),transparent 50%),linear-gradient(180deg,var(--paper),var(--cream)); }
 .welcome-grid{ display:grid; gap:32px; align-items:center; }
 .welcome-copy{ min-width:0; }
+.welcome-copy .eyebrow{ display:flex; align-items:center; gap:12px; }
+.welcome-copy .eyebrow::before{ content:""; width:28px; height:2px; flex:none; background:var(--gold); }
 .welcome-copy h2{ max-width:16ch; text-wrap:balance; }
 .welcome-copy .lead{ margin-top:22px; margin-bottom:0; }
+.welcome-media{ min-width:0; padding:8px; border:1px solid rgba(89,112,102,.18); border-radius:26px; background:linear-gradient(135deg,var(--gold-soft),var(--paper) 35%,var(--mist) 70%,#A6BEB2); box-shadow:0 18px 40px -22px rgba(26,48,40,.35),0 6px 14px -10px rgba(26,48,40,.25); }
 .welcome-poster{ position:relative; display:block; width:100%; aspect-ratio:16/9; padding:0; border:0; border-radius:var(--r-photo); overflow:hidden; background:var(--night); cursor:pointer; text-align:left; color:var(--white); }
 .welcome-poster img{ display:block; width:100%; height:100%; object-fit:contain; }
-.welcome-poster::after{ content:""; position:absolute; inset:40% 0 0; background:linear-gradient(transparent,rgba(0,0,0,.8)); pointer-events:none; }
+.welcome-poster::after{ content:""; position:absolute; inset:40% 0 0; background:linear-gradient(transparent,rgba(26,48,40,.9)); pointer-events:none; }
 .welcome-play{ position:absolute; bottom:24px; left:24px; right:20px; z-index:1; display:flex; align-items:center; gap:16px; font-family:"Satoshi Header",var(--sans); font-weight:600; font-size:18px; line-height:1.4; }
-.welcome-play-icon{ display:grid; place-items:center; width:60px; height:60px; flex:none; border-radius:50%; background:var(--paper); color:var(--night); transition:background .15s; }
+.welcome-play-icon{ display:grid; place-items:center; width:60px; height:60px; flex:none; border-radius:50%; background:linear-gradient(135deg,var(--paper),var(--gold-soft)); color:var(--night); box-shadow:0 0 0 6px rgba(255,253,248,.14); transition:background .15s; }
 .welcome-play-icon svg{ width:22px; height:22px; }
 .welcome-poster:hover .welcome-play-icon{ background:var(--gold-soft); }
 .welcome-poster:focus-visible{ outline-offset:6px; }
 @media (min-width:1000px){
   .welcome-grid{ grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:64px; }
   .welcome-copy{ grid-column:2; grid-row:1; }
-  .welcome-poster{ grid-column:1; grid-row:1; }
+  .welcome-media{ grid-column:1; grid-row:1; }
 }
 @media (max-width:767px){
   .welcome{ padding-block:48px; }
@@ -474,7 +477,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="cc662c1d3c13da47b2b1e0647c59f90b42aeb0421c7bdb955485ac66b104bb96">
+<meta data-preview-version="13e4a3a0d3b10abd8679a9f7f871584f17f7d4ef5333ade5a5305b641d9de7d8">
 </head>
 <body>
 
@@ -549,13 +552,15 @@ body.modal-open{ overflow:hidden; }
   <div class="wrap welcome-grid">
     <div class="welcome-copy">
       <p class="eyebrow">Welcome to our practice</p>
-      <h2 id="welcome-title">Meet the People Behind Your Hearing Care</h2>
+      <h2 id="welcome-title">Meet the People Behind Your <em>Hearing Care</em></h2>
       <p class="lead">Take a look inside our practice and meet your hearing care team. Our welcome video introduces what to expect at your first visit, from discussing your concerns to reviewing your results and next steps.</p>
     </div>
+    <div class="welcome-media">
     <button type="button" class="welcome-poster" data-welcome-video aria-haspopup="dialog" aria-controls="welcome-video-dialog" aria-label="Watch our welcome video (opens video popup)">
       <img src="https://altamontefamilyhearing.com/assets/video/welcome-crop-poster.webp" alt="" width="1280" height="720" loading="lazy" referrerpolicy="no-referrer">
       <span class="welcome-play"><span class="welcome-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span>Watch our welcome video</span></span>
     </button>
+    </div>
   </div>
 </section>
 
@@ -1207,7 +1212,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = 'cc662c1d3c13da47b2b1e0647c59f90b42aeb0421c7bdb955485ac66b104bb96';
+  const version = '13e4a3a0d3b10abd8679a9f7f871584f17f7d4ef5333ade5a5305b641d9de7d8';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
