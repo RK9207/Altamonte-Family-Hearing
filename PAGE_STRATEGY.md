@@ -1,321 +1,226 @@
-\# Content direction — Better Hearing Health
+# Page strategy — Better Hearing Health
 
 Version 2 · 9 October 2026 · Governing foundation for Steps 4 and 5
 
-Use with \[PAGE\_STRATEGY.md\](PAGE\_STRATEGY.md) and \[DESIGN\_SYSTEM.md\](DESIGN\_SYSTEM.md). The latest brief, research, project instructions, and inspected clinic website inform this document. Source revision and access details are in PAGE\_STRATEGY.md. This is a messaging framework; Claude may improve working headlines and draft copy within it. Final copy is not locked in Step 3\.
+Use with [CONTENT_DIRECTION.md](CONTENT_DIRECTION.md) and [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). This version supersedes the first strategy and is grounded in the clinic's inspected live website. It defines decisions, not a finished page or locked final copy.
 
-\#\# Core message
+## Source authority and current evidence
 
-| Element | Governing direction |  
-|---|---|  
-| Primary audience | Adults noticing everyday hearing difficulty, including older adults; current hearing-aid users who need better support. Address family members helping arrange care while respecting the patient's autonomy. |  
-| Primary problem/need | Difficulty following conversations, uncertainty about hearing changes, or aids that do not work well; concern about being sold a device before understanding the issue. |  
-| Primary desired outcome | Clear answers and suitable, supported care that may make everyday communication easier. Do not promise restored natural hearing or a guaranteed result. |  
-| Main value proposition | Personalized hearing care in Altamonte Springs: evaluation, understandable results, options based on needs and preferences, verified fitting when appropriate, and support afterward. |  
-| Main trust proposition | An independent family-owned practice with named licensed Hearing Aid Specialists, individual fitting verification, ongoing professional care, genuine clinic imagery, and identifiable patient accounts. |  
-| Primary CTA | \*\*Book Appointment\*\*, opening the supplied My Hearing Portal widget in a popup. |  
-| Secondary action | \*\*Call 407-949-6737\*\*. The separate \*\*Request an Appointment\*\* form offers an assisted route to care, not the destination of Book Appointment. |
+Read the following from GitHub `main`, commit `cae8cf29cd469121a19260689b7ef29b848bf457`:
 
-Lead with understanding and everyday conversation, then substantiate quality through method and people. Family ownership supplies warmth; verification, appropriate credentials, and ongoing care give that warmth substance. Avoid leading with hearing-aid technology or a vague wellness promise.
+- `Altamonte Family Hearing - Project Brief BHH.md` is the supplied PROJECT_BRIEF.md.
+- `RESEARCH (1).md` is the supplied RESEARCH.md; its Section 11 contains the newer supplied-review evidence.
+- `Agents.md` defines project workflow, including section-by-section approval in Step 5.
 
-\#\# Hero direction
-
-\*\*H1:\*\* communicate hearing care/understanding hearing and a useful next step or everyday communication benefit. A working direction is \*\*“Understand your hearing. Find the care that fits.”\*\* It is not a locked headline. The service and Altamonte Springs must remain explicit in the immediate context. “Better Hearing Health” may be a topic eyebrow, but cannot carry the complete proposition alone.
-
-\*\*Supporting copy:\*\* explain a local, independent family-owned practice that evaluates hearing, explains results, and discusses appropriate options. Use two or three useful sentences if necessary in Step 4\. Do not imply every visitor needs hearing aids. Keep the first step concrete rather than repeating aspirational language.
-
-\*\*Trust cue:\*\* Google \*\*5.0 rating / 156 reviews\*\*, based on the supplied Google-panel transcription captured 9 October 2026\. The clinic's website still shows 155; it is not a fresh Google aggregate. Use the newer supplied count in both hero and S7, identify its dated source in implementation notes, and confirm immediately before publishing. Stars alone do not communicate rating/count accessibly.
+The live homepage and `/about`, `/services/hearing-tests`, `/services/real-ear-measurement`, `/services/hearing-aid-fittings`, `/services/hearing-aid-repair`, `/services/tinnitus`, `/services/earwax-removal`, `/services/mobile-hearing-services`, `/reviews`, and `/llm-info` were read on 9 October 2026. Desktop (1440 px) and mobile (390 px) renders were inspected. Live HTML/CSS, loaded fonts, and genuine clinic images now support the design foundation; details are recorded in DESIGN_SYSTEM.md.
 
-\*\*Action:\*\* Book Appointment dominates; phone is a subordinate link. A quiet \*\*Hablamos español\*\* cue is suitable. The real consultation photo helps establish the setting and patient attention but must not distract from the first action.
+The brief controls required functionality; the clinic's own current pages control clinic-authored facts; research supplies context and captured review evidence. These documents decide hierarchy and presentation. Do not turn a patient's words into a clinic claim. The website still displays 155 reviews; the supplied Google-panel transcription reports 156 on 9 October. Use the newer supplied snapshot consistently in the draft, and refresh the aggregate directly before publication.
 
-\*\*Keep out:\*\* request form, service catalog, all manufacturer logos, acronyms, long bios, multiple seals, insurance-plan logos, device prices, universal “free” claims, appointment scarcity, typing effects, and a full navigation menu on mobile. Preserve useful facts later; this is placement, not deletion.
+Original review screenshot files remain unavailable in this workspace; their research transcription is available. The original logo from the brief was downloaded and inspected, as were genuine website photos. The original logo is already high resolution and remains the identity source; the generative upscale is not the production master.
 
-\#\# Section-by-section content direction
-
-Each section has required/optional information, emphasis, objection, tone, detail level, and a visual-fact treatment. S0–S12 match PAGE\_STRATEGY.md.
-
-\#\#\# S0. Header
-
-\- \*\*Must retain:\*\* linked original logo; desktop navigation, phone, Book Appointment; compact header logo and booking.  
-\- \*\*Optional:\*\* phone icon, understated active anchor state.  
-\- \*\*Emphasis:\*\* recognizable clinic and a clear next step.  
-\- \*\*Objection/question:\*\* “How do I reach them?”  
-\- \*\*Tone:\*\* functional and precise.  
-\- \*\*Detail:\*\* labels only; no promotional strip.  
-\- \*\*Visual facts:\*\* booking button, readable phone link, quiet anchor navigation.
-
-\#\#\# S1. Hero
-
-\- \*\*Must retain:\*\* useful hearing-care proposition, location, family-owned context, Google proof, Book Appointment, call alternative.  
-\- \*\*Optional:\*\* brief Spanish cue or a short reassurance if composition has room.  
-\- \*\*Emphasis:\*\* understanding hearing and finding appropriate care.  
-\- \*\*Objection/question:\*\* “Is this the right practice for me?”  
-\- \*\*Tone:\*\* warm, confident, specific; follow the hero rules above.  
-\- \*\*Detail:\*\* one purposeful H1, short supporting paragraph, compact proof/action grouping. Allow a complete explanation rather than forcing one cramped sentence.  
-\- \*\*Visual facts:\*\* locality eyebrow, Google rating/count, authentic consultation photo; main message stays outside the photo.
-
-\#\#\# S2. Recognition
-
-\- \*\*Must retain:\*\* asking for repeats; speech without catching words; noisy conversations; TV-volume concerns; ringing/buzzing; existing aids not working well; not every concern needs aids; visible urgent-change note.  
-\- \*\*Optional:\*\* tiredness after listening in noise; one caregiver-inclusive sentence.  
-\- \*\*Emphasis:\*\* seek understanding rather than self-diagnose.  
-\- \*\*Objection/question:\*\* “Is this worth checking?”  
-\- \*\*Tone:\*\* empathetic, everyday language without guilt or alarm.  
-\- \*\*Detail:\*\* four to six clear items with useful reassurance. More context can survive in Step 4 if it adds meaning.  
-\- \*\*Visual facts:\*\* readable symptom rows; separate high-contrast safety note, not buried in a closed FAQ.
-
-\#\#\# S3. First visit
-
-\- \*\*Must retain:\*\* listening/history; ear exam/wax check; tones and speech testing; results explained during the visit; appropriate options based on hearing, lifestyle, preferences, and budget. \*\*Most hearing evaluations are complimentary. Call to confirm any costs that may apply.\*\* Keep those statements together.  
-\- \*\*Optional:\*\* take-home results record; bring current aids/insurance card; a family member or friend can help when reviewing results. The current hearing-tests page supports these practical details.  
-\- \*\*Emphasis:\*\* clear information before a recommendation; aids are one possible option.  
-\- \*\*Objection/question:\*\* “What happens, what might it cost, and will I have to buy?”  
-\- \*\*Tone:\*\* reassuring through facts rather than repeated “no pressure” slogans.  
-\- \*\*Detail:\*\* four labeled steps, with enough explanation to understand each. Step 4 may use two to four sentences per step if useful; no fixed word quota.  
-\- \*\*Visual facts:\*\* numbered sequence, genuine testing photo, readable qualified-cost callout.
-
-\#\#\# S4. Verification and ongoing care
-
-\- \*\*Must retain:\*\* a complete plain-language REM explanation; distinct EAA check; Jaysee's HearingUp attribution; manufacturer choice; five-year professional-care scope.  
-\- \*\*Optional:\*\* why two different ear canals can receive different sound despite identical software settings; six manufacturer names if not already placed in S5.  
-\- \*\*Emphasis:\*\* fitting is checked for the person's ears, with professional support afterward.  
-\- \*\*Objection/question:\*\* “Why trust this fitting, especially after a disappointing experience?”  
-\- \*\*Tone:\*\* concrete, educational, confident without a superiority guarantee.  
-\- \*\*Detail:\*\* a primary explanatory passage plus clear supporting facts for device checks and continuing care. Do not collapse meaningful methods into “advanced technology.”  
-\- \*\*Visual facts:\*\* real REM photograph/caption; prominent \*\*5 years of professional care\*\* with \*\*included with hearing aids purchased from our office, at every technology level\*\* immediately beside it.
-
-Required explanation boundaries:
-
-\- \*\*Real Ear Measurement:\*\* a small probe microphone measures hearing-aid sound in the ear canal and compares it with targets calculated from the person's hearing test. It checks the fitting in that ear rather than relying only on average software settings. It is verification, not a promise of perfect hearing.  
-\- \*\*Electroacoustic Analysis:\*\* a test-box check of the device's performance against manufacturer specifications before fitting. It is not another test of the patient's hearing and is not interchangeable with REM.  
-\- \*\*HearingUp:\*\* Jaysee is a HearingUp Certified Provider in the network founded by Dr. Cliff Olson, committed to best practices including fitting verification. Do not call this a medical-board credential or imply Dr. Cliff treats patients here.  
-\- \*\*Professional care:\*\* five years included with hearing aids bought from this office, at every technology level. Do not turn this into a device warranty, unlimited replacement, product lifespan, or care for every visitor.
-
-\#\#\# S5. Care options
-
-\- \*\*Must retain:\*\* the six service groups below, aids bought elsewhere, distinct walk-in hour, and relevant limitations.  
-\- \*\*Optional:\*\* six manufacturer names; rechargeable/Bluetooth/discreet-style examples if discussing choice; six-month professional-cleaning recommendation.  
-\- \*\*Emphasis:\*\* help for the current concern, beyond selling new devices.  
-\- \*\*Objection/question:\*\* “Do you handle my situation?”  
-\- \*\*Tone:\*\* practical and specific, with each service meaningfully distinguished.  
-\- \*\*Detail:\*\* short but complete explanations. Step 4 may use a paragraph per entry when needed; do not remove scope/limitations to equalize row height.  
-\- \*\*Visual facts:\*\* service titles, separate walk-in-hours line, home-care call link; one subdued genuine manufacturer row at most.
-
-| Service group | Information to preserve | Qualification |  
-|---|---|---|  
-| Hearing evaluations | Ear check and testing help explain hearing and next steps. | Most complimentary; confirm applicable costs. |  
-| Fitting/adjustment | Options suit hearing, lifestyle, preferences, and budget; verify fitting and fine-tune. | Aids may help but do not restore natural hearing or remove all background noise. |  
-| Repair/cleaning | Support for aids bought here or elsewhere; weekday walk-in cleaning/minor-repair hour. | Monday–Friday 1:00–2:00 pm; some repairs require manufacturer service. No universal same-day guarantee. |  
-| Tinnitus consultation | Evaluate hearing and discuss reducing impact; aid sound-therapy features may help with accompanying hearing loss. | No universal cure, relief varies, and specialized referral may be appropriate. |  
-| Earwax removal | Examine ears and suitability; video otoscopy and warmed-water Earigator are supported methods. | Prior surgery, tubes, perforation, or recent infection need screening; removal/referral depends on suitability. |  
-| Mobile/home care | Toni provides evaluations/fittings at home or a care facility for access difficulties in Greater Orlando. | Call for cost/availability; some testing requires office equipment. |
-
-Manufacturer names, if used: \*\*Phonak, Oticon, ReSound, Signia, Starkey, Widex\*\*. Do not imply sponsorship, exclusivity, or support for every historic model.
-
-\#\#\# S6. People
-
-\- \*\*Must retain:\*\* correct roles, names, qualifications, ownership, Jaysee's experience since 2013, Toni's licensure/firsthand experience, and bilingual care-coordinator support.  
-\- \*\*Optional:\*\* Jaysee's Florida Hearing Society board role; a brief educator detail if it adds confidence. Avoid a separate podcast/YouTube promotion block.  
-\- \*\*Emphasis:\*\* identifiable people with relevant expertise and approachable help.  
-\- \*\*Objection/question:\*\* “Who will I see, and will they understand my needs?”  
-\- \*\*Tone:\*\* human and professional; do not write a résumé or imply a medical specialty not held.  
-\- \*\*Detail:\*\* substantive mini-bios for Jaysee/Toni; shorter coordinator descriptions. Preserve distinctions instead of flattening all four into interchangeable staff cards.  
-\- \*\*Visual facts:\*\* authentic portrait, name, role, and credentials together; readable Spanish cue.
-
-Use \*\*Jaysee A. Soto, HAS, BC-HIS — Owner / Hearing Aid Specialist\*\* and \*\*Toni Trager, HAS — Hearing Aid Specialist\*\*. Explain BC-HIS once as Board Certified in Hearing Instrument Sciences. Grace Soto is co-owner/Patient Care Coordinator; Francesca Natal is Patient Care Coordinator. Both coordinators are bilingual. Do not extend Jaysee's credentials or Spanish proficiency to Toni without evidence. Clinical providers are licensed Hearing Aid Specialists, not audiologists or physicians. Clinic-authored copy must not call Jaysee “Dr.”
-
-\#\#\# S7. Google reviews
-
-\- \*\*Must retain:\*\* aggregate rating/count, genuine reviewer names and known ratings, exact quotation meaning, six desktop/three mobile maximum, required Google link.  
-\- \*\*Optional:\*\* matched authentic thumbnails; verified absolute dates; full-text disclosures.  
-\- \*\*Emphasis:\*\* explanations, personalization, family support, practical help, and dignity.  
-\- \*\*Objection/question:\*\* “Do patients describe this care in practice?”  
-\- \*\*Tone:\*\* patient's original voice, clearly attributed.  
-\- \*\*Detail:\*\* meaningful contiguous excerpts, with available full review text in a disclosure. Cards may have different lengths; do not rewrite endorsements to fit.  
-\- \*\*Visual facts:\*\* one aggregate proof grouping, individual scores/names/Google attribution, accessible text rather than tiny screenshot UI.
-
-Default desktop selection: \*\*Teri Yanovitch, Philip Zeitler, jan bradburn, Steve Marsee, Emily Palo, Rocio M Stevens\*\*. Mobile shows only the first three. This set covers personalization, caregiver confidence, existing-aid frustration, technical care, repairs, and Spanish care.
-
-| Reviewer | Proof role | Suitable exact excerpt from research Section 11 |  
-|---|---|---|  
-| Teri Yanovitch | Appropriate care rather than a sales-first experience | “They weren't just focused on selling a hearing aid; they were truly committed to finding the best solution for my hearing needs and lifestyle.” |  
-| Philip Zeitler | Family-care confidence and explanation | “He spent a great deal of time performing very thorough hearing tests and, just as importantly, took the time to clearly explain the results in a way that we could all understand.” |  
-| jan bradburn | Help after previous aids disappointed | “I have several hearing aids that don't work and don't fit, but Jaysee found the perfect match for me.” |  
-| Steve Marsee | Empathy alongside technical care | “Jaysee and his staff are personable, professional and really go the extra mile for their clients.” |  
-| Emily Palo | Practical help and feeling cared for | “I really felt heard and cared for by the staff\! Thank you so much\! Your help has made a HUGE impact on my life.” |  
-| Rocio M Stevens | Spanish-language family care | “Being able to communicate in Spanish made my mother feel at ease and well cared for.” |
-
-Quote integrity:
-
-\- Label shortened passages as excerpts; retain original capitalization/spelling, including \`jan bradburn\` and reviewer misspellings of Jaysee. Never splice separate sentences into a new meaning; indicate internal omissions honestly.  
-\- Rocio's complete review inaccurately calls Jaysee “Dr.” Prefer the exact Spanish-care excerpt above. If displaying the complete text, retain it verbatim with an adjacent clinic-authored clarification of specialist scope; do not promote the incorrect title in a headline.  
-\- Exclude Jason Hoch and Cynthia O'brien until complete text/attribution/rating are verified; research flags partial captures and inferred metadata.  
-\- Do not select Christopher Powell's Medicare-coverage statement as conversion proof: an individual's account is not evidence of universal plan coverage. Use the qualified insurance answer instead.  
-\- Do not treat “3 months ago” from a capture as current relative metadata. Use verified absolute dates or omit dates.  
-\- Owner replies, if used, must be visibly separate. Never invent reviewer avatars, aggregate updates, or branded screenshots. Original screenshot files are not locally available; text transcription is the working source.
-
-\#\#\# S8. FAQs
-
-\- \*\*Must retain:\*\* cost/coverage qualifications, device/scope questions, tinnitus/wax limits, home-care access, Spanish, provider scope, and sudden-change guidance.  
-\- \*\*Optional:\*\* discreet styles/water resistance if the draft introduces those topics; not compulsory filler.  
-\- \*\*Emphasis:\*\* useful answers that help someone decide.  
-\- \*\*Objection/question:\*\* practical barriers to booking.  
-\- \*\*Tone:\*\* direct and honest.  
-\- \*\*Detail:\*\* typically two to five sentences; retain extra explanation where necessary in Step 4\. Do not repeat the entire S3 process.  
-\- \*\*Visual facts:\*\* clear question rows; qualifications in the same answer as the attractive statement. Essential safety guidance also remains outside the accordion.
-
-| Order | Working question | Required answer direction / source |  
-|---|---|---|  
-| 1 | Is there a charge for a hearing evaluation? | Most complimentary; call to confirm costs. \`/services/hearing-tests\`. |  
-| 2 | Do you accept insurance? | Many plans accepted; coverage varies; bring insurance card or call with details to check benefits. No payer list, Medicare promise, or guaranteed coverage. \`/about\`, service FAQs. |  
-| 3 | Will I necessarily need hearing aids? | No automatic recommendation; evaluation explains suitable options, and patients are told when hearing is within normal limits. Research/hearing-tests source. |  
-| 4 | Can you help with aids I bought elsewhere? | Major-brand servicing, repair, and fitting review; some faults require manufacturer service. \`/services/hearing-aid-repair\`, \`/services/real-ear-measurement\`. |  
-| 5 | How long does adjustment take? | It varies; regular use and follow-up help. No fixed deadline. \`/services/hearing-aid-fittings\`. |  
-| 6 | Can hearing aids help tinnitus? | May reduce impact with accompanying hearing loss; no universal cure; relief varies; referral when appropriate. \`/services/tinnitus\`. |  
-| 7 | What if it is earwax? | Examine first; safe removal here or referral depending on suitability. Symptoms alone cannot diagnose wax. \`/services/earwax-removal\`. |  
-| 8 | Do you offer home visits? | Yes for access difficulties; call for availability/cost; some testing needs office equipment. \`/services/mobile-hearing-services\`. |  
-| 9 | Can my visit be in Spanish? | Spanish evaluations/forms/resources and full Spanish-language care supported. \`/about\`. |  
-| 10 | Who provides my hearing care? | Jaysee or Toni, licensed Hearing Aid Specialists; correct credentials/scope; coordinators help with scheduling/forms. \`/about\`. |  
-| 11 | What if hearing changes suddenly? | Sudden hearing loss, or tinnitus with sudden severe vertigo, requires immediate medical care rather than routine booking. For sudden-onset, one-sided, or pulse-synchronous tinnitus, see a physician promptly. \`/services/tinnitus\`, research hearing-loss source. |
-
-\#\#\# S9. Appointment request
-
-\- \*\*Must retain:\*\* Request an Appointment heading, short next-step explanation, exact supplied form/script, nearby privacy link, phone fallback.  
-\- \*\*Optional:\*\* caregiver-inclusive reassurance without assuming undocumented widget fields/features.  
-\- \*\*Emphasis:\*\* assisted arrangement rather than a confirmed time slot.  
-\- \*\*Objection/question:\*\* “Can the team help me arrange the next step?”  
-\- \*\*Tone:\*\* calm and factual: “Send an appointment request and let our team help arrange the next step” is a working direction.  
-\- \*\*Detail:\*\* concise introduction; do not invent a response deadline or borrow the site's missed-call turnaround as a form guarantee.  
-\- \*\*Visual facts:\*\* clean form wrapper; no invented fields or competing large booking button.
-
-\#\#\# S10. Location
-
-\- \*\*Must retain:\*\* exact address/One Senior Place, phone, office hours/lunch/weekend closures, separately labeled walk-in hour, responsive map, Get Directions below map with preceding icon.  
-\- \*\*Optional:\*\* Lake Mary, Winter Park, Maitland, Casselberry, Longwood, Winter Springs as nearby communities; no estimated travel times.  
-\- \*\*Emphasis:\*\* practical locality.  
-\- \*\*Objection/question:\*\* “Where do I go and when?”  
-\- \*\*Tone:\*\* exact and useful.  
-\- \*\*Detail:\*\* structured address/hours; no invented parking, building-access, or exterior claims.  
-\- \*\*Visual facts:\*\* text outside map, labeled schedule, prominent directions utility.
-
-\#\#\# S11. Closing invitation
-
-\- \*\*Must retain:\*\* benefit-led next-step headline, Book Appointment, quieter call alternative.  
-\- \*\*Optional:\*\* one supportive sentence.  
-\- \*\*Emphasis:\*\* action with confidence, no new argument.  
-\- \*\*Objection/question:\*\* “What do I do next?”  
-\- \*\*Tone:\*\* straightforward invitation, no urgency.  
-\- \*\*Detail:\*\* short close rather than a repeated service inventory.  
-\- \*\*Visual facts:\*\* dominant action within a calm pine panel.
-
-\#\#\# S12. Footer
-
-\- \*\*Must retain:\*\* clinic identification/contact, Privacy Policy, Visit Our Website, current-year/location copyright.  
-\- \*\*Optional:\*\* genuine reversed logo.  
-\- \*\*Emphasis:\*\* identification and utility.  
-\- \*\*Objection/question:\*\* “Where are the business/privacy details?”  
-\- \*\*Tone:\*\* factual.  
-\- \*\*Detail:\*\* compact but readable; no tiny legal copy.  
-\- \*\*Visual facts:\*\* readable grouped contact lines and links.
-
-\#\# Copy style and content depth
-
-Use clear, specific language, patient-centered framing, natural sentences, and benefits supported by details. Explain acronyms before relying on them. Use “you” for the visitor and “we” only for clinic-authored statements. Family-member language should support patient choice rather than assume dependency.
-
-Avoid “world-class,” “cutting-edge solutions,” “rediscover a world of sound,” “your journey starts here,” unsupported “best,” fear-based medical statistics, guilt, competitor attacks, and repeated “personalized/compassionate/professional” without fresh evidence. A patient may use enthusiastic wording; the clinic must not convert it into a guarantee.
-
-\*\*Step 4 is intentionally content-rich.\*\* Write complete method explanations, service distinctions, useful provider details, practical answers, and available full review text. Scannability comes from hierarchy, short paragraphs, lists, open editorial layouts, selected cards, captions, and labeled expansions. Do not reduce the first draft to slogans or delete useful facts for an arbitrary word target. Step 5 tightens interactively after seeing the actual page. Remove repetition or relocate detail before deleting substantive content.
-
-\#\#\# Factual boundaries
-
-| Topic | Supported direction | Do not infer |  
-|---|---|---|  
-| Aggregate reviews | 5.0 / 156 from supplied 9 October snapshot; refresh before release | Fresh Google verification or an automatic live feed |  
-| Evaluations | Most complimentary; confirm costs | Universal free tests, invented prices/financing |  
-| Insurance | Many plans, coverage varies, benefits can be checked | Medicare promise, unverified payer logos |  
-| Included care | Five years with hearing aids purchased here, every technology level | Product warranty, unlimited replacement, universal visitor entitlement |  
-| Provider scope | Correct HAS/BC-HIS attribution and Hearing Aid Specialist titles | Doctor, physician, audiologist, team-wide certification |  
-| Outcomes | Aids may help communication; fitting is verified | Restored natural hearing, no background noise, guaranteed improvement |  
-| Repairs | Some in-office, some manufacturer service | Guaranteed same-day repairs for every issue |  
-| Tinnitus | Discuss reducing impact; relief varies; urgent symptoms get appropriate medical care | Cure or universal relief |  
-| Wax | Examine and screen suitability; refer when needed | Universal safe removal or self-treatment instructions |  
-| Home visits | Cost/availability by phone; some tests require office | Universal radius, flat fee, office-equivalent testing |  
-| History | Jaysee in hearing care since 2013 | Clinic founded in 2013 or unconfirmed founding-year claims |  
-| Site guarantee line | Omit “100% satisfaction” from the default draft until terms are clarified | Clinical-result, refund, or warranty guarantee without terms |
-
-\#\# Handoff and governing changes
-
-Claude should draft the complete S0–S12 page with these priorities and the verified design system. Source missing nonessential assets or choose honest text-led fallbacks; put implementation questions in notes rather than visitor-facing placeholder copy. The live site's facts can support content; its broader website navigation, contact form, videos, and animations do not replace the brief's landing-page functionality.
-
-Step 5 follows the one-section workflow in PAGE\_STRATEGY.md and \`Agents.md\`: review, 3–5 major-section headline options, proactive content/design/image suggestions, questions and user response before implementation; explanation and approval afterward; lock approved sections and do not proceed automatically. Explain and obtain approval for meaningful departures, then update governing documents and IMAGE\_PROMPTS.md when relevant. This document is a foundation that can improve with evidence, not a license to silently discard useful content.
-
-Before release, confirm current Google figures and original quotes, image usage, clinic claim scopes, and real behavior of both vendor routes. No appointment submission or booking completion was tested in this strategy task.
-
-\#\# Integration reference for Step 4
-
-These are implementation inputs, not new services to invent. They were supplied in the brief; their runtime behavior has not been tested in this strategy task. Remove the brief's Markdown escape characters when using URLs or HTML. Preserve widget identifiers, query parameters, and form attributes.
-
-\*\*Clinic website / linked logo destination:\*\* \`https\://altamontefamilyhearing.com/\`
-
-\*\*Privacy Policy:\*\* \`https\://altamontefamilyhearing.com/privacy-policy/\`
-
-\*\*Original logo source:\*\* \`https\://assets.cdn.filesafe.space/3o0LBBSuVEkoaohgGtT0/media/6ac7f45989da6e6f9bbdacc8.png\`
-
-\*\*Booking widget — every Book Appointment opens this iframe in a popup:\*\*
-
-\`\`\`html  
-\<iframe src="https\://myhearingportal.com/?clinic=P2FwaUtleT1TMDd0THc0OEtTNVJROFdDcW1hTU40QWZjRFFCZHdySiZjbGluaWNOYW1lPUZMX2FmaCZmdWxsV2lkdGg9MQ=="\>\</iframe\>  
-\`\`\`
-
-A descriptive iframe title and responsive container styling are necessary accessibility/layout additions. Do not change the clinic parameter or replace this with the request form.
-
-\*\*Separate appointment-request form — preserve the supplied embed:\*\*
-
-\`\`\`html  
-\<iframe  
-    src="https\://api.onspirepulse.com/widget/form/D8GC4EbdywnuWVjsghX3"  
-    style="width:100%;height:100%;border:none;border-radius:8px"  
-    id="inline-D8GC4EbdywnuWVjsghX3"  
-    data-layout="{'id':'INLINE'}"  
-    data-trigger-type="alwaysShow"  
-    data-trigger-value=""  
-    data-activation-type="alwaysActivated"  
-    data-activation-value=""  
-    data-deactivation-type="neverDeactivate"  
-    data-deactivation-value=""  
-    data-form-name="Better Hearing Health"  
-    data-height="492"  
-    data-layout-iframe-id="inline-D8GC4EbdywnuWVjsghX3"  
-    data-form-id="D8GC4EbdywnuWVjsghX3"  
-    data-cookie-consent="true"  
-    data-cookie-consent-provider="auto"  
-    title="Better Hearing Health"  
-\>  
-\</iframe\>  
-\<script src="https\://api.onspirepulse.com/js/form\_embed.js"\>\</script\>  
-\`\`\`
-
-\*\*See all our Google reviews — exact brief destination:\*\*
-
-\`\`\`text  
-https\://www\.google.com/search?q=altamonte+family+hearing+center\&rlz=1C1CHBD\_enIN1092IN1158\&oq=altamonte+Family\&gs\_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIGCAEQRRg5MgcIAhAAGIAEMgwIAxAAGBQYhwIYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQk3MTU0ajBqMTWoAgiwAgHxBX27SYRtLJHc8QV9u0mEbSyR3A\&sourceid=chrome\&source=chrome.rb\&ie=UTF-8\#lrd=0x88e771506ecb647d:0xabcbd17d7a2f5be5,1,,,,  
-\`\`\`
-
-\*\*Get Directions — brief map destination:\*\*
-
-\`\`\`text  
-https\://www\.google.com/maps/place/Altamonte+Family+Hearing/@28.676125,-81.3896501,17z/data=\!3m1\!4b1\!4m6\!3m5\!1s0x88e771506ecb647d:0xabcbd17d7a2f5be5\!8m2\!3d28.676125\!4d-81.3896501\!16s%2Fg%2F11frns4w3b?hl=en-GB\&entry=ttu\&g\_ep=EgoyMDI2MTAwNS4wIKXMDSoASAFQAw%3D%3D  
-\`\`\`
-
-Use a valid verified Google embed for the map component; the place link above is the directions destination. Do not treat a share/place/CID link as verified iframe embed HTML. An API-key-based map is unnecessary unless a later approved implementation specifically chooses it.
+## Conversion and audience decisions
+
+**Primary conversion goal:** an appropriate hearing-care appointment completed through the supplied My Hearing Portal booking widget. Every **Book Appointment** button opens the same accessible popup with that widget.
+
+**Secondary conversion action:** a call to **407-949-6737** (`tel:+14079496737`) for booking assistance, practical questions, Spanish care, existing-device help, or home-visit inquiries.
+
+**Alternative appointment route:** the required Onspire Pulse request form, headed **Request an Appointment**, helps people who prefer the clinic to arrange the next step. It is separate from direct booking. Opening a popup is not a completed booking; submitting a request is not an instantly confirmed appointment.
+
+Prioritize adults who struggle with everyday conversation, people disappointed with their existing hearing aids, and family members arranging care. Older adults are important without making the page exclusively for seniors. Describe hearing care first, devices when appropriate, and support throughout. The central promise is a clearer understanding of hearing and suitable options for better communication, supported by verified fitting and ongoing care.
+
+## Overall decision sequence
+
+Relevance and early proof → recognition → a concrete first visit → evidence of fitting quality and support → service fit → qualified people → patient experience → remaining objections → appointment request → visit logistics → final invitation.
+
+This order avoids making visitors decode every service before understanding the first step. It demonstrates why the practice is credible before asking people to read long testimonials. The dedicated request form follows answers and proof, while ready visitors can book or call from the header/hero immediately. Location appears in the hero and full logistics near the end, so locality is established early without putting an interactive map above the main message.
+
+## Top-to-bottom section plan
+
+S0–S12 are stable identifiers in all three documents. Header, closing invitation, and footer are compact functional regions; they do not need long editorial content.
+
+### S0. Sticky header
+
+- **Purpose:** identify the clinic and keep booking/help available.
+- **Visitor question:** “Is this the right practice, and how do I contact it?”
+- **Main message:** local Altamonte Family Hearing care with an obvious next step.
+- **Key information:** original logo linked to the main clinic website; desktop anchors **Care**, **Our Team**, **Reviews**, **FAQs**; phone number; Book Appointment.
+- **Trust/CRO role:** recognizable identity and orientation; navigation remains subordinate to conversion.
+- **CTA role:** booking dominates; desktop phone is quieter. Compact mobile header keeps the logo and Book Appointment; the bottom Call bar supplies phone access.
+- **Imagery:** logo only, serving identity. No certification/manufacturer strip in the header.
+
+### S1. Hero — Hearing care for easier everyday communication
+
+- **Purpose:** establish benefit, service, location, proof, and action immediately.
+- **Visitor question:** “Can this practice help with my hearing concern, near me?”
+- **Main message:** personalized hearing care in Altamonte Springs, beginning with understanding hearing and discussing suitable options.
+- **Key information:** benefit-led H1 identifying hearing care; location; independent/family-owned context; evaluation and clear explanations; Google rating/count; Book Appointment. A quiet **Hablamos español** line can support access.
+- **Trust/CRO role:** relevance, warmth, real-care imagery, and immediate Google proof without overcrowding.
+- **CTA role:** primary booking button with a subordinate phone link. No request form in the hero.
+- **Imagery:** strongly helpful. One real clinic conversation image, preferably the inspected `AFH-C-173.webp`; role: warmth, patient attention, real-practice trust. Frame it beside copy on desktop; place it after message/proof/action on mobile. Do not label the pictured person as a reviewer or invent their outcome.
+
+### S2. Recognition — When listening takes more effort
+
+- **Purpose:** help visitors recognize a reason to seek answers without self-diagnosing.
+- **Visitor question:** “Is my difficulty worth having checked?”
+- **Main message:** conversation difficulty or aids that do not work well are useful reasons to understand hearing.
+- **Key information:** asking for repetition; hearing speech but missing words; noisy conversations; TV-volume concerns; ringing/buzzing; poorly performing existing aids. Reassurance: not every hearing concern requires hearing aids.
+- **Trust/CRO role:** recognition without shame or fear. Include a visible, calm note that sudden hearing loss, or tinnitus with sudden severe vertigo, requires immediate medical care rather than routine booking.
+- **CTA role:** no extra button group; transition into the visit process while persistent actions remain available.
+- **Imagery:** not needed. A readable symptom list is clearer than several generic lifestyle photos. Small icons may aid scanning but cannot carry meaning alone.
+
+### S3. First visit — Understand your hearing and your options
+
+- **Purpose:** make the appointment concrete and reduce uncertainty about testing, cost, and device recommendations.
+- **Visitor question:** “What happens at the visit, and will I have to buy hearing aids?”
+- **Main message:** concerns are heard, ears/hearing checked, results explained, and appropriate options discussed.
+- **Key information:** four stages: discuss history and daily listening; ear exam/wax check; sound-booth testing including tones and speech; explain results and next steps during the visit. Choices consider hearing needs, lifestyle, preferences, and budget. Most evaluations are complimentary; call to confirm applicable costs. Bring insurance/current aids and consider a family member or friend.
+- **Trust/CRO role:** transparency and informed choice. Do not promise a visit duration, automatic same-day fitting, or universal free care.
+- **CTA role:** first in-body repeat of Book Appointment after the useful process explanation and qualified cost statement.
+- **Imagery:** helpful. Real sound-booth image, such as website-displayed `AFH-A-29.webp`. Role: familiarity and explanation. Pair an accurate caption with numbered steps; do not substitute an unrelated ear procedure.
+
+### S4. Care difference — A fitting checked for your ears, with care afterward
+
+- **Purpose:** explain concrete reasons to choose this practice beyond friendliness.
+- **Visitor question:** “What is different here, particularly if previous hearing aids disappointed me?”
+- **Main message:** verification for the individual ear and ongoing professional care support a hearing-aid recommendation.
+- **Key information:** plain-language REM explanation; separate EAA device-performance check before fitting; Jaysee's HearingUp certification; six manufacturer options; five years of professional care included with hearing aids purchased from this office at every technology level.
+- **Trust/CRO role:** shows the mechanism behind quality, counters skepticism, and answers after-purchase anxiety. Keep benefit and evidence together; do not claim guaranteed outcomes or superior performance for every patient.
+- **CTA role:** a Book Appointment repeat after the explanation. Certification references are subordinate to booking.
+- **Imagery:** valuable. Authentic `AFH-C-196.webp` REM image, visibly connected to the explanation; role: process evidence. Do not turn a procedure photo into a decorative crop that removes the probe/equipment.
+
+### S5. Care options — Help for the concern you have now
+
+- **Purpose:** establish fit for distinct needs without making a product catalog.
+- **Visitor question:** “Do you handle my specific concern, including aids bought elsewhere?”
+- **Main message:** hearing evaluation, fitting, repair, tinnitus/wax support, and home care are available within the practice's scope.
+- **Key information:** six service groups: evaluations; fitting/adjustment; repair/cleaning; tinnitus consultation; appropriate earwax removal; mobile/home care. REM is explained in S4 and linked to fitting rather than added as a duplicate seventh tile. State walk-in cleaning/minor-repair hour and home-care cost/availability by phone. Keep service qualifications visible or immediately available in the relevant FAQ.
+- **Trust/CRO role:** relevance for first-time and current aid users; access for caregivers; support beyond a sale.
+- **CTA role:** no competing button on every service. **Call about home visits** is an appropriate contextual phone link; other entries support the common booking path.
+- **Imagery:** optional. Typographic service rows are enough. If a real repair image helps explain maintenance, use it selectively; no six-photo stock grid.
+
+### S6. People — Meet the team who will care for you
+
+- **Purpose:** attach names, appropriate credentials, and human continuity to the care proposition.
+- **Visitor question:** “Who will I see, and are they qualified?”
+- **Main message:** an independent family-owned practice with licensed Hearing Aid Specialists and helpful care coordinators.
+- **Key information:** Jaysee A. Soto, HAS, BC-HIS, owner, hearing care since 2013, Florida licensure, board certification, HearingUp, English/Spanish; Toni Trager, HAS, Florida-licensed, hearing-aid wearer since childhood, mobile care; Grace Soto, co-owner/Patient Care Coordinator; Francesca Natal, Patient Care Coordinator; both coordinators bilingual. Clarify specialist scope rather than implying audiologists or physicians.
+- **Trust/CRO role:** accountability, expertise, firsthand understanding, and language access. Keep credentials attached to the correct person.
+- **CTA role:** no extra conversion cluster; patient accounts follow naturally.
+- **Imagery:** strongly helpful. Genuine portraits beside names/roles; larger clinical-provider presentation, smaller coordinated support row. Role: recognition and provider credibility. Do not generate replacement staff faces.
+
+### S7. Google reviews — How patients describe their care
+
+- **Purpose:** substantiate the now-understood care proposition with identifiable accounts.
+- **Visitor question:** “Do real patients describe the experience I am looking for?”
+- **Main message:** patients describe clear explanations, personalized fittings, practical help, and feeling cared for.
+- **Key information:** single aggregate rating/count; selected named reviews; maximum six visible desktop/tablet and three mobile; accurate excerpts/full-text access; **See all our Google reviews** to the brief's destination. CONTENT_DIRECTION.md governs selection and integrity.
+- **Trust/CRO role:** independent patient evidence after method and people are understood. Keep testimonial claims distinguishable from clinic promises.
+- **CTA role:** review link is required and quieter; separate Book Appointment after the proof group.
+- **Imagery:** optional. Accessible text cards are preferred to cramped Google UI screenshots. Use genuine reviewer thumbnails only if matched to the selected reviewer; no fabricated faces or Google graphics. Role: authenticity.
+
+### S8. FAQs — Answers before you book
+
+- **Purpose:** resolve remaining practical and care-scope objections.
+- **Visitor question:** “What about cost, insurance, my current aids, or whether this care suits me?”
+- **Main message:** useful answers with honest limitations and an easy route to help.
+- **Key information:** cost; insurance; whether aids are needed; existing-device support; adjustment; tinnitus; wax; home visits; Spanish; provider scope; sudden hearing changes. Preserve qualifications; avoid repeating S3 verbatim.
+- **Trust/CRO role:** removes uncertainty without hiding conditions in fine print. Safety guidance is also visible in S2.
+- **CTA role:** calm phone-support invitation below; no CTA in every answer.
+- **Imagery:** no. Accessible text disclosure rows are the best format.
+
+### S9. Appointment request — Prefer help arranging the next step?
+
+- **Purpose:** provide the required alternate request route for visitors who prefer assistance to direct online booking.
+- **Visitor question:** “Can I ask the clinic to help arrange an appointment?”
+- **Main message:** send a request and let the team help with the next step.
+- **Key information:** **Request an Appointment** heading; reassuring explanation; supplied Onspire Pulse iframe/script; phone fallback; nearby privacy link. A request does not confirm a time. Do not promise a form response deadline based on a separate missed-call policy.
+- **Trust/CRO role:** lower interaction friction after questions and proof; preserve the vendor form rather than inventing fields or consent language.
+- **CTA role:** form's own submission action. Do not crowd it with a second equally dominant direct-booking button.
+- **Imagery:** not helpful here. Give the form room and use quiet introductory copy.
+
+### S10. Location — Visit us in Altamonte Springs
+
+- **Purpose:** establish locality and make arrival practical.
+- **Visitor question:** “Where are you, when are you open, and how do I get there?”
+- **Main message:** one clinic inside One Senior Place, with clear hours and directions.
+- **Key information:** 715 Douglas Ave, Suite 45, Altamonte Springs, FL 32714; One Senior Place; phone; Monday–Friday 9:00 am–4:30 pm; lunch closure 12:00–1:00 pm; Saturday/Sunday closed; distinct weekday walk-in cleaning/minor-repair hour 1:00–2:00 pm; responsive Google map; **Get Directions** below the map with a preceding direction/location icon.
+- **Trust/CRO role:** logistical certainty; no invented parking, accessibility, exterior, or travel-time claim.
+- **CTA role:** directions are a utility action, phone an assisted path; neither should outweigh booking visually.
+- **Imagery:** map helps locality; real exterior optional if provided later. Place/CID URLs are not automatically valid iframe sources; verify a real embed. Address remains readable outside the map.
+
+### S11. Closing invitation
+
+- **Purpose:** give readers a clear action after all information and logistics.
+- **Visitor question:** “What should I do next?”
+- **Main message:** take the next step toward understanding your hearing and suitable care.
+- **Key information:** benefit-led headline, short support line, Book Appointment, quieter phone alternative; no new evidence or promise.
+- **Trust/CRO role:** a calm decision point, not a new sales argument.
+- **CTA role:** final direct-booking button opens the same widget.
+- **Imagery:** unnecessary. Strong type and the verified pine/cream palette provide closure.
+
+### S12. Footer
+
+- **Purpose:** identify the business and provide required external/privacy links.
+- **Visitor question:** “Where are the clinic's website, privacy, and contact details?”
+- **Main message:** a real local practice with clear identification.
+- **Key information:** clinic name, address, phone; Privacy Policy; Visit Our Website; `© current year {{location.name}} | All rights reserved.` Resolve year dynamically and location token appropriately for the deployment platform.
+- **Trust/CRO role:** legitimacy and transparent utility links.
+- **CTA role:** utility only; no new promotional block or social-feed distraction.
+- **Imagery:** small genuine reversed logo optional on pine, serving identity.
+
+## Placement and repetition rules
+
+| Element | Placement and role |
+|---|---|
+| Book Appointment | Header, hero, after S3, after S4, after S7, S11. Each repeat follows a resolved decision barrier rather than every small section. |
+| Phone | Desktop header, hero, home-care entry, FAQ support, request-form fallback, location/closing/footer. Mobile bottom bar replaces repeated large phone buttons. |
+| Google rating/count | Hero for immediate legitimacy; S7 for full proof. One consistent aggregate source, updated together before release. |
+| Method/certification | S4 for actual process; S6 for the person holding the credential. Explain badges rather than assuming visitors understand them. |
+| Included care | S4, with purchase scope beside the five-year figure; relevant FAQ reinforcement only if useful. |
+| Dedicated reviews | S7, after methods and people. No separate duplicated testimonial strip. |
+| Request form | S9 after FAQs; direct booking remains accessible throughout. |
+| Location/map | Location named in hero; complete logistics S10, before closing invitation. |
+
+No auto-open booking, timed popup, exit-intent modal, countdown, fabricated scarcity, or autoplay testimonial slider. Main navigation uses page anchors rather than outbound service funnels.
+
+## Useful information to layer or relocate
+
+REM retains a complete plain-language explanation in S4; deeper terminology can be a labeled expansion or caption. EAA remains distinct. Manufacturer names can form one subdued row within S4/S5 rather than a new section. Adjustment, device styles, wax screening, tinnitus limits, and home-testing differences belong in relevant service/FAQ content. Full review text expands within the selected cards. Provider associations can sit below the relevant bio.
+
+Do not add separate blocks for every manufacturer, device model, hearing-loss taxonomy, awards, YouTube/podcast promotion, or social media. The live site's video/audio demo and animated decorations are not requirements for this landing page. Helpful fragments can remain in Step 4 where they answer a decision question. Remove repetition or relocate detail before deleting useful evidence. Final compression is an interactive Step 5 decision.
+
+## Mobile priority
+
+1. Show logo and Book Appointment in the compact header. In hero, benefit, locality, Google proof, and action precede the main photo; do not shrink type just to fit everything in one screen.
+2. The bottom **Call 407-949-6737** bar uses primary **#006241**, pure-white label/icon, and safe-area spacing. It must not cover important content, active form controls, or booking-dialog controls.
+3. Preserve information order in one column. Visit steps become a vertical sequence; explain the method before the procedure photo; keep provider identity and qualifications together.
+4. Show only the three chosen mobile reviews, stacked. Do not expose the other three through a mobile carousel/load-more; Google provides the larger review collection.
+5. Let FAQ answers and forms expand naturally. Do not impose fixed text heights or rely on horizontal swipes for essential facts.
+6. Keep text address/hours and a usable directions button outside the map. Hide the page Call bar during modal display and handle keyboard/form focus after actual testing.
+
+## Later-build evidence and review
+
+Measure booking clicks, widget load failures, phone clicks, request-form visibility, review-link clicks, and directions clicks. Completed booking/request events require vendor-supported cross-origin integration; do not equate a button click with an appointment or collect patient free-text in analytics. No integration behavior was validated in this strategy task.
+
+Before release, verify all supplied destinations, both embed routes, Google figures/quotes, responsive review caps, actual image use, title/claim accuracy, keyboard/zoom behavior, and sticky controls. A third-party failure gets an honest message and phone fallback, never fabricated success.
+
+## Governing workflow for Steps 4 and 5
+
+**Step 4:** Claude creates the complete, content-rich first draft within this structure and design system. Preserve useful facts and their qualifications; use hierarchy, selective imagery, lists, and labeled expansions to make depth readable. Missing nonessential imagery does not justify fabrication. No first-draft page is being built in this Step 3 task.
+
+**Step 5:** follow `Agents.md`: work on **one section at a time**. Before implementing that section, review it, offer **3–5 headline options** for major sections, suggest stronger content/design ideas, review imagery and IMAGE_PROMPTS.md when available/relevant, ask useful questions, and wait for the user's response. After implementation, explain the changes and ask for approval or adjustment; do not move forward automatically. Lock the section when approved.
+
+These documents are a strategic baseline, not a reason to defend a weaker solution exposed by the actual page. Explain meaningful departures—conversion route, substantive information, order, visual personality, image authenticity, review/form behavior—and obtain approval before adoption. Update every affected governing document and, when it exists, IMAGE_PROMPTS.md. Maintain a short approved-decision record in the relevant document so the foundation stays current.
 
 ## Step 5 decision record — S0 header
 
-9 October 2026: the user approved the header-refinement direction. The implementation is awaiting final section review; **S0 is not yet locked**.
+9 October 2026: the user approved the proposed header-refinement direction, including persistent tablet phone access where it fits. The implementation is awaiting final section review; **S0 is not yet locked**. This approved S0 refinement takes precedence over the earlier compact-header description.
 
-Retain the original linked logo, Care / Our Team / Reviews / FAQs destinations, phone number 407-949-6737, and exact Book Appointment label. No copy is removed, moved, or added. Phone assistance is now visible in the tablet/small-desktop header from 768 px; complete navigation waits until 1280 px. Below 768 px retain logo and booking, with the existing bottom Call action.
-
-This is a utility region with no headline or image prompt. Review S0 with the user before moving to the hero or offering its headline options.
+- Below 768 px: original linked logo and Book Appointment; the existing bottom Call bar remains the assisted phone route.
+- From 768 to 1279 px: original linked logo, visible phone number, and Book Appointment; no full navigation. This closes the draft's gap in persistent tablet phone access.
+- At 1280 px and above: logo left, centered Care / Our Team / Reviews / FAQs navigation, phone and booking right. Show the complete layout only when it has comfortable room.
+- Preserve every navigation destination, phone number, booking behavior, and identity asset. No promotional copy or extra proof is added to the header.
+- The hero and all later sections remain unreviewed and unchanged. Ask for the user's approval or adjustment of S0 before advancing.
 
 ## Step 5 approval — S0 header locked
 
