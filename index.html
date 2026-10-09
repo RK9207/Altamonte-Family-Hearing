@@ -195,6 +195,37 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .fig figcaption{ font-size:16px; line-height:1.5; color:var(--text-2); margin-top:12px; }
 .panel .fig figcaption{ color:var(--on-dark-soft); }
 
+/* S1A Welcome video */
+.welcome{ padding-block:72px; }
+.welcome-grid{ display:grid; gap:32px; align-items:center; }
+.welcome-copy{ min-width:0; }
+.welcome-copy h2{ max-width:16ch; text-wrap:balance; }
+.welcome-copy .lead{ margin-top:22px; margin-bottom:0; }
+.welcome-poster{ position:relative; display:block; width:100%; aspect-ratio:16/9; padding:0; border:0; border-radius:var(--r-photo); overflow:hidden; background:var(--night); cursor:pointer; text-align:left; color:var(--white); }
+.welcome-poster img{ display:block; width:100%; height:100%; object-fit:contain; }
+.welcome-poster::after{ content:""; position:absolute; inset:40% 0 0; background:linear-gradient(transparent,rgba(0,0,0,.8)); pointer-events:none; }
+.welcome-play{ position:absolute; bottom:24px; left:24px; right:20px; z-index:1; display:flex; align-items:center; gap:16px; font-family:"Satoshi Header",var(--sans); font-weight:600; font-size:18px; line-height:1.4; }
+.welcome-play-icon{ display:grid; place-items:center; width:60px; height:60px; flex:none; border-radius:50%; background:var(--paper); color:var(--night); transition:background .15s; }
+.welcome-play-icon svg{ width:22px; height:22px; }
+.welcome-poster:hover .welcome-play-icon{ background:var(--gold-soft); }
+.welcome-poster:focus-visible{ outline-offset:6px; }
+@media (min-width:1000px){
+  .welcome-grid{ grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:64px; }
+  .welcome-copy{ grid-column:2; grid-row:1; }
+  .welcome-poster{ grid-column:1; grid-row:1; }
+}
+@media (max-width:767px){
+  .welcome{ padding-block:48px; }
+  .welcome-play{ bottom:16px; left:16px; right:16px; font-size:16px; gap:12px; }
+  .welcome-play-icon{ width:48px; height:48px; }
+}
+.video-dialog{ width:min(1040px,calc(100vw - 24px)); max-width:none; max-height:calc(100dvh - 24px); padding:0; border:0; border-radius:var(--r-card); overflow:auto; background:var(--paper); color:var(--text); box-shadow:0 30px 80px -20px rgba(26,48,40,.55); }
+.video-dialog::backdrop{ background:rgba(26,48,40,.8); }
+.video-screen{ position:relative; aspect-ratio:16/9; background:var(--night); }
+.video-screen iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.video-fallback{ margin:0; padding:16px 28px; font-size:16px; line-height:1.5; }
+@media (max-width:767px){ .video-dialog{ border-radius:18px; } .video-fallback{ padding:14px 20px; } }
+
 /* S2 Recognition */
 .recog-grid{ display:grid; gap:36px; }
 @media (min-width:900px){ .recog-grid{ grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:64px; align-items:start; } }
@@ -443,7 +474,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="b75f1841d30612d47f92be36b3f9a214a9631c8eefd34b44d21af2cc3b516b5d">
+<meta data-preview-version="cc662c1d3c13da47b2b1e0647c59f90b42aeb0421c7bdb955485ac66b104bb96">
 </head>
 <body>
 
@@ -510,6 +541,21 @@ body.modal-open{ overflow:hidden; }
     <li><strong>Fittings checked for your ears</strong><span>Real Ear Measurement verifies your hearing aid fitting.</span></li>
     <li><strong>5+ years of professional care</strong><span>Included with hearing aids purchased from our office.</span></li>
   </ul>
+  </div>
+</section>
+
+<!-- S1A. WELCOME VIDEO -->
+<section class="welcome" aria-labelledby="welcome-title">
+  <div class="wrap welcome-grid">
+    <div class="welcome-copy">
+      <p class="eyebrow">Welcome to our practice</p>
+      <h2 id="welcome-title">Meet the People Behind Your Hearing Care</h2>
+      <p class="lead">Take a look inside our practice and meet your hearing care team. Our welcome video introduces what to expect at your first visit, from discussing your concerns to reviewing your results and next steps.</p>
+    </div>
+    <button type="button" class="welcome-poster" data-welcome-video aria-haspopup="dialog" aria-controls="welcome-video-dialog" aria-label="Watch our welcome video (opens video popup)">
+      <img src="https://altamontefamilyhearing.com/assets/video/welcome-crop-poster.webp" alt="" width="1280" height="720" loading="lazy" referrerpolicy="no-referrer">
+      <span class="welcome-play"><span class="welcome-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span>Watch our welcome video</span></span>
+    </button>
   </div>
 </section>
 
@@ -1075,6 +1121,51 @@ body.modal-open{ overflow:hidden; }
   <p class="book-foot">Having trouble booking? Call <a href="tel:+14079496737">407-949-6737</a> and our team will help.</p>
 </dialog>
 
+<!-- S1A video popup: player is created only after a deliberate click -->
+<dialog id="welcome-video-dialog" class="video-dialog" aria-labelledby="welcome-video-title">
+  <div class="book-head">
+    <h2 id="welcome-video-title">Welcome to Altamonte Family Hearing</h2>
+    <button type="button" class="book-close" data-video-close aria-label="Close welcome video" autofocus><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="video-screen" id="welcome-video-screen"></div>
+  <p class="video-fallback">If the video doesn’t play, <a href="https://www.youtube.com/watch?v=HxCXX0CgR9s" target="_blank" rel="noopener">watch on YouTube<span class="sr-only"> (opens in a new tab)</span></a>.</p>
+</dialog>
+
+<script id="welcome-video-script">
+(function(){
+  var dialog = document.getElementById('welcome-video-dialog');
+  var screen = document.getElementById('welcome-video-screen');
+  var trigger = document.querySelector('[data-welcome-video]');
+  trigger.addEventListener('click', function(){
+    if (typeof dialog.showModal !== 'function') {
+      window.open('https://www.youtube.com/watch?v=HxCXX0CgR9s', '_blank', 'noopener');
+      return;
+    }
+    var player = document.createElement('iframe');
+    player.title = 'Altamonte Family Hearing welcome video';
+    player.src = 'https://www.youtube-nocookie.com/embed/HxCXX0CgR9s?autoplay=1&playsinline=1&rel=0';
+    player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    player.allowFullscreen = true;
+    player.referrerPolicy = 'strict-origin-when-cross-origin';
+    screen.replaceChildren(player);
+    dialog.showModal();
+    document.body.classList.add('modal-open');
+  });
+  dialog.querySelector('[data-video-close]').addEventListener('click', function(){ dialog.close(); });
+  dialog.addEventListener('click', function(e){
+    if (e.target === dialog) {
+      var rect = dialog.getBoundingClientRect();
+      if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) dialog.close();
+    }
+  });
+  dialog.addEventListener('close', function(){
+    screen.replaceChildren();
+    if (!document.getElementById('booking-dialog').open) document.body.classList.remove('modal-open');
+    trigger.focus({preventScroll:true});
+  });
+})();
+</script>
+
 <script>
 (function(){
   var dlg = document.getElementById('booking-dialog');
@@ -1116,7 +1207,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = 'b75f1841d30612d47f92be36b3f9a214a9631c8eefd34b44d21af2cc3b516b5d';
+  const version = 'cc662c1d3c13da47b2b1e0647c59f90b42aeb0421c7bdb955485ac66b104bb96';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
