@@ -334,6 +334,7 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .verify-proof p{ margin:0; font-size:17px; line-height:1.55; color:var(--on-dark-soft); }
 .verify-brands{ color:var(--gold-soft)!important; font-size:15px!important; margin-top:10px!important; line-height:1.7!important; }
 #verification .panel-cta{ margin-top:26px; padding-top:24px; }
+#verification .panel-cta p{ max-width:none; flex:1 1 280px; }
 .panel-cta{ margin-top:48px; padding-top:36px; border-top:1px solid rgba(238,243,239,.2); display:flex; flex-wrap:wrap; align-items:center; gap:12px 28px; }
 .panel-cta p{ margin:0; color:var(--on-dark-soft); max-width:46ch; }
 @media(min-width:1000px){ .verify-feature{ grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:48px; } }
@@ -529,7 +530,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="6dfe08a9233e19f5577b7c7982b0cbeb6a4db15e27c2eabff9453a38c64abc75">
+<meta data-preview-version="c18d229ba20bdeeac60fa9548437d9010672157ae80f6e2d374ace97ac1fe851">
 </head>
 <body>
 
@@ -1253,7 +1254,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = '6dfe08a9233e19f5577b7c7982b0cbeb6a4db15e27c2eabff9453a38c64abc75';
+  const version = 'c18d229ba20bdeeac60fa9548437d9010672157ae80f6e2d374ace97ac1fe851';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
