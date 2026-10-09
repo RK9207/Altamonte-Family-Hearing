@@ -149,10 +149,14 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 }
 
 /* Hero */
-.hero{ padding-block:48px 64px; }
-.hero-grid{ display:grid; gap:36px; }
-.hero h1{ margin-bottom:24px; }
-.hero .cta-row{ margin-top:32px; }
+.hero{ padding-block:44px 48px; }
+.hero-grid{ display:grid; gap:32px; }
+.hero h1{ margin-bottom:24px; text-wrap:balance; overflow-wrap:anywhere; }
+.hero .lead{ margin-bottom:14px; max-width:48ch; }
+.hero-context{ font-size:16px; line-height:1.5; color:var(--text-2); }
+.hero .cta-row{ margin-top:26px; }
+.hero .g-proof{ margin-top:20px; }
+.hero .es-cue{ margin-top:10px; }
 .g-proof{ display:inline-flex; align-items:center; flex-wrap:wrap; gap:6px 12px; margin-top:28px; color:var(--text); text-decoration:none; font-size:16px; }
 .g-proof:hover .g-text{ text-decoration:underline; }
 .stars{ display:inline-flex; gap:2px; color:var(--gold); }
@@ -160,7 +164,7 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .es-cue{ margin-top:14px; font-size:16px; font-weight:500; color:var(--text-2); }
 .hero-photo{ --ar:3/2; box-shadow:0 18px 40px -22px rgba(26,48,40,.35),0 6px 14px -10px rgba(26,48,40,.25); }
 @media (min-width:900px){
-  .hero{ padding-block:72px 96px; }
+  .hero{ padding-block:64px 72px; }
   .hero-grid{ grid-template-columns:minmax(0,6fr) minmax(0,5fr); gap:64px; align-items:center; }
 }
 
@@ -420,7 +424,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="42073e31cbe210efc6cd16a7922ad5c5699d38ec8f7802c2b0bc7cb5a1e7893c">
+<meta data-preview-version="7c58c28d1734b55fe4122a32b7b28d92534679de6adaabd4841a7805a918d0be">
 </head>
 <body>
 
@@ -460,9 +464,10 @@ body.modal-open{ overflow:hidden; }
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Better hearing health in Altamonte Springs, FL</p>
-      <h1 id="hero-title">Understand your hearing. <em>Find the care that fits.</em></h1>
-      <p class="lead">Altamonte Family Hearing is an independent, family-owned practice in Altamonte Springs. We evaluate your hearing, explain your results in plain language, and talk through the options that suit your needs, with hearing aids as one possibility, never an assumption.</p>
+      <p class="eyebrow">Hearing care in Altamonte Springs, FL</p>
+      <h1 id="hero-title">Hearing care for easier <em>everyday conversations.</em></h1>
+      <p class="lead">When conversations become harder to follow, start with clear answers. We evaluate your hearing, explain your results in plain language, and discuss care suited to your needs—including hearing aids when appropriate.</p>
+      <p class="hero-context">An independent, family-owned practice.</p>
       <div class="cta-row">
         <button type="button" class="btn btn-primary" data-book>Book Appointment</button>
         <a class="tel" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>or call 407-949-6737</a>
@@ -1083,7 +1088,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = '42073e31cbe210efc6cd16a7922ad5c5699d38ec8f7802c2b0bc7cb5a1e7893c';
+  const version = '7c58c28d1734b55fe4122a32b7b28d92534679de6adaabd4841a7805a918d0be';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
