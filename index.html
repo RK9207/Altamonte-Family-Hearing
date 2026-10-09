@@ -270,10 +270,14 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .visit-practical{ padding:24px 28px; margin-top:28px; border-radius:24px; background:linear-gradient(115deg,var(--mist),var(--cream)); display:grid; gap:24px; }
 .callout strong{ display:block; font:600 20px/1.4 "Satoshi Header",var(--sans); margin-bottom:8px; }
 .callout p{ margin:0; font-size:18px; line-height:1.5; }
-.bring{ list-style:none; display:grid; gap:8px; font-size:18px; line-height:1.5; }
-.bring li{ color:var(--text-2); }
-.bring b{ color:var(--text); font-family:"Satoshi Header",var(--sans); font-weight:600; }
-.visit-prep h3{ font:600 20px/1.4 "Satoshi Header",var(--sans); margin-bottom:8px; }
+.bring{ margin:0; font-size:18px; line-height:1.5; }
+.bring > div{ display:grid; grid-template-columns:112px minmax(0,1fr); gap:16px; padding:12px 0; border-top:1px solid var(--border); }
+.bring > div:first-child{ border-top:0; padding-top:0; }
+.bring > div:last-child{ padding-bottom:0; }
+.bring dt{ color:var(--primary); font:600 16px/1.5 "Satoshi Header",var(--sans); }
+.bring dd{ margin:0; color:var(--text-2); }
+.visit-prep h3{ font:600 24px/1.3 "Satoshi Header",var(--sans); margin-bottom:16px; }
+@media (max-width:1199px){ .bring > div{ grid-template-columns:minmax(0,1fr); gap:4px; } }
 .visit-cta{ grid-column:1/-1; }
 @media (min-width:768px){ .steps{ grid-template-columns:repeat(2,minmax(0,1fr)); } .steps li:nth-child(2){ border-top:0; } .visit-practical{ grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:32px; } .visit-prep{ border-left:1px solid var(--border); padding-left:28px; } }
 @media (min-width:1100px){ .visit-grid{ grid-template-columns:minmax(0,3.6fr) minmax(0,7.4fr); gap:40px; align-items:start; } .visit-practical{ grid-column:1/-1; margin-top:0; } }
@@ -496,7 +500,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="733e7fb9706c811f59bc39388622c6fa345031ac0dc541e049eaebe880ee56c4">
+<meta data-preview-version="2419a6f519552440f5a80ce8f5f3fc0600522b8fa3e168766bdfdd3cf45da15c">
 </head>
 <body>
 
@@ -639,11 +643,11 @@ body.modal-open{ overflow:hidden; }
         </div>
         <div class="visit-prep">
         <h3>Before you come in</h3>
-        <ul class="bring" aria-label="Before your visit">
-          <li><b>For adults of all ages.</b></li>
-          <li><b>Bring</b> your current hearing aids, if you wear them, and your insurance card. We’ll check your benefits.</li>
-          <li><b>A family member or friend</b> can join you to help review your results.</li>
-        </ul>
+        <dl class="bring">
+          <div><dt>Who it’s for</dt><dd>Adults of all ages.</dd></div>
+          <div><dt>What to bring</dt><dd>Your current hearing aids, if you wear them, and your insurance card. We’ll check your benefits.</dd></div>
+          <div><dt>Who can join you</dt><dd>A family member or friend can help you review your results.</dd></div>
+        </dl>
         </div>
       </div>
     <div class="cta-row visit-cta">
@@ -1213,7 +1217,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = '733e7fb9706c811f59bc39388622c6fa345031ac0dc541e049eaebe880ee56c4';
+  const version = '2419a6f519552440f5a80ce8f5f3fc0600522b8fa3e168766bdfdd3cf45da15c';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
