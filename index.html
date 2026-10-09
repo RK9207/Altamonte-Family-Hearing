@@ -467,7 +467,7 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 #faq .section-head .lead{ margin-top:14px; max-width:none; }
 .faq-groups{ display:grid; gap:28px; align-items:start; }
 .faq-group{ min-width:0; }
-#faq .faq-group>h3{ display:flex; align-items:center; gap:12px; font:600 24px/1.25 "Satoshi Header",var(--sans); color:var(--night); margin:0 0 12px; padding:10px 14px; border-radius:14px; background:linear-gradient(110deg,rgba(222,231,227,.8),rgba(251,248,241,.55)); }
+#faq .faq-group>h3{ display:flex; align-items:center; gap:12px; font:600 24px/1.25 "Satoshi Header",var(--sans); color:var(--night); margin:0 0 12px; padding:10px 14px; border-radius:14px; background:linear-gradient(110deg,rgba(222,231,227,.8),#F3E4AE); }
 .faq-group-icon{ display:grid; place-items:center; width:32px; height:32px; flex:none; border-radius:50%; background:var(--paper); color:var(--primary); }
 .faq-group-icon svg{ width:21px; height:21px; }
 .faq details[open]>summary{ color:var(--primary); }
@@ -585,7 +585,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="61f8a179f495de4c06a3d0847009fda36f985fdc0574886deb3d6d534eec3a08">
+<meta data-preview-version="b788d581d14a8f2518b1b7466f75fc1cb47265e5fd91ae63aa50c63ac43e6233">
 </head>
 <body>
 
@@ -1350,7 +1350,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = '61f8a179f495de4c06a3d0847009fda36f985fdc0574886deb3d6d534eec3a08';
+  const version = 'b788d581d14a8f2518b1b7466f75fc1cb47265e5fd91ae63aa50c63ac43e6233';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
