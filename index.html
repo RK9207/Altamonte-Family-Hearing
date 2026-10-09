@@ -420,37 +420,46 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 @media(max-width:1099px){ .team-provider+.team-provider{ padding-top:24px; border-top:1px solid var(--border); } }
 @media(max-width:599px){ #team{ padding-block:40px; } .team-providers{ padding:20px 18px; gap:22px; } .team-provider{ grid-template-columns:112px minmax(0,1fr); gap:12px; } .team-photo{ grid-row:1; aspect-ratio:1; } .team-bio{ grid-column:1/-1; } #team .team-provider h3{ font-size:24px; } .team-coordinator{ grid-template-columns:80px minmax(0,1fr); gap:16px; } }
 
-/* S7 Reviews */
-.rev-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 48px; margin-bottom:40px; }
-.rev-head h2{ color:var(--white); max-width:16ch; }
-.agg{ display:flex; align-items:center; gap:16px; }
-.agg .num{ font:400 clamp(3.2rem,2.4rem + 2vw,4.2rem)/1 var(--serif); color:var(--white); }
-.agg .stars{ margin-bottom:4px; }
-.agg .ico-star{ width:22px; height:22px; }
-.agg p{ margin:0; color:var(--on-dark); font-size:17px; line-height:1.4; }
-.rev-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; align-items:start; }
-@media (max-width:1099px){ .rev-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:767px){
-  .rev-grid{ grid-template-columns:minmax(0,1fr); gap:18px; }
-  .rev:nth-child(n+4){ display:none; }
-}
-.rev{ background:var(--paper); color:var(--night); border:1px solid var(--mist-deep); border-radius:var(--r-card); padding:28px; display:flex; flex-direction:column; gap:14px; }
-.rev .stars{ color:var(--gold); }
-.rev blockquote{ margin:0; font-size:18px; line-height:1.6; }
-.rev .who{ margin-top:2px; }
-.rev .who b{ display:block; font-size:17px; }
-.rev .who span{ font-size:15px; color:var(--text-2); }
-.rev details{ border-top:1px solid var(--border); padding-top:6px; }
-.rev summary{ list-style:none; cursor:pointer; min-height:44px; display:flex; align-items:center; gap:8px; font-weight:700; color:var(--primary); }
+/* S7 Reviews — three primary accounts, expandable supporting proof */
+#reviews .panel{ padding:44px 40px 36px; background:radial-gradient(ellipse at 0% 0%,rgba(86,128,104,.25),transparent 60%),linear-gradient(125deg,#203B30,var(--night)); }
+.rev-head{ display:grid; gap:22px; align-items:center; margin-bottom:28px; }
+.rev-head h2{ color:var(--on-dark); max-width:none; }
+.rev-head h2 em{ color:var(--gold-soft); }
+.agg{ display:flex; align-items:center; gap:14px; }
+.agg .num{ font:400 54px/1 var(--serif); color:var(--on-dark); }
+.agg .stars{ margin-bottom:5px; }
+.agg .ico-star{ width:19px; height:19px; }
+.agg p{ margin:0; color:var(--on-dark-soft); font-size:16px; line-height:1.5; }
+.agg p strong{ color:var(--on-dark); }
+.rev-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; align-items:stretch; }
+.rev{ min-width:0; background:var(--paper); color:var(--night); border:1px solid var(--border); border-radius:20px; padding:22px; display:flex; flex-direction:column; }
+.rev-theme{ color:var(--primary); font:600 15px/1.4 "Satoshi Header",var(--sans); margin:0 0 10px; }
+.rev .stars{ color:var(--gold); margin-bottom:12px; }
+.rev .stars .ico-star{ width:17px; height:17px; }
+.rev blockquote{ margin:0 0 18px; font-size:18px; line-height:1.5; overflow-wrap:anywhere; }
+.rev .who{ margin-top:auto; }
+.rev .who b{ display:block; font:600 17px/1.4 "Satoshi Header",var(--sans); margin-bottom:3px; }
+.rev .who span{ font-size:15px; line-height:1.5; color:var(--text-2); }
+.rev details{ border-top:1px solid var(--border); margin-top:12px; padding-top:4px; }
+.rev summary{ list-style:none; cursor:pointer; min-height:44px; display:flex; align-items:center; gap:10px; font:600 17px/1.5 "Satoshi Header",var(--sans); color:var(--primary); }
 .rev summary::-webkit-details-marker{ display:none; }
-.rev summary::after{ content:""; width:8px; height:8px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg) translateY(-2px); margin-left:2px; }
-.rev details[open] summary::after{ transform:rotate(-135deg); }
-.rev .full{ font-size:16px; line-height:1.6; color:var(--text-2); padding-bottom:6px; }
-.rev .full p{ margin-bottom:.8em; }
-.rev .clar{ background:var(--mist); border-radius:12px; padding:12px 14px; font-size:15px; color:var(--text); }
-.rev-foot{ margin-top:40px; padding-top:32px; border-top:1px solid rgba(238,243,239,.2); display:flex; flex-wrap:wrap; align-items:center; gap:16px 32px; }
-.rev-foot .rev-link{ font-weight:700; font-size:18px; }
-@media (max-width:767px){ .rev-head{ margin-bottom:28px; } .rev{ padding:22px; } }
+.rev summary::after{ content:"+"; font-size:21px; line-height:1; }
+.rev details[open] summary::after{ content:"−"; }
+.rev .full{ font-size:17px; line-height:1.55; color:var(--text-2); padding-top:8px; overflow-wrap:anywhere; }
+.rev .full p{ margin:0 0 12px; }
+.rev .full p:last-child{ margin-bottom:0; }
+.rev .clar{ background:var(--mist); border-radius:10px; padding:12px; font-size:15px; color:var(--night); }
+.reviews-more{ margin-top:18px; }
+.reviews-more>summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:10px; min-height:44px; font:600 17px/1.5 "Satoshi Header",var(--sans); color:var(--gold-soft); }
+.reviews-more>summary::-webkit-details-marker{ display:none; }
+.reviews-more>summary::after{ content:"+"; font-size:22px; }
+.reviews-more[open]>summary::after{ content:"−"; }
+.reviews-more .rev-grid{ margin-top:16px; }
+.rev-foot{ margin-top:18px; padding-top:22px; border-top:1px solid rgba(238,243,239,.22); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px 28px; }
+.rev-foot .rev-link{ font:600 17px/1.5 "Satoshi Header",var(--sans); color:var(--on-dark); }
+@media(min-width:1100px){ .rev-head{ grid-template-columns:minmax(0,1.8fr) minmax(0,1fr); gap:40px; } .agg{ justify-self:end; } }
+@media(min-width:768px) and (max-width:999px){ .rev-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } .rev-grid>.rev:first-child{ grid-column:1/-1; } }
+@media(max-width:767px){ #reviews .panel{ padding:30px 20px; } .rev-head{ margin-bottom:22px; gap:18px; } .rev-grid{ grid-template-columns:minmax(0,1fr); gap:16px; } .rev{ padding:20px; } .reviews-more{ display:none; } .rev-foot{ flex-direction:column; align-items:stretch; gap:16px; } .rev-foot .btn{ width:100%; } .rev-foot .rev-link{ text-align:center; } }
 
 /* S8 FAQ */
 .faq-wrap{ max-width:820px; margin-inline:auto; }
@@ -562,7 +571,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="a0f45ecb4c22c2eb32beb0d1191abe049b1dd75ad6e5dd3601cc3957a24ee7ad">
+<meta data-preview-version="a72d90bcc9d483250174abc91a1d4dbadbbc6fcdb1f81ab6ee041f69631858fc">
 </head>
 <body>
 
@@ -938,7 +947,7 @@ body.modal-open{ overflow:hidden; }
   <div class="wrap">
     <div class="panel">
       <div class="rev-head">
-        <h2 id="reviews-title">How patients describe their care</h2>
+        <h2 id="reviews-title">Personal Care, Described by <em>Patients and Families</em></h2>
         <!-- Google aggregate: 5.0 / 156 per 9 Oct 2026 panel capture. Re-check before publishing. -->
         <div class="agg">
           <span class="num" aria-hidden="true">5.0</span>
@@ -949,9 +958,10 @@ body.modal-open{ overflow:hidden; }
         </div>
       </div>
 
-      <div class="rev-grid">
-        <!-- Cards 1-3 show on mobile. Cards 4-6 are hidden below 768px. Excerpts are exact; full text is verbatim from the supplied Google panel. -->
-        <article class="rev">
+      <!-- Exact excerpts from supplied Google reviews; original full text retained. -->
+      <div class="rev-grid rev-primary">
+<article class="rev">
+          <p class="rev-theme">Personalized recommendations</p>
           <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
           <p class="sr-only">5 out of 5 stars</p>
           <blockquote><p>“They weren't just focused on selling a hearing aid; they were truly committed to finding the best solution for my hearing needs and lifestyle.”</p></blockquote>
@@ -961,19 +971,19 @@ body.modal-open{ overflow:hidden; }
             <div class="full"><p>I had an outstanding experience at Altamonte Hearing Center. From the moment I walked in, I was treated with warmth, professionalism, and genuine care. Jaycee is incredibly knowledgeable, patient, and attentive—taking the time to thoroughly explain every step of the hearing evaluation process. What really stood out was how personalized the service felt by both Jaycee and Francesca. They weren't just focused on selling a hearing aid; they were truly committed to finding the best solution for my hearing needs and lifestyle. If you're looking for a place where you'll be treated like a person, not just a patient, Altamonte Hearing Center is the place to go. I can't recommend them highly enough!</p></div>
           </details>
         </article>
-
-        <article class="rev">
+<article class="rev">
+          <p class="rev-theme">Clear explanations</p>
           <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
           <p class="sr-only">5 out of 5 stars</p>
-          <blockquote><p>“He spent a great deal of time performing very thorough hearing tests and, just as importantly, took the time to clearly explain the results in a way that we could all understand.”</p></blockquote>
+          <blockquote><p>“took the time to clearly explain the results in a way that we could all understand.”</p></blockquote>
           <div class="who"><b>Philip Zeitler</b><span>Excerpt from a Google review</span></div>
           <details>
             <summary>Read full review</summary>
             <div class="full"><p>We had an excellent experience with Altamonte Family Hearing, and I can't thank them enough for the care they provided my dad. Jaysee Soto was absolutely wonderful throughout the entire process. He spent a great deal of time performing very thorough hearing tests and, just as importantly, took the time to clearly explain the results in a way that we could all understand. When it came time to set up and program my dad's new high-end ReSound hearing aids, Jaysee was incredibly patient and detail-oriented, making sure everything was perfectly tuned to my dad's needs. He also went above and beyond by showing my dad how to operate the hearing aids through his phone once they were paired, which gave him a lot of confidence using them.</p></div>
           </details>
         </article>
-
-        <article class="rev">
+<article class="rev">
+          <p class="rev-theme">Help after disappointing hearing aids</p>
           <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
           <p class="sr-only">5 out of 5 stars</p>
           <blockquote><p>“I have several hearing aids that don't work and don't fit, but Jaysee found the perfect match for me.”</p></blockquote>
@@ -983,8 +993,12 @@ body.modal-open{ overflow:hidden; }
             <div class="full"><p>Jaysee Soto gave me back my hearing! I have several hearing aids that don't work and don't fit, but Jaysee found the perfect match for me. To determine my hearing concerns, I had a extensive exam that went far beyond my other hearing exams, leading to hearing aids that are comfortable and actually work. The office staff is professional and accomodating. They worked with my insurance to get me the best price on my hearing aids. I highly recommend Altamonte Family Hearing.</p></div>
           </details>
         </article>
-
-        <article class="rev">
+      </div>
+      <details class="reviews-more">
+        <summary>More patient experiences</summary>
+        <div class="rev-grid">
+<article class="rev">
+          <p class="rev-theme">Attentive care</p>
           <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
           <p class="sr-only">5 out of 5 stars</p>
           <blockquote><p>“Jaysee and his staff are personable, professional and really go the extra mile for their clients.”</p></blockquote>
@@ -994,8 +1008,8 @@ body.modal-open{ overflow:hidden; }
             <div class="full"><p>They have the in the ear measuring capability that allows them to actually see in the device they have in your ear is actually picking up the sounds that you need. That ensured that my monitors were dong their job based upon my specific needs. Jaysee and his staff are personable, professional and really go the extra mile for their clients. You can see their empathy, understanding and dedication to every one of us. You really matter to them and they have invested the training and resources for state-of-the art equipment necessary to provide you with the absolute best care available.</p></div>
           </details>
         </article>
-
-        <article class="rev">
+<article class="rev">
+          <p class="rev-theme">Practical repair support</p>
           <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
           <p class="sr-only">5 out of 5 stars</p>
           <blockquote><p>“I really felt heard and cared for by the staff! Thank you so much! Your help has made a HUGE impact on my life.”</p></blockquote>
@@ -1005,8 +1019,8 @@ body.modal-open{ overflow:hidden; }
             <div class="full"><p>I want to start this review by saying this has by far been the best experience I have had with healthcare. About a month ago, I came across them by googling places that can repair hearing aids. I called them 5 minutes before closing time and they happily answered my call for help and immediately re-assured me that things can be fixed. I came in today during the walk-in hours and showed them the aids and the issue. I was greeted by Jaysee and he re-assured me that things can be fixed, and all the same day! The staff are very friendly and helpful. I had mentioned that getting hearing aids has been hard and they immediately wanted to help with a solution. I really felt heard and cared for by the staff! Thank you so much! Your help has made a HUGE impact on my life. This is absolutely the place to go!!!!</p></div>
           </details>
         </article>
-
-        <article class="rev">
+<article class="rev">
+          <p class="rev-theme">Spanish-language care</p>
           <div class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></div>
           <p class="sr-only">5 out of 5 stars</p>
           <blockquote><p>“Being able to communicate in Spanish made my mother feel at ease and well cared for.”</p></blockquote>
@@ -1019,7 +1033,8 @@ body.modal-open{ overflow:hidden; }
             </div>
           </details>
         </article>
-      </div>
+        </div>
+      </details>
 
       <div class="rev-foot">
         <a class="rev-link" href="https://www.google.com/search?q=altamonte+family+hearing+center&amp;rlz=1C1CHBD_enIN1092IN1158&amp;oq=altamonte+Family&amp;gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIGCAEQRRg5MgcIAhAAGIAEMgwIAxAAGBQYhwIYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQk3MTU0ajBqMTWoAgiwAgHxBX27SYRtLJHc8QV9u0mEbSyR3A&amp;sourceid=chrome&amp;source=chrome.rb&amp;ie=UTF-8#lrd=0x88e771506ecb647d:0xabcbd17d7a2f5be5,1,,,," target="_blank" rel="noopener">See all our Google reviews<span class="sr-only"> (opens in a new tab)</span></a>
@@ -1308,7 +1323,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = 'a0f45ecb4c22c2eb32beb0d1191abe049b1dd75ad6e5dd3601cc3957a24ee7ad';
+  const version = 'a72d90bcc9d483250174abc91a1d4dbadbbc6fcdb1f81ab6ee041f69631858fc';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
