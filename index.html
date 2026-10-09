@@ -380,15 +380,15 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 
 /* S6 People — paired specialists, coordinated support */
 #team{ background:var(--cream); padding-block:56px; }
-#team .section-head{ max-width:none; margin-bottom:28px; }
+#team .section-head{ max-width:none; margin-bottom:20px; }
 #team .section-head .lead{ margin-top:14px; max-width:none; }
 .team-providers{ display:grid; gap:28px; padding:28px; border-radius:26px; background:radial-gradient(ellipse at 100% 0%,rgba(222,231,227,.65),transparent 65%),linear-gradient(115deg,var(--paper),#F4F4EC); border:1px solid rgba(201,216,209,.6); }
-.team-provider{ display:grid; grid-template-columns:160px minmax(0,1fr); gap:14px 22px; align-content:start; min-width:0; }
-.team-photo{ grid-column:1; grid-row:1/3; margin:0; aspect-ratio:1; border-radius:22px; padding:4px; background:linear-gradient(135deg,var(--gold-soft),var(--mist)); overflow:hidden; }
+.team-provider{ display:grid; grid-template-columns:200px minmax(0,1fr); gap:10px 20px; align-content:start; min-width:0; }
+.team-photo{ grid-column:1; grid-row:1/3; margin:0; aspect-ratio:4/5; border-radius:22px; padding:4px; background:linear-gradient(135deg,var(--gold-soft),var(--mist)); overflow:hidden; }
 .team-photo img{ display:block; width:100%; height:100%; object-fit:cover; object-position:50% 20%; border-radius:18px; }
 .team-provider header{ grid-column:2; min-width:0; }
 #team .team-provider h3{ font:400 27px/1.15 var(--serif); margin:0 0 7px; }
-.team-credentials{ display:block; font:600 16px/1.4 "Satoshi Header",var(--sans); color:var(--text-2); margin-top:5px; }
+.team-credentials{ display:inline-block; font:600 16px/1.4 "Satoshi Header",var(--sans); color:var(--text-2); margin-top:0; }
 #team .team-role{ font:600 16px/1.45 "Satoshi Header",var(--sans); color:var(--primary); margin:0; }
 .team-bio{ grid-column:2; min-width:0; }
 .team-bio p{ font-size:18px; line-height:1.5; color:var(--text-2); margin:0 0 12px; overflow-wrap:anywhere; }
@@ -396,29 +396,29 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .team-facts{ list-style:none; margin:14px 0; padding:0; display:grid; gap:8px; }
 .team-facts li{ font-size:17px; line-height:1.45; color:var(--text-2); padding-left:16px; position:relative; }
 .team-facts li::before{ content:""; width:6px; height:6px; border:1px solid var(--primary); border-radius:50%; position:absolute; left:0; top:.55em; }
-.team-extra{ margin-top:10px; }
+.team-extra{ margin-top:8px; }
 .team-extra summary{ cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px; min-height:44px; color:var(--primary); font:600 17px/1.5 "Satoshi Header",var(--sans); }
 .team-extra summary::-webkit-details-marker{ display:none; }
 .team-extra summary::after{ content:"+"; font-size:22px; }
 .team-extra[open] summary::after{ content:"−"; }
 .team-extra p{ font-size:17px; margin:8px 0 0; padding-left:14px; border-left:2px solid var(--border); }
-.team-support{ margin-top:28px; }
+.team-support{ margin-top:22px; }
 #team .team-support>h3{ font:600 22px/1.3 "Satoshi Header",var(--sans); margin:0 0 6px; }
 .team-support-intro{ font-size:17px; color:var(--text-2); margin:0 0 18px; }
 .team-coordinators{ display:grid; gap:22px; }
 .team-coordinator{ display:grid; grid-template-columns:88px minmax(0,1fr); gap:18px; min-width:0; align-items:start; }
-.team-coordinator .team-photo{ grid-row:auto; border-radius:16px; padding:0; }
+.team-coordinator .team-photo{ grid-row:auto; aspect-ratio:1; border-radius:16px; padding:0; }
 .team-coordinator .team-photo img{ border-radius:16px; }
 .team-coordinator h4{ font:600 21px/1.3 "Satoshi Header",var(--sans); margin:0 0 4px; }
 .team-coordinator p{ font-size:17px; line-height:1.5; color:var(--text-2); margin:8px 0 0; overflow-wrap:anywhere; }
-.team-foot{ margin-top:26px; padding-top:20px; border-top:1px solid var(--border); display:grid; gap:16px; }
+.team-foot{ margin-top:20px; padding-top:20px; border-top:1px solid var(--border); display:grid; gap:16px; }
 .team-foot p{ font-size:16px; line-height:1.5; color:var(--text-2); margin:0; }
 .team-spanish{ border-left:3px solid var(--gold); padding-left:16px; }
 .team-spanish strong{ display:block; color:var(--primary); font:600 18px/1.4 "Satoshi Header",var(--sans); margin-bottom:4px; }
-@media(min-width:1100px){ .team-providers{ grid-template-columns:minmax(0,7fr) minmax(0,6fr); gap:28px; } .team-provider+.team-provider{ padding-left:28px; border-left:1px solid var(--border); grid-template-columns:140px minmax(0,1fr); } }
+@media(min-width:1100px){ .team-provider{ grid-template-columns:clamp(160px,calc(11.765vw + 30.585px),200px) minmax(0,1fr); } .team-providers{ grid-template-columns:minmax(0,7fr) minmax(0,6fr); gap:28px; } .team-provider+.team-provider{ padding-left:28px; border-left:1px solid var(--border); grid-template-columns:clamp(140px,calc(11.765vw + 10.585px),180px) minmax(0,1fr); } }
 @media(min-width:768px){ .team-coordinators{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; } .team-foot{ grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:32px; align-items:start; } }
 @media(max-width:1099px){ .team-provider+.team-provider{ padding-top:24px; border-top:1px solid var(--border); } }
-@media(max-width:599px){ #team{ padding-block:40px; } .team-providers{ padding:20px 18px; gap:22px; } .team-provider{ grid-template-columns:96px minmax(0,1fr); gap:14px; } .team-photo{ grid-row:1; } .team-bio{ grid-column:1/-1; } #team .team-provider h3{ font-size:24px; } .team-coordinator{ grid-template-columns:80px minmax(0,1fr); gap:16px; } }
+@media(max-width:599px){ #team{ padding-block:40px; } .team-providers{ padding:20px 18px; gap:22px; } .team-provider{ grid-template-columns:112px minmax(0,1fr); gap:12px; } .team-photo{ grid-row:1; aspect-ratio:1; } .team-bio{ grid-column:1/-1; } #team .team-provider h3{ font-size:24px; } .team-coordinator{ grid-template-columns:80px minmax(0,1fr); gap:16px; } }
 
 /* S7 Reviews */
 .rev-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 48px; margin-bottom:40px; }
@@ -562,7 +562,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="17a45547f62229325a7152c42be38a6f2099a5ee7425968d912cb96e91551ef8">
+<meta data-preview-version="a0f45ecb4c22c2eb32beb0d1191abe049b1dd75ad6e5dd3601cc3957a24ee7ad">
 </head>
 <body>
 
@@ -1308,7 +1308,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = '17a45547f62229325a7152c42be38a6f2099a5ee7425968d912cb96e91551ef8';
+  const version = 'a0f45ecb4c22c2eb32beb0d1191abe049b1dd75ad6e5dd3601cc3957a24ee7ad';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
