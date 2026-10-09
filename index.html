@@ -299,22 +299,22 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 #verification .panel-head{ max-width:none; margin-bottom:32px; }
 #verification .panel-head h2{ max-width:950px; }
 #verification .panel-head .lead{ max-width:76ch; margin-top:16px; font-size:20px; }
-.verify-feature{ display:grid; gap:28px; align-items:start; }
+.verify-feature{ display:grid; gap:32px; align-items:center; }
 .verify-copy,.verify-media{ min-width:0; }
 #verification h3{ color:var(--on-dark); font:600 23px/1.3 "Satoshi Header",var(--sans); margin-bottom:10px; }
 #verification p{ overflow-wrap:anywhere; }
-.verify-label{ display:block; color:var(--gold-soft); font:600 13px/1.4 "Satoshi Header",var(--sans); letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px; }
-.verify-copy p{ font-size:18px; line-height:1.55; margin-bottom:12px; }
-.verify-note{ color:var(--on-dark-soft); font-size:16px!important; }
-.verify-detail{ border-top:1px solid rgba(238,243,239,.22); border-bottom:1px solid rgba(238,243,239,.22); margin-top:18px; }
-.verify-detail summary{ cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:16px; padding:14px 0; font:600 16px/1.5 "Satoshi Header",var(--sans); color:var(--gold-soft); }
+.verify-copy p{ font-size:18px; line-height:1.55; margin:0; color:var(--on-dark-soft); }
+.verify-copy strong{ font-weight:500; color:var(--on-dark); }
+.verify-check + .verify-check{ margin-top:24px; }
+.verify-detail{ border-top:1px solid rgba(238,243,239,.22); margin-top:26px; }
+.verify-detail summary{ cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:16px 0 0; font:600 16px/1.5 "Satoshi Header",var(--sans); color:var(--gold-soft); }
 .verify-detail summary::-webkit-details-marker{ display:none; }
 .verify-detail summary::after{ content:"+"; font-size:22px; line-height:1; }
 .verify-detail[open] summary::after{ content:"−"; }
-.verify-detail p{ font-size:17px; padding-bottom:4px; }
-.verify-device{ margin-top:22px; padding-left:18px; border-left:2px solid var(--gold-soft); }
-.verify-device h3{ font-size:20px!important; }
-.verify-device p{ margin:0; }
+.verify-detail-body{ padding-top:20px; }
+.verify-detail-body h4{ font:600 18px/1.4 "Satoshi Header",var(--sans); margin:0 0 8px; }
+.verify-detail-body p{ font-size:17px; margin:0 0 16px; }
+.verify-detail-body p:last-child{ margin:0; }
 .verify-media{ margin:0; }
 .verify-media .ph{ aspect-ratio:3/2; padding:5px; background:linear-gradient(135deg,var(--gold-soft),rgba(222,231,227,.28) 65%); border-radius:26px 26px 18px 18px; }
 .verify-media .ph::before{ display:none; }
@@ -327,7 +327,7 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .verify-care ul{ list-style:none; margin:0; padding:0; display:grid; gap:14px; }
 .verify-care li{ position:relative; padding-left:20px; font-size:17px; line-height:1.5; color:var(--text-2); }
 .verify-care li::before{ content:""; position:absolute; left:0; top:.6em; width:7px; height:7px; border:1px solid var(--primary); border-radius:50%; }
-.verify-care li strong{ display:block; color:var(--night); font:600 17px/1.5 "Satoshi Header",var(--sans); }
+.verify-care li strong{ display:inline; color:var(--night); font:600 17px/1.5 "Satoshi Header",var(--sans); }
 .verify-proof{ display:grid; gap:22px; margin-top:28px; }
 .verify-proof>div{ min-width:0; }
 .verify-proof h3{ font-size:19px!important; }
@@ -336,7 +336,7 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 #verification .panel-cta{ margin-top:26px; padding-top:24px; }
 .panel-cta{ margin-top:48px; padding-top:36px; border-top:1px solid rgba(238,243,239,.2); display:flex; flex-wrap:wrap; align-items:center; gap:12px 28px; }
 .panel-cta p{ margin:0; color:var(--on-dark-soft); max-width:46ch; }
-@media(min-width:1000px){ .verify-feature{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:36px; } .verify-media{ position:sticky; top:130px; } }
+@media(min-width:1000px){ .verify-feature{ grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:48px; } }
 @media(min-width:768px){ .verify-care{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; align-items:center; } .verify-care ul{ border-left:1px solid var(--border); padding-left:28px; } .verify-proof{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; } .verify-proof>div+div{ border-left:1px solid rgba(238,243,239,.22); padding-left:28px; } }
 @media(max-width:999px){ .verify-media{ grid-row:1; } }
 @media(max-width:767px){ #verification .panel{ padding:30px 20px; border-radius:28px; } #verification .panel-head{ margin-bottom:24px; } #verification .panel-head .lead{ font-size:18px; } .verify-feature{ gap:24px; } .verify-care{ padding:22px 20px; } .verify-care ul{ border-top:1px solid var(--border); padding-top:18px; } .verify-proof>div+div{ border-top:1px solid rgba(238,243,239,.22); padding-top:20px; } #verification .panel-cta .btn{ width:100%; } }
@@ -529,7 +529,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="a8fc26a22747092d54b4896623cdc82ea4d8128be28996d09de33ba6aa0131c2">
+<meta data-preview-version="08ff3e4b4f7c98330e0e1ae344e85ed34a15c6095692352a28e35f29fba33f06">
 </head>
 <body>
 
@@ -693,28 +693,34 @@ body.modal-open{ overflow:hidden; }
     <div class="panel">
       <div class="panel-head">
         <h2 id="verify-title">Care That Goes <em>Beyond the Hearing Aid</em></h2>
-        <p class="lead">If hearing aids are right for you, the fitting and follow-up matter. We check how they perform for your ears and support you as you get used to them.</p>
+        <p class="lead">If hearing aids are right for you, we verify your fitting and provide care that continues after your first visit.</p>
       </div>
       <div class="verify-feature">
         <div class="verify-copy">
-          <span class="verify-label">A fitting based on your hearing</span>
-          <h3>Checked for your ears</h3>
-          <p>With <strong>Real Ear Measurement (REM)</strong>, a thin microphone tube beside your hearing aid measures sound near your eardrum at soft, average and loud levels. We compare those measurements with targets calculated from your own hearing test, then fine-tune your fitting.</p>
-          <p class="verify-note">This verifies your fitting; it cannot promise perfect hearing.</p>
-          <details class="verify-detail">
-            <summary>How fitting verification works</summary>
-            <p>Two people with the same hearing test results, hearing aids and software settings can still receive very different sound in their ear canals. Software defaults use average ear-canal values. Real Ear Measurement checks what reaches your ear against your individual hearing targets, rather than relying on those averages.</p>
-          </details>
-          <div class="verify-device">
-            <h3>Checked before fitting</h3>
-            <p>Before every fitting, <strong>Electroacoustic Analysis (EAA)</strong> checks the hearing aid’s output, amplification and distortion in a test box against the manufacturer’s specifications. This checks the device’s performance and is separate from Real Ear Measurement and your hearing test.</p>
+          <div class="verify-check">
+            <h3>Measured in your ear</h3>
+            <p><strong>Real Ear Measurement</strong> checks the sound your hearing aid delivers against targets from your own hearing test. Those measurements guide adjustments to your fitting.</p>
           </div>
+          <div class="verify-check">
+            <h3>Device checked before fitting</h3>
+            <p><strong>Electroacoustic Analysis</strong> checks the hearing aid itself against the manufacturer’s specifications before every fitting. It is a separate check from your hearing test and in-ear measurement.</p>
+          </div>
+          <details class="verify-detail">
+            <summary>Explore how we verify your fitting</summary>
+            <div class="verify-detail-body">
+              <h4>Real Ear Measurement (REM)</h4>
+              <p>A thin probe-microphone tube sits in your ear canal beside the hearing aid. It measures sound near your eardrum at soft, average and loud levels. We compare those measurements with targets calculated from your own hearing test, then fine-tune your fitting.</p>
+              <p>Two people with the same hearing test results, hearing aids and software settings can receive very different sound in their ear canals. Software defaults use average ear-canal values; REM checks what reaches your individual ear. It verifies the fitting and cannot promise perfect hearing.</p>
+              <h4>Electroacoustic Analysis (EAA)</h4>
+              <p>A separate test-box check measures the device’s output, amplification and distortion against the manufacturer’s specifications before every fitting. It checks device performance, rather than your hearing, and does not replace Real Ear Measurement.</p>
+            </div>
+          </details>
         </div>
         <figure class="verify-media">
           <div class="ph" data-ph="IMG-METHOD-01" data-label="Real Ear Measurement procedure photo, 3:2" style="--ar:3/2">
             <img src="https://altamontefamilyhearing.com/assets/photos/AFH-C-196.webp" alt="Jaysee positioning equipment at a patient's ear during Real Ear Measurement" width="1800" height="1201" loading="lazy" referrerpolicy="no-referrer">
           </div>
-          <figcaption>Real Ear Measurement checks the sound delivered in your ear, with a thin probe tube beside the hearing aid.</figcaption>
+          <figcaption>Real Ear Measurement at Altamonte Family Hearing.</figcaption>
         </figure>
       </div>
       <div class="verify-care">
@@ -723,8 +729,8 @@ body.modal-open{ overflow:hidden; }
           <p>Included with hearing aids purchased from our office, at every technology level.</p>
         </div>
         <ul>
-          <li><strong>Support as you settle in</strong>Follow-up visits over the first few weeks to fine-tune your fit.</li>
-          <li><strong>Keep your hearing aids cared for</strong>A professional deep cleaning every six months is recommended for hearing aid users.</li>
+          <li><strong>Fitting follow-ups.</strong> Visits over the first few weeks help fine-tune your fit.</li>
+          <li><strong>Professional cleaning.</strong> A deep cleaning every six months is recommended for hearing aid users.</li>
         </ul>
       </div>
       <div class="verify-proof">
@@ -1247,7 +1253,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = 'a8fc26a22747092d54b4896623cdc82ea4d8128be28996d09de33ba6aa0131c2';
+  const version = '08ff3e4b4f7c98330e0e1ae344e85ed34a15c6095692352a28e35f29fba33f06';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
