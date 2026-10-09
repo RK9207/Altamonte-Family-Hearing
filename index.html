@@ -14,7 +14,7 @@
   IMPLEMENTATION NOTES (internal, not visitor-facing)
   - Image slots carry data-ph="IMG-..." IDs. Each is populated with the genuine clinic photo named in DESIGN_SYSTEM.md.
     If a file fails to load, the slot shows its ID/label instead. Swap src values in Step 4B / production.
-  - Google aggregate (5.0 / 156) comes from the 9 Oct 2026 panel transcription. It appears in S1 and S7 only. Re-check before publishing.
+  - Google aggregate (5.0 / 156) comes from the 9 Oct 2026 panel transcription. Display the user-approved 150+ reviews in S1 and S7. Re-check the rating before production publishing.
   - Booking dialog iframe src is the supplied My Hearing Portal URL, unchanged. It is set on first open (not at page load).
   - Request form: the embed is the supplied Onspire Pulse code with ONE technical change: the iframe id and
     data-layout-iframe-id use the "formEmbed-" prefix instead of "inline-" (known GHL autoscroll fix). form_embed.js is loaded once.
@@ -443,7 +443,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="ef41aadc97306b3ef1fbaef8cd9116eb405f4e02781f4971c6a25c0f352b51bc">
+<meta data-preview-version="f06e2f08e6d0f723dc378f33eb6321de6d85fb9a1d42aaeee789676badb05e94">
 </head>
 <body>
 
@@ -494,7 +494,7 @@ body.modal-open{ overflow:hidden; }
       <!-- Google aggregate: 5.0 / 156 per 9 Oct 2026 panel capture. Re-check before publishing. -->
       <a class="g-proof" href="#reviews">
         <span class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></span>
-        <span class="g-text"><strong>5.0</strong> rating on Google from 156 reviews</span>
+        <span class="g-text"><strong>5.0</strong> rating on Google from 150+ reviews</span>
       </a>
       <p class="es-cue">Hablamos español.</p>
     </div>
@@ -797,7 +797,7 @@ body.modal-open{ overflow:hidden; }
           <span class="num" aria-hidden="true">5.0</span>
           <div>
             <span class="stars" aria-hidden="true"><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg><svg class="ico ico-star"><use href="#i-star"/></svg></span>
-            <p><strong>5.0 rating</strong> from 156 Google reviews</p>
+            <p><strong>5.0 rating</strong> from 150+ Google reviews</p>
           </div>
         </div>
       </div>
@@ -1116,7 +1116,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = 'ef41aadc97306b3ef1fbaef8cd9116eb405f4e02781f4971c6a25c0f352b51bc';
+  const version = 'f06e2f08e6d0f723dc378f33eb6321de6d85fb9a1d42aaeee789676badb05e94';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
