@@ -343,23 +343,23 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 @media(max-width:767px){ #verification .panel{ padding:30px 20px; border-radius:28px; } #verification .panel-head{ margin-bottom:24px; } #verification .panel-head .lead{ font-size:18px; } .verify-feature{ gap:24px; } .verify-care{ padding:22px 20px; } .verify-care ul{ border-top:1px solid var(--border); padding-top:18px; } .verify-proof>div+div{ border-top:1px solid rgba(238,243,239,.22); padding-top:20px; } #verification .panel-cta .btn{ width:100%; } }
 
 /* S5 Services — open entries with layered technical detail */
-#care{ background:var(--paper); }
-#care .section-head{ margin-bottom:30px; }
-#care .section-head .lead{ margin-top:16px; }
-.services{ display:grid; gap:0 48px; }
-.svc{ min-width:0; padding:24px 0; border-top:1px solid var(--border); }
-.svc h3{ font:600 22px/1.3 "Satoshi Header",var(--sans); margin-bottom:10px; }
+#care{ background:var(--paper); padding-block:56px; }
+#care .section-head{ margin-bottom:22px; max-width:none; }
+#care .section-head .lead{ margin-top:12px; max-width:none; }
+.services{ display:grid; gap:0 32px; }
+.svc{ min-width:0; padding:18px 0; border-top:1px solid var(--border); }
+.svc h3{ font:600 22px/1.3 "Satoshi Header",var(--sans); margin-bottom:8px; }
 .svc p{ font-size:18px; line-height:1.5; color:var(--text-2); margin:0; overflow-wrap:anywhere; }
 .svc .qual{ font-size:17px; line-height:1.5; margin-top:12px; }
-.svc strong{ color:var(--night); font:600 17px/1.5 "Satoshi Header",var(--sans); }
-.svc .tel{ display:inline-flex; align-items:center; gap:8px; margin-top:14px; font:600 17px/1.5 "Satoshi Header",var(--sans); }
-.service-detail{ margin-top:14px; }
+.svc strong{ color:var(--night); font-family:"Satoshi Header",var(--sans); font-weight:600; }
+.svc .tel{ display:inline-flex; align-items:center; gap:8px; margin-top:6px; font:600 17px/1.5 "Satoshi Header",var(--sans); }
+.service-detail{ margin-top:6px; }
 .service-detail summary{ cursor:pointer; list-style:none; display:flex; align-items:center; gap:12px; color:var(--primary); font:600 17px/1.5 "Satoshi Header",var(--sans); width:fit-content; max-width:100%; min-height:44px; }
 .service-detail summary::-webkit-details-marker{ display:none; }
 .service-detail summary::after{ content:"+"; font-size:22px; line-height:1; flex:none; }
 .service-detail[open] summary::after{ content:"−"; }
 .service-detail p{ font-size:17px; line-height:1.55; margin:8px 0 0; padding-left:14px; border-left:2px solid var(--border); }
-.walkin{ display:grid; gap:28px; background:radial-gradient(ellipse at 100% 0%,rgba(232,211,166,.25),transparent 65%),linear-gradient(110deg,var(--mist),var(--cream)); border:1px solid rgba(201,216,209,.55); border-radius:24px; padding:24px; margin-top:12px; align-items:center; }
+.walkin{ display:grid; gap:24px; background:radial-gradient(ellipse at 100% 0%,rgba(232,211,166,.25),transparent 65%),linear-gradient(110deg,var(--mist),var(--cream)); border:1px solid rgba(201,216,209,.55); border-radius:22px; padding:20px; margin-top:8px; align-items:center; }
 .walkin .ph{ --ar:3/2; margin:0; border-radius:16px; }
 .walkin .ph img{ object-position:45% 60%; }
 .walkin h3{ font:600 21px/1.3 "Satoshi Header",var(--sans); margin-bottom:10px; }
@@ -367,9 +367,10 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .walkin p{ font-size:18px; line-height:1.5; color:var(--text-2); margin:0; }
 .walkin strong{ font:600 18px/1.5 "Satoshi Header",var(--sans); color:var(--night); }
 @media (min-width:768px){ .services{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (min-width:900px){ .walkin{ grid-template-columns:minmax(0,1fr) minmax(0,2.4fr); gap:32px; } }
+@media (min-width:1100px){ .services{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (min-width:900px){ .walkin{ grid-template-columns:minmax(0,240px) minmax(0,1fr); gap:28px; } }
 @media (max-width:899px){ .walkin .ph{ width:min(100%,360px); justify-self:center; grid-row:2; } }
-@media (max-width:767px){ #care{ padding-block:44px; } .svc{ padding:22px 0; } .svc h3{ font-size:21px; } .walkin{ padding:22px; gap:20px; } }
+@media (max-width:767px){ #care{ padding-block:36px; } .svc{ padding:16px 0; } .svc h3{ font-size:21px; } .walkin{ padding:20px; gap:16px; } .walkin .ph{ display:none; } }
 
 /* S6 People */
 .provider{ display:grid; gap:28px; padding:40px 0; border-top:1px solid var(--border); }
@@ -544,7 +545,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="67094fef4f7bb1b20cdc446e92480fa115730a8e639ca654a2e3bba3b3a46bf4">
+<meta data-preview-version="8260bdf9cdd908f65496646c19cd3f5719268b1ccfb9362aed3e69ea3117b5bb">
 </head>
 <body>
 
@@ -772,55 +773,49 @@ body.modal-open{ overflow:hidden; }
   <div class="wrap">
     <div class="section-head">
       <h2 id="care-title">Hearing Care for <em>Your Next Step</em></h2>
-      <p class="lead">Start with the help you need—whether you’re noticing changes, need support with existing hearing aids, or are arranging care for a family member.</p>
+      <p class="lead">Help with new hearing concerns, existing hearing aids, or care for a family member.</p>
     </div>
     <div class="services">
       <article class="svc">
         <h3>Hearing evaluations</h3>
-        <p>An ear check and sound-booth testing help explain how you hear and what to do next. For adults of all ages.</p>
-        <p class="qual"><strong>Most evaluations are complimentary.</strong> Call to confirm any costs that may apply.</p>
+        <p>Ear checks and sound-booth testing for adults of all ages. <strong>Most evaluations are complimentary;</strong> call to confirm any costs that may apply.</p>
       </article>
       <article class="svc">
-        <h3>Hearing aid fittings and adjustments</h3>
-        <p>Options based on your hearing, lifestyle, preferences and budget, with a verified fitting and follow-up adjustments.</p>
-        <p class="qual">Hearing aids do not restore natural hearing or remove all background noise.</p>
+        <h3>Hearing aid fittings</h3>
+        <p>A verified fitting and follow-up adjustments tailored to your needs. Hearing aids do not restore natural hearing or remove all background noise.</p>
         <details class="service-detail">
           <summary>What to expect from a fitting</summary>
-          <p>We program your hearing aids to targets calculated from your hearing test and verify the fitting with Real Ear Measurement. Follow-up visits help fine-tune your fit. The adjustment period varies; familiar sounds and your own voice may seem different at first.</p>
+          <p>Options reflect your hearing, lifestyle, preferences and budget. We program your hearing aids to targets calculated from your hearing test and verify the fitting with Real Ear Measurement. Follow-up visits help fine-tune your fit. The adjustment period varies; familiar sounds and your own voice may seem different at first.</p>
         </details>
       </article>
       <article class="svc">
-        <h3>Hearing aid repair and cleaning</h3>
-        <p>Troubleshooting, cleaning, programming and repairs for most major manufacturers, <strong>including hearing aids bought elsewhere.</strong></p>
-        <p class="qual">Some repairs require factory service. Same-day repair is not guaranteed.</p>
+        <h3>Repairs and cleaning</h3>
+        <p>Support for most major hearing-aid brands, <strong>including aids bought elsewhere.</strong> Some repairs need factory service; same-day repair is not guaranteed.</p>
         <details class="service-detail">
           <summary>Repairs and maintenance we handle</summary>
-          <p>Many small repairs—battery doors, receivers, tubing, domes and filters—can be handled in our office. We also use professional drying for moisture. Moisture inside the case, a cracked shell or a failed circuit board may require factory service, which we coordinate with the manufacturer.</p>
+          <p>We troubleshoot, clean, program and repair hearing aids. Many small repairs—battery doors, receivers, tubing, domes and filters—can be handled in our office. We also use professional drying for moisture. Moisture inside the case, a cracked shell or a failed circuit board may require factory service, which we coordinate with the manufacturer.</p>
           <p>A professional deep cleaning about every six months is recommended to help address moisture and earwax before they cause a repair.</p>
         </details>
       </article>
       <article class="svc">
         <h3>Tinnitus consultation</h3>
-        <p>We evaluate your hearing and discuss ways to reduce the impact of ringing, buzzing, hissing or pulsing sounds.</p>
-        <p class="qual">There is no universal cure, and relief varies. Specialized referral may be appropriate.</p>
+        <p>Hearing evaluation and options for managing tinnitus. There is no universal cure; relief varies and specialized referral may be needed.</p>
         <details class="service-detail">
           <summary>Options we can discuss</summary>
-          <p>When hearing loss is also present, hearing aids with built-in sound-therapy features may help make tinnitus less noticeable. We refer you to other providers for specialized tinnitus care when appropriate.</p>
+          <p>We discuss ways to reduce the impact of ringing, buzzing, hissing or pulsing sounds. When hearing loss is also present, hearing aids with built-in sound-therapy features may help make tinnitus less noticeable. We refer you to other providers for specialized tinnitus care when appropriate.</p>
         </details>
       </article>
       <article class="svc">
         <h3>Earwax removal</h3>
-        <p>A video-otoscope ear check lets you see the image on screen. When suitable, we gently remove wax with warm-water irrigation.</p>
-        <p class="qual"><strong>Suitability is checked first.</strong> Irrigation is not appropriate for every ear; an ENT referral may be needed.</p>
+        <p>Ear checks and gentle warm-water removal. <strong>Suitability is checked first:</strong> irrigation is not right for every ear, and an ENT referral may be needed.</p>
         <details class="service-detail">
           <summary>How we check suitability</summary>
-          <p>Ear surgery, ear tubes, a perforated eardrum or a recent infection can mean irrigation is unsuitable. We screen first and refer to an ENT when needed. Suitable ears can be treated with warmed water at controlled low pressure.</p>
+          <p>We examine your ears with a video otoscope, so you can see the image on screen. Ear surgery, ear tubes, a perforated eardrum or a recent infection can mean irrigation is unsuitable. We screen first and refer to an ENT when needed. Suitable ears can be treated with warmed water at controlled low pressure.</p>
         </details>
       </article>
       <article class="svc">
-        <h3>Mobile hearing care at home</h3>
-        <p>Toni provides evaluations and fittings at home or in a care facility across Greater Orlando for people who have difficulty reaching the office.</p>
-        <p class="qual"><strong>Call for cost and availability.</strong> Some tests require in-office equipment.</p>
+        <h3>Hearing care at home</h3>
+        <p>Toni offers evaluations and fittings at home or care facilities in Greater Orlando when travel is difficult. <strong>Call for costs and availability;</strong> some tests require office equipment.</p>
         <a class="tel" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Call about home visits</a>
       </article>
     </div>
@@ -831,7 +826,7 @@ body.modal-open{ overflow:hidden; }
       <div>
         <h3>Walk-in cleaning and minor repairs</h3>
         <span class="time">Monday–Friday · 1:00–2:00 pm</span>
-        <p><strong>No appointment needed.</strong> Bring your hearing aids, whether you bought them here or elsewhere. For cleanings and minor repairs.</p>
+        <p><strong>No appointment needed.</strong> Hearing aids bought here or elsewhere are welcome.</p>
       </div>
     </div>
   </div>
@@ -1284,7 +1279,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = '67094fef4f7bb1b20cdc446e92480fa115730a8e639ca654a2e3bba3b3a46bf4';
+  const version = '8260bdf9cdd908f65496646c19cd3f5719268b1ccfb9362aed3e69ea3117b5bb';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
