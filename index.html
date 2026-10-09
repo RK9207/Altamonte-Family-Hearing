@@ -419,6 +419,8 @@ body.modal-open{ overflow:hidden; }
   *,*::before,*::after{ transition:none!important; animation:none!important; }
 }
 </style>
+<meta name="robots" content="noindex, nofollow">
+<meta data-preview-version="42073e31cbe210efc6cd16a7922ad5c5699d38ec8f7802c2b0bc7cb5a1e7893c">
 </head>
 <body>
 
@@ -1079,5 +1081,26 @@ body.modal-open{ overflow:hidden; }
   if (yr) { yr.textContent = new Date().getFullYear(); }
 })();
 </script>
-</body>
+<script>
+(() => {
+  const version = '42073e31cbe210efc6cd16a7922ad5c5699d38ec8f7802c2b0bc7cb5a1e7893c';
+  setInterval(async () => {
+    try {
+      const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
+      if (!response.ok) return;
+      const html = await response.text();
+      const next = html.match(/data-preview-version="([a-f0-9]+)"/);
+      if (next && next[1] !== version) {
+        sessionStorage.setItem('afh-preview-scroll', String(window.scrollY));
+        location.reload();
+      }
+    } catch (_) {}
+  }, 15000);
+  const scroll = sessionStorage.getItem('afh-preview-scroll');
+  if (scroll !== null) {
+    sessionStorage.removeItem('afh-preview-scroll');
+    window.addEventListener('load', () => window.scrollTo(0, Number(scroll)));
+  }
+})();
+</script></body>
 </html>
