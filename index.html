@@ -356,7 +356,7 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .svc strong{ color:var(--primary); font-family:"Satoshi Header",var(--sans); font-weight:600; }
 .svc .tel{ display:inline-flex; align-items:center; gap:8px; margin-top:auto; padding-top:8px; min-height:52px; font:600 17px/1.5 "Satoshi Header",var(--sans); }
 .service-detail{ margin-top:auto; padding-top:8px; }
-.service-detail summary{ cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--primary); font:600 17px/1.5 "Satoshi Header",var(--sans); width:100%; max-width:100%; min-height:44px; }
+.service-detail summary{ cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:flex-start; gap:10px; color:var(--primary); font:600 17px/1.5 "Satoshi Header",var(--sans); width:100%; max-width:100%; min-height:44px; }
 .service-detail summary::-webkit-details-marker{ display:none; }
 .service-detail summary::after{ content:"+"; display:grid; place-items:center; width:24px; height:24px; border:1px solid var(--border); border-radius:50%; font-size:20px; line-height:1; flex:none; }
 .service-detail[open] summary::after{ content:"−"; }
@@ -547,7 +547,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="6cc565b4c514a85a976c7a6bbe55ac934b9188617feec13794b5831285ddd198">
+<meta data-preview-version="df97c750254ebca8197bc98205d2c6b37ae380e3d424f5aaee6291359fbdf6dc">
 </head>
 <body>
 
@@ -1281,7 +1281,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = '6cc565b4c514a85a976c7a6bbe55ac934b9188617feec13794b5831285ddd198';
+  const version = 'df97c750254ebca8197bc98205d2c6b37ae380e3d424f5aaee6291359fbdf6dc';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
