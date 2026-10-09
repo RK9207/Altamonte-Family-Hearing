@@ -361,18 +361,22 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .service-detail summary::after{ content:"+"; display:grid; place-items:center; width:24px; height:24px; border:1px solid var(--border); border-radius:50%; font-size:20px; line-height:1; flex:none; }
 .service-detail[open] summary::after{ content:"−"; }
 .service-detail p{ font-size:17px; line-height:1.55; margin:8px 0 0; padding-left:14px; border-left:2px solid var(--border); }
-.walkin{ display:grid; gap:24px; background:radial-gradient(ellipse at 100% 0%,rgba(232,211,166,.25),transparent 65%),linear-gradient(110deg,var(--mist),var(--cream)); border:1px solid rgba(201,216,209,.55); border-radius:22px; padding:20px; margin-top:8px; align-items:center; }
+.walkin{ display:grid; gap:24px; background:radial-gradient(ellipse at 100% 0%,rgba(232,211,166,.35),transparent 65%),linear-gradient(110deg,var(--mist),var(--cream)); border:1px solid var(--border); border-radius:22px; padding:20px; margin-top:8px; align-items:center; }
 .walkin .ph{ --ar:3/2; margin:0; border-radius:16px; }
 .walkin .ph img{ object-position:45% 60%; }
-.walkin h3{ font:600 21px/1.3 "Satoshi Header",var(--sans); margin-bottom:10px; }
-.walkin .time{ display:block; font:400 clamp(1.6rem,1.3rem + .65vw,2rem)/1.2 var(--serif); color:var(--primary); margin-bottom:12px; }
+.walkin-content{ display:grid; gap:20px; align-items:center; min-width:0; }
+.walkin h3{ font:400 28px/1.15 var(--serif); margin-bottom:10px; }
 .walkin p{ font-size:18px; line-height:1.5; color:var(--text-2); margin:0; }
-.walkin strong{ font:600 18px/1.5 "Satoshi Header",var(--sans); color:var(--night); }
+.walkin-hours{ padding-top:16px; border-top:1px solid rgba(89,112,102,.25); }
+.walkin-days{ display:block; font:600 17px/1.4 "Satoshi Header",var(--sans); color:var(--night); margin-bottom:4px; }
+.walkin .time{ display:block; font:400 32px/1.15 var(--serif); color:var(--primary); white-space:nowrap; }
+.walkin-access{ display:inline-block; margin-top:10px; padding:5px 10px; border-radius:6px; background:var(--primary); color:var(--paper); font:600 14px/1.4 "Satoshi Header",var(--sans); }
+@media(min-width:1100px){ .walkin-content{ grid-template-columns:minmax(0,1fr) minmax(0,230px); gap:28px; } .walkin-hours{ border-top:0; border-left:1px solid rgba(89,112,102,.25); padding:0 0 0 28px; } }
 @media (min-width:768px){ .services{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (min-width:1100px){ .services{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
-@media (min-width:900px){ .walkin{ grid-template-columns:minmax(0,240px) minmax(0,1fr); gap:28px; } }
-@media (max-width:899px){ .walkin .ph{ width:min(100%,360px); justify-self:center; grid-row:2; } }
-@media (max-width:767px){ #care{ padding-block:36px; } .svc{ padding:16px 0; } .svc h3{ font-size:21px; } .walkin{ padding:20px; gap:16px; } .walkin .ph{ display:none; } }
+@media (min-width:768px){ .walkin{ grid-template-columns:minmax(0,200px) minmax(0,1fr); gap:28px; } }
+@media (max-width:899px){ .walkin .ph{ width:min(100%,200px); justify-self:center; } }
+@media (max-width:767px){ #care{ padding-block:36px; } .svc{ padding:16px 0; } .svc h3{ font-size:21px; } .walkin{ padding:20px; gap:16px; } .walkin h3{ font-size:25px; } .walkin-content{ gap:16px; } .walkin .time{ font-size:30px; } .walkin .ph{ display:none; } }
 
 /* S6 People */
 .provider{ display:grid; gap:28px; padding:40px 0; border-top:1px solid var(--border); }
@@ -547,7 +551,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="df97c750254ebca8197bc98205d2c6b37ae380e3d424f5aaee6291359fbdf6dc">
+<meta data-preview-version="a7b46b1afe5d889efb670d0022b2d7ba8ce62d6add534629118c38e30836fb51">
 </head>
 <body>
 
@@ -825,10 +829,16 @@ body.modal-open{ overflow:hidden; }
       <figure class="ph" data-ph="IMG-REPAIR-01" data-label="Real clinic repair bench, 3:2">
         <img src="https://altamontefamilyhearing.com/assets/photos/AFH-C-125.webp" alt="Jaysee working on a hearing aid at the clinic repair bench" width="1600" height="1067" loading="lazy" referrerpolicy="no-referrer">
       </figure>
-      <div>
-        <h3>Walk-in cleaning and minor repairs</h3>
-        <span class="time">Monday–Friday · 1:00–2:00 pm</span>
-        <p><strong>No appointment needed.</strong> Hearing aids bought here or elsewhere are welcome.</p>
+      <div class="walkin-content">
+        <div class="walkin-copy">
+          <h3>Walk-in cleaning and minor repairs</h3>
+          <p>Bring your hearing aids—even if you bought them elsewhere.</p>
+        </div>
+        <div class="walkin-hours" aria-label="Walk-in hours and appointment information">
+          <span class="walkin-days">Monday–Friday</span>
+          <span class="time">1:00–2:00 pm</span>
+          <span class="walkin-access">No appointment needed</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1281,7 +1291,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = 'df97c750254ebca8197bc98205d2c6b37ae380e3d424f5aaee6291359fbdf6dc';
+  const version = 'a7b46b1afe5d889efb670d0022b2d7ba8ce62d6add534629118c38e30836fb51';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
