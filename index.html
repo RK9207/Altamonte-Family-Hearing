@@ -542,12 +542,18 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 .end{ background:var(--cream); }
 .end-inner{ background:var(--night); color:var(--on-dark); border-radius:var(--r-panel) var(--r-panel) 0 0; }
 @media (max-width:767px){ .end-inner{ border-radius:28px 28px 0 0; } }
-.closing{ padding-block:80px 64px; }
-.closing h2{ color:var(--white); max-width:18ch; }
-.closing p{ color:var(--on-dark-soft); max-width:50ch; margin-top:18px; font-size:20px; }
-.closing .cta-row{ margin-top:32px; }
-.closing .tel{ color:var(--on-dark); }
-@media (max-width:767px){ .closing{ padding-block:48px 40px; } .closing p{ font-size:18px; } }
+/* S11 Closing — calm final decision point */
+.closing{ padding-block:56px; border-radius:inherit; background:radial-gradient(ellipse at 85% 0%,rgba(0,98,65,.28),transparent 65%); }
+.closing-grid{ display:grid; gap:28px; align-items:center; }
+.closing h2{ color:var(--white); font-size:clamp(36px,3.4vw,48px); line-height:1.15; margin:0; }
+.closing h2 em{ color:var(--gold-soft); }
+.closing .closing-copy p{ color:var(--on-dark-soft); margin:16px 0 0; font-size:20px; line-height:1.5; }
+.closing-actions{ display:flex; flex-direction:column; align-items:flex-start; gap:12px; min-width:0; }
+.closing-actions .btn{ min-width:220px; }
+.closing .tel{ color:var(--on-dark); display:inline-flex; align-items:center; gap:8px; min-height:44px; font:600 18px/1.5 "Satoshi Header",var(--sans); }
+.closing-actions .closing-language{ color:var(--on-dark-soft); font-size:16px; line-height:1.5; margin:0; }
+@media(min-width:1000px){ .closing-grid{ grid-template-columns:minmax(0,7fr) minmax(0,4fr); gap:64px; } .closing-actions{ border-left:1px solid rgba(238,243,239,.2); padding-left:40px; } }
+@media(max-width:767px){ .closing{ padding-block:40px; } .closing .closing-copy p{ font-size:18px; } .closing-actions .btn{ width:100%; } }
 .footer{ border-top:1px solid rgba(238,243,239,.2); padding-block:40px 36px; font-size:16px; color:var(--on-dark-soft); }
 .footer a{ color:var(--on-dark); }
 .footer-grid{ display:grid; gap:28px; }
@@ -605,7 +611,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="4f0a2aaf21072b90883e8f93566d1557f2bcdfadb30e8302207aa57ccf6f849f">
+<meta data-preview-version="7b034a68aee4b0cf85064417d2011c1ee1521aa1390b07a730f3226451f71965">
 </head>
 <body>
 
@@ -1251,12 +1257,15 @@ body.modal-open{ overflow:hidden; }
 <div class="end">
   <div class="end-inner on-dark">
     <section class="closing" aria-labelledby="closing-title">
-      <div class="wrap">
-        <h2 id="closing-title">Ready to understand your hearing?</h2>
-        <p>Book an appointment online, or call our Altamonte Springs office and our team will help. Hablamos español.</p>
-        <div class="cta-row">
+      <div class="wrap closing-grid">
+        <div class="closing-copy">
+          <h2 id="closing-title">Take the Next Step Toward <em>Easier Conversations</em></h2>
+          <p>Start with a hearing evaluation. We’ll explain your results and talk through the options for your needs.</p>
+        </div>
+        <div class="closing-actions">
           <button type="button" class="btn btn-gold" data-book>Book Appointment</button>
           <a class="tel" href="tel:+14079496737"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>or call 407-949-6737</a>
+          <p class="closing-language" lang="es">Hablamos español.</p>
         </div>
       </div>
     </section>
@@ -1387,7 +1396,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = '4f0a2aaf21072b90883e8f93566d1557f2bcdfadb30e8302207aa57ccf6f849f';
+  const version = '7b034a68aee4b0cf85064417d2011c1ee1521aa1390b07a730f3226451f71965';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
