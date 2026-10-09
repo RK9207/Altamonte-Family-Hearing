@@ -252,29 +252,33 @@ h1 em,h2 em{ font-style:italic; color:var(--primary); }
 
 /* S3 First visit */
 #first-visit{ padding-block:56px; overflow-wrap:anywhere; }
-#first-visit .section-head{ margin-bottom:28px; }
+#first-visit .section-head{ display:flex; align-items:center; gap:32px; margin-bottom:24px; }
+#first-visit .section-head::after{ content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--gold),var(--border)); }
+#first-visit .section-head h2{ text-wrap:balance; }
 .visit-grid{ display:grid; grid-template-columns:minmax(0,1fr); gap:28px; }
 .visit-media{ margin:0; min-width:0; }
 .visit-photo-shell{ padding:6px; border-radius:24px; background:linear-gradient(135deg,var(--gold-soft),var(--mist) 60%,var(--paper)); }
 .visit-media .ph{ --ar:4/5; }
 .visit-media img{ object-position:50% 48%; }
 .visit-media figcaption{ margin-top:10px; font-size:14px; line-height:1.5; color:var(--text-2); }
-.steps{ list-style:none; counter-reset:step; display:grid; gap:24px 32px; }
-.steps li{ counter-increment:step; padding-top:16px; border-top:1px solid var(--border); min-width:0; }
-.steps li::before{ content:counter(step); display:grid; place-items:center; width:32px; height:32px; border-radius:50%; border:1px solid var(--primary); color:var(--primary); font:400 20px/1 var(--serif); margin-bottom:12px; }
-.steps h3{ font:600 20px/1.4 "Satoshi Header",var(--sans); margin-bottom:8px; }
-.steps p{ margin:0; line-height:1.5; }
+.steps{ list-style:none; counter-reset:step; display:grid; gap:0 28px; padding:8px 24px; border-radius:24px; background:linear-gradient(135deg,var(--cream),rgba(222,231,227,.65)); }
+.steps li{ counter-increment:step; display:grid; grid-template-columns:38px minmax(0,1fr); align-content:start; gap:10px 12px; padding:22px 0; border-top:1px solid var(--border); min-width:0; }
+.steps li:first-child{ border-top:0; }
+.steps li::before{ content:counter(step); display:grid; place-items:center; grid-column:1; grid-row:1; width:38px; height:38px; border-radius:50%; background:var(--primary); color:var(--paper); font:400 22px/1 var(--serif); }
+.steps h3{ grid-column:2; grid-row:1; align-self:center; font:600 21px/1.35 "Satoshi Header",var(--sans); margin:0; }
+.steps p{ grid-column:2; grid-row:2; margin:0; color:var(--text-2); line-height:1.5; }
 .visit-practical{ padding:24px 28px; margin-top:28px; border-radius:24px; background:linear-gradient(115deg,var(--mist),var(--cream)); display:grid; gap:24px; }
 .callout strong{ display:block; font:600 20px/1.4 "Satoshi Header",var(--sans); margin-bottom:8px; }
 .callout p{ margin:0; font-size:18px; line-height:1.5; }
 .bring{ list-style:none; display:grid; gap:8px; font-size:18px; line-height:1.5; }
 .bring li{ color:var(--text-2); }
 .bring b{ color:var(--text); font-family:"Satoshi Header",var(--sans); font-weight:600; }
+.visit-prep h3{ font:600 20px/1.4 "Satoshi Header",var(--sans); margin-bottom:8px; }
 .visit-cta{ grid-column:1/-1; }
-@media (min-width:768px){ .steps{ grid-template-columns:repeat(2,minmax(0,1fr)); } .visit-practical{ grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:36px; } }
-@media (min-width:1100px){ .visit-grid{ grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:48px; align-items:start; } .visit-practical{ grid-column:1/-1; margin-top:0; } }
+@media (min-width:768px){ .steps{ grid-template-columns:repeat(2,minmax(0,1fr)); } .steps li:nth-child(2){ border-top:0; } .visit-practical{ grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:32px; } .visit-prep{ border-left:1px solid var(--border); padding-left:28px; } }
+@media (min-width:1100px){ .visit-grid{ grid-template-columns:minmax(0,3.6fr) minmax(0,7.4fr); gap:40px; align-items:start; } .visit-practical{ grid-column:1/-1; margin-top:0; } }
 @media (max-width:1099px){ .visit-media{ order:4; width:min(100%,440px); justify-self:center; } .steps{ order:1; } .visit-practical{ order:2; } .visit-cta{ order:3; } }
-@media (max-width:767px){ #first-visit{ padding-block:40px; } .steps{ gap:20px; } .steps li{ position:relative; padding:18px 0 0 44px; } .steps li::before{ position:absolute; top:18px; left:0; } .visit-practical{ padding:20px; } }
+@media (max-width:767px){ #first-visit{ padding-block:40px; } #first-visit .section-head::after{ display:none; } .steps{ padding:4px 18px; } .steps li{ padding:16px 0; } .steps h3{ font-size:20px; } .steps p{ grid-column:1/-1; } .visit-practical{ padding:20px; } }
 
 /* Panels */
 .panel{ background:var(--night); color:var(--on-dark); border-radius:var(--r-panel); padding:72px 64px; }
@@ -492,7 +496,7 @@ body.modal-open{ overflow:hidden; }
 }
 </style>
 <meta name="robots" content="noindex, nofollow">
-<meta data-preview-version="5921d2b02477cec8d5991d740bb44302c0527054051e016761cce4d48df26764">
+<meta data-preview-version="733e7fb9706c811f59bc39388622c6fa345031ac0dc541e049eaebe880ee56c4">
 </head>
 <body>
 
@@ -633,11 +637,14 @@ body.modal-open{ overflow:hidden; }
           <strong>Most hearing evaluations are complimentary.</strong>
           <p>Call our office for details and to confirm any costs that may apply: <a href="tel:+14079496737">407-949-6737</a>.</p>
         </div>
+        <div class="visit-prep">
+        <h3>Before you come in</h3>
         <ul class="bring" aria-label="Before your visit">
           <li><b>For adults of all ages.</b></li>
           <li><b>Bring</b> your current hearing aids, if you wear them, and your insurance card. We’ll check your benefits.</li>
           <li><b>A family member or friend</b> can join you to help review your results.</li>
         </ul>
+        </div>
       </div>
     <div class="cta-row visit-cta">
       <button type="button" class="btn btn-primary" data-book>Book Appointment</button>
@@ -1206,7 +1213,7 @@ body.modal-open{ overflow:hidden; }
 </script>
 <script>
 (() => {
-  const version = '5921d2b02477cec8d5991d740bb44302c0527054051e016761cce4d48df26764';
+  const version = '733e7fb9706c811f59bc39388622c6fa345031ac0dc541e049eaebe880ee56c4';
   setInterval(async () => {
     try {
       const response = await fetch('./?previewCheck=' + Date.now(), {cache:'no-store'});
